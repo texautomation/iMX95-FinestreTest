@@ -1,0 +1,44 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Documento -->
+  <rect x="12" y="8" width="40" height="48" rx="6" fill="#F9FAFB" stroke="#6B7280" stroke-width="2"></rect>
+  
+  <!-- Angolo piegato -->
+  <path d="M40 8 L52 20 L40 20 Z" fill="#E5E7EB"></path>
+
+  <!-- Linee log -->
+  <line x1="18" y1="26" x2="46" y2="26" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round"></line>
+  <line x1="18" y1="34" x2="46" y2="34" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round"></line>
+  
+  <!-- Riga errore -->
+  <line x1="18" y1="42" x2="32" y2="42" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round"></line>
+
+  <!-- Microprocessore -->
+  <rect x="36" y="34" width="16" height="16" rx="3" fill="#EF4444"></rect>
+  
+  <!-- Core interno -->
+  <rect x="40" y="38" width="8" height="8" rx="1.5" fill="white"></rect>
+
+  <!-- Pin (sopra) -->
+  <line x1="38" y1="32" x2="38" y2="34" stroke="#EF4444" stroke-width="2"></line>
+  <line x1="42" y1="32" x2="42" y2="34" stroke="#EF4444" stroke-width="2"></line>
+  <line x1="46" y1="32" x2="46" y2="34" stroke="#EF4444" stroke-width="2"></line>
+  <line x1="50" y1="32" x2="50" y2="34" stroke="#EF4444" stroke-width="2"></line>
+
+  <!-- Pin (sotto) -->
+  <line x1="38" y1="50" x2="38" y2="52" stroke="#EF4444" stroke-width="2"></line>
+  <line x1="42" y1="50" x2="42" y2="52" stroke="#EF4444" stroke-width="2"></line>
+  <line x1="46" y1="50" x2="46" y2="52" stroke="#EF4444" stroke-width="2"></line>
+  <line x1="50" y1="50" x2="50" y2="52" stroke="#EF4444" stroke-width="2"></line>
+
+  <!-- Pin (sinistra) -->
+  <line x1="34" y1="36" x2="36" y2="36" stroke="#EF4444" stroke-width="2"></line>
+  <line x1="34" y1="40" x2="36" y2="40" stroke="#EF4444" stroke-width="2"></line>
+  <line x1="34" y1="44" x2="36" y2="44" stroke="#EF4444" stroke-width="2"></line>
+  <line x1="34" y1="48" x2="36" y2="48" stroke="#EF4444" stroke-width="2"></line>
+
+  <!-- Pin (destra) -->
+  <line x1="52" y1="36" x2="54" y2="36" stroke="#EF4444" stroke-width="2"></line>
+  <line x1="52" y1="40" x2="54" y2="40" stroke="#EF4444" stroke-width="2"></line>
+  <line x1="52" y1="44" x2="54" y2="44" stroke="#EF4444" stroke-width="2"></line>
+  <line x1="52" y1="48" x2="54" y2="48" stroke="#EF4444" stroke-width="2"></line>
+</svg>

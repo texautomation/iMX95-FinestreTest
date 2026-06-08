@@ -1,0 +1,31 @@
+/*
+* Copyright 2024 NXP
+* NXP Proprietary. This software is owned or controlled by NXP and may only be used strictly in
+* accordance with the applicable license terms. By expressly accepting such terms or by downloading, installing,
+* activating and/or otherwise using the software, you are agreeing that you have read, and that you agree to
+* comply with and are bound by, such license terms.  If you do not agree to be bound by the applicable license
+* terms, then you may not retain, install, activate or otherwise use the software.
+*/
+
+#ifndef __SCREEN_ECATNETWORK_H_
+#define __SCREEN_ECATNETWORK_H_
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+extern smSlaveInformation * SLAVE_INFO_shm;
+extern sem_t* SLAVE_INFO_sem;
+extern smSlaveData* SLAVE_DATA_shm;
+extern sem_t* SLAVE_DATA_sem;
+extern volatile int regs_row_sel;
+
+extern void scrECATnet_init(void);
+extern void update_scrECATnet(void);
+extern void msgbox_event_cb(lv_event_t * e);
+extern void drag_event_cb(lv_event_t * e);
+extern void table_draw_event_cb(lv_event_t * e);
+
+#ifdef __cplusplus
+}
+#endif
+#endif /* __SCREEN_ECATNETWORK_H_ */

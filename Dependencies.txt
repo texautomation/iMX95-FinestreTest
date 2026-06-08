@@ -1,0 +1,11 @@
+gcc-aarch64-linux-gnu
+g++-aarch64-linux-gnu
+pkg-config
+cmake
+wayland-protocols 
+libwayland-dev
+libwayland-dev:arm64 
+libxkbcommon-dev
+libxkbcommon-dev:arm64
+libwayland-bin
+libdrm-dev

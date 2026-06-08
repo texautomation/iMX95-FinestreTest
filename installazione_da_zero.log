@@ -1,0 +1,1339 @@
+Script started on 2026-05-22 12:10:39+00:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="120" LINES="30"]
+[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider[00m# mount -o remount  , rw /
+[?2004l[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider[00m# apt install cmake
+[?2004lReading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 21%Reading package lists... 42%Reading package lists... 58%Reading package lists... 59%Reading package lists... 59%Reading package lists... 96%Reading package lists... 96%Reading package lists... 96%Reading package lists... 96%Reading package lists... 96%Reading package lists... 96%Reading package lists... 97%Reading package lists... 97%Reading package lists... 97%Reading package lists... 97%Reading package lists... 97%Reading package lists... 97%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%                             Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... 53%                                Reading state information... 0%Reading state information... 0%                                The following packages were automatically installed and are no longer required:
+  libwlroots10  libxss1  suckless-tools
+Use 'apt autoremove' to remove them.
+
+Upgrading:
+[32m  curl  e2fsprogs
+[0m
+Installing:
+[32m  cmake
+[0m
+Installing dependencies:
+[32m  cmake-data  libarchive13t64  libcurl4t64  libext2fs2t64  libjsoncpp26  librhash1  libuv1t64  make
+[0m
+Suggested packages:
+  cmake-doc  cmake-format  elpa-cmake-mode  ninja-build  lrzip  make-doc
+
+REMOVING:
+[31m  libcurl4  libext2fs2
+[0m
+Summary:
+  Upgrading: 2, Installing: 9, Removing: 2, Not Upgrading: 91
+  Download size: 14.7 MB
+  Space needed: 52.2 MB / 754 MB available
+
+Continue? [Y/n] y
+[33m0% [Working][0m            Err:1 https://deb.debian.org/debian trixie/main arm64 curl arm64 8.14.1-2
+  404  Not Found [IP: 151.101.2.132 443]
+[33m0% [Working][0m            Err:2 https://deb.debian.org/debian trixie/main arm64 libcurl4t64 arm64 8.14.1-2
+  404  Not Found [IP: 151.101.2.132 443]
+[33m0% [Waiting for headers][0m                        Err:3 https://deb.debian.org/debian trixie/main arm64 libext2fs2t64 arm64 1.47.2-3+b3
+  404  Not Found [IP: 151.101.2.132 443]
+[33m0% [Waiting for headers][0m                        Err:4 https://deb.debian.org/debian trixie/main arm64 e2fsprogs arm64 1.47.2-3+b3
+  404  Not Found [IP: 151.101.2.132 443]
+[33m0% [Waiting for headers][0m                        Get:5 https://deb.debian.org/debian trixie/main arm64 cmake-data all 3.31.6-2 [2268 kB]
+[33m0% [5 cmake-data 5600 B/2268 kB 0%][0m[33m                                   14% [Waiting for headers][0m                         Get:6 https://deb.debian.org/debian trixie/main arm64 libarchive13t64 arm64 3.7.4-4 [323 kB]
+[33m14% [6 libarchive13t64 0 B/323 kB 0%][0m[33m                                     18% [Waiting for headers][0m                         Get:7 https://deb.debian.org/debian trixie/main arm64 libjsoncpp26 arm64 1.9.6-3 [72.9 kB]
+[33m18% [7 libjsoncpp26 4096 B/72.9 kB 6%][0m[33m                                      20% [Waiting for headers][0m                         Get:8 https://deb.debian.org/debian trixie/main arm64 librhash1 arm64 1.4.5-1 [129 kB]
+[33m20% [8 librhash1 0 B/129 kB 0%][0m[33m                               22% [Waiting for headers][0m                         Get:9 https://deb.debian.org/debian trixie/main arm64 libuv1t64 arm64 1.50.0-2 [148 kB]
+[33m22% [9 libuv1t64 0 B/148 kB 0%][0m[33m                               25% [Waiting for headers][0m                         Get:10 https://deb.debian.org/debian trixie/main arm64 cmake arm64 3.31.6-2 [9906 kB]
+[33m25% [10 cmake 0 B/9906 kB 0%][0m[33m37% [10 cmake 2228 kB/9906 kB 22%][0m[33m51% [10 cmake 4702 kB/9906 kB 47%][0m[33m69% [10 cmake 8077 kB/9906 kB 82%][0m[33m                                  81% [Working][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers]                                                                                  1989 kB/s 0s[0m[33m81% [Waiting for headers]                                                                                  1989 kB/s 0s[0m[33m81% [Waiting for headers]                                                                                  1989 kB/s 0s[0m[33m81% [Waiting for headers]                                                                                  1989 kB/s 0s[0m[33m81% [Waiting for headers]                                                                                  1989 kB/s 0s[0m[33m81% [Waiting for headers]                                                                                  1989 kB/s 0s[0m[33m81% [Waiting for headers]                                                                                  1989 kB/s 0s[0m[33m81% [Waiting for headers]                                                                                  1989 kB/s 0s[0m[33m81% [Waiting for headers]                                                                                  1989 kB/s 0s[0m[33m81% [Waiting for headers]                                                                                  1989 kB/s 0s[0m[33m81% [Waiting for headers]                                                                                  1989 kB/s 0s[0m[33m81% [Waiting for headers]                                                                                  1989 kB/s 0s[0m[33m                                                                                                                       81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m[33m81% [Waiting for headers][0m                         Get:11 https://deb.debian.org/debian trixie/main arm64 make arm64 4.4.1-2 [452 kB]
+[33m81% [11 make 4096 B/452 kB 1%][0m[33m                              85% [Working][0m             Fetched 13.3 MB in 33s (397 kB/s)
+[1;31mError: [0m[1mFailed to fetch https://deb.debian.org/debian/pool/main/c/curl/curl_8.14.1-2_arm64.deb  404  Not Found [IP: 151.101.2.132 443][0m
+[1;31mError: [0m[1mFailed to fetch https://deb.debian.org/debian/pool/main/c/curl/libcurl4t64_8.14.1-2_arm64.deb  404  Not Found [IP: 151.101.2.132 443][0m
+[1;31mError: [0m[1mFailed to fetch https://deb.debian.org/debian/pool/main/e/e2fsprogs/libext2fs2t64_1.47.2-3%2bb3_arm64.deb  404  Not Found [IP: 151.101.2.132 443][0m
+[1;31mError: [0m[1mFailed to fetch https://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.47.2-3%2bb3_arm64.deb  404  Not Found [IP: 151.101.2.132 443][0m
+[1;31mError: [0m[1mUnable to fetch some archives, maybe run apt-get update or try with --fix-missing?[0m
+[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider[00m# apt-get update
+[?2004l0% [Working]            Get:1 https://packages.microsoft.com/debian/12/prod bookworm InRelease [3618 B]
+0% [Waiting for headers] [Connected to brave-browser-apt-release.s3.brave.com (13.224.106.54)] [Connected to repo.libre0% [Waiting for headers] [Connected to brave-browser-apt-release.s3.brave.com (13.224.106.54)] [Connected to repo.libre                                                                                                                       Get:2 https://deb.debian.org/debian trixie InRelease [140 kB]
+                                                                                                                       Get:3 https://brave-browser-apt-release.s3.brave.com stable InRelease [7547 B]
+                                                                                                                       0% [Waiting for headers] [Connected to download.mono-project.com (150.171.110.52)]                                                                                  Err:1 https://packages.microsoft.com/debian/12/prod bookworm InRelease
+  Sub-process /usr/bin/sqv returned an error code (1), error message is: Signing key on BC528686B50D79E339D3721CEB3E94ADBE1229CF is not bound:            No binding signature at time 2026-05-22T10:40:27Z   because: Policy rejected non-revocation signature (PositiveCertification) requiring second pre-image resistance   because: SHA1 is not considered secure since 2026-02-01T00:00:00Z
+                                                                                  0% [Waiting for headers] [Waiting for headers]                                              Hit:4 https://download.mono-project.com/repo/debian stable-buster InRelease
+                                              0% [Waiting for headers]                        Get:5 https://repo.librewolf.net librewolf InRelease [5657 B]
+0% [5 InRelease 3448 B/5657 B 61%]                                  0% [Working]0% [Working]0% [Waiting for headers]                        Get:6 https://deb.debian.org/debian trixie/main arm64 Packages [9608 kB]
+0% [6 Packages 7000 B/9608 kB 0%]                                 Err:4 https://download.mono-project.com/repo/debian stable-buster InRelease
+  Sub-process /usr/bin/sqv returned an error code (1), error message is: Error: Failed to parse keyring "/usr/share/keyrings/mono-official-archive-keyring.gpg"  Caused by:     0: Reading "/usr/share/keyrings/mono-official-archive-keyring.gpg": EOF     1: EOF
+0% [6 Packages 61.6 kB/9608 kB 1%] [Waiting for headers]                                                        Get:7 https://brave-browser-apt-release.s3.brave.com stable/main arm64 Packages [29.9 kB]
+0% [6 Packages 209 kB/9608 kB 2%] [7 Packages 15.8 kB/29.9 kB 53%]0% [6 Packages 225 kB/9608 kB 2%] [7 Packages 29.9 kB/29.9 kB 100%]                                                                   0% [6 Packages 635 kB/9608 kB 7%]0% [7 Packages store 0 B] [6 Packages 651 kB/9608 kB 7%] [Waiting for headers]                                                                              0% [6 Packages 897 kB/9608 kB 9%] [Waiting for headers]                                                       Get:8 https://repo.librewolf.net librewolf/main arm64 Packages [1019 B]
+0% [6 Packages 1929 kB/9608 kB 20%] [8 Packages 1019 B/1019 B 100%]                                                                   0% [6 Packages 1962 kB/9608 kB 20%]0% [8 Packages store 0 B] [6 Packages 1962 kB/9608 kB 20%]                                                          0% [6 Packages 1979 kB/9608 kB 21%] [Waiting for headers]                                                         Get:9 https://repo.librewolf.net librewolf/main amd64 Packages [1021 B]
+0% [6 Packages 4616 kB/9608 kB 48%] [9 Packages 1021 B/1021 B 100%]                                                                   0% [6 Packages 4649 kB/9608 kB 48%]0% [9 Packages store 0 B] [6 Packages 4649 kB/9608 kB 48%]                                                          0% [6 Packages 4666 kB/9608 kB 49%]0% [6 Packages 9056 kB/9608 kB 94%]                                   0% [Working]0% [6 Packages store 0 B]                         Get:10 https://deb.debian.org/debian trixie/main Translation-en [6485 kB]
+0% [6 Packages store 0 B] [10 Translation-en 28.7 kB/6485 kB 0%]0% [6 Packages store 0 B] [10 Translation-en 3929 kB/6485 kB 61%]                                                                 0% [6 Packages store 0 B]                         Get:11 https://deb.debian.org/debian trixie/contrib arm64 Packages [48.4 kB]
+0% [6 Packages store 0 B] [11 Packages 8192 B/48.4 kB 17%]                                                          0% [6 Packages store 0 B]0% [6 Packages store 0 B]0% [6 Packages store 0 B]                         0% [Working]0% [10 Translation-en store 0 B]0% [10 Translation-en store 0 B]0% [10 Translation-en store 0 B]                                0% [Working]0% [11 Packages store 0 B]                          0% [Working]            Fetched 16.3 MB in 5s (3276 kB/s)
+Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 22%Reading package lists... 43%Reading package lists... 59%Reading package lists... 59%Reading package lists... 59%Reading package lists... 96%Reading package lists... 96%Reading package lists... 96%Reading package lists... 96%Reading package lists... 97%Reading package lists... 97%Reading package lists... 97%Reading package lists... 97%Reading package lists... 97%Reading package lists... 97%Reading package lists... 97%Reading package lists... 97%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. OpenPGP signature verification failed: https://packages.microsoft.com/debian/12/prod bookworm InRelease: Sub-process /usr/bin/sqv returned an error code (1), error message is: Signing key on BC528686B50D79E339D3721CEB3E94ADBE1229CF is not bound:            No binding signature at time 2026-05-22T10:40:27Z   because: Policy rejected non-revocation signature (PositiveCertification) requiring second pre-image resistance   because: SHA1 is not considered secure since 2026-02-01T00:00:00Z
+N: Repository 'https://deb.debian.org/debian trixie InRelease' changed its 'Version' value from '13.0' to '13.5'
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. OpenPGP signature verification failed: https://download.mono-project.com/repo/debian stable-buster InRelease: Sub-process /usr/bin/sqv returned an error code (1), error message is: Error: Failed to parse keyring "/usr/share/keyrings/mono-official-archive-keyring.gpg"  Caused by:     0: Reading "/usr/share/keyrings/mono-official-archive-keyring.gpg": EOF     1: EOF
+W: Failed to fetch https://packages.microsoft.com/debian/12/prod/dists/bookworm/InRelease  Sub-process /usr/bin/sqv returned an error code (1), error message is: Signing key on BC528686B50D79E339D3721CEB3E94ADBE1229CF is not bound:            No binding signature at time 2026-05-22T10:40:27Z   because: Policy rejected non-revocation signature (PositiveCertification) requiring second pre-image resistance   because: SHA1 is not considered secure since 2026-02-01T00:00:00Z
+W: Failed to fetch https://download.mono-project.com/repo/debian/dists/stable-buster/InRelease  Sub-process /usr/bin/sqv returned an error code (1), error message is: Error: Failed to parse keyring "/usr/share/keyrings/mono-official-archive-keyring.gpg"  Caused by:     0: Reading "/usr/share/keyrings/mono-official-archive-keyring.gpg": EOF     1: EOF
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider[00m# apt-get update[3@ install cmake
+[?2004lReading package lists... 0%Reading package lists... 100%                              Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%                                Reading state information... 0%Reading state information... 0%                                The following packages were automatically installed and are no longer required:
+  libwlroots10  libxss1  suckless-tools
+Use 'apt autoremove' to remove them.
+
+Upgrading:
+[32m  curl  libcurl3t64-gnutls
+[0m
+Installing:
+[32m  cmake
+[0m
+Installing dependencies:
+[32m  cmake-data  libarchive13t64  libcurl4t64  libjsoncpp26  librhash1  libuv1t64  make
+[0m
+Suggested packages:
+  cmake-doc  cmake-format  elpa-cmake-mode  ninja-build  lrzip  make-doc
+
+REMOVING:
+[31m  libcurl4
+[0m
+Summary:
+  Upgrading: 2, Installing: 8, Removing: 1, Not Upgrading: 203
+  Download size: 1299 kB / 14.3 MB
+  Space needed: 52.1 MB / 741 MB available
+
+Continue? [Y/n] y
+[33m85% [Working][0m             Get:1 https://deb.debian.org/debian trixie/main arm64 curl arm64 8.14.1-2+deb13u3 [262 kB]
+[33m85% [1 curl 4096 B/262 kB 2%][0m[33m                             88% [Working][0m             Get:2 https://deb.debian.org/debian trixie/main arm64 libcurl4t64 arm64 8.14.1-2+deb13u3 [359 kB]
+[33m88% [2 libcurl4t64 8192 B/359 kB 2%][0m[33m                                    92% [Waiting for headers][0m                         Get:3 https://deb.debian.org/debian trixie/main arm64 libarchive13t64 arm64 3.7.4-4+deb13u1 [324 kB]
+[33m92% [3 libarchive13t64 8400 B/324 kB 3%][0m[33m                                        96% [Waiting for headers][0m                         Get:4 https://deb.debian.org/debian trixie/main arm64 libcurl3t64-gnutls arm64 8.14.1-2+deb13u3 [353 kB]
+[33m96% [4 libcurl3t64-gnutls 12.6 kB/353 kB 4%][0m[33m                                            100% [Working][0m              Fetched 1299 kB in 0s (2712 kB/s)
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 79, <STDIN> line 10.)
+debconf: falling back to frontend: Readline
+
+7[0;29r8[1A(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 52344 files and directories currently installed.)
+Preparing to unpack .../curl_8.14.1-2+deb13u3_arm64.deb ...
+7[30;0f[42m[30mProgress: [  0%][49m[39m [..................................................................................................] 87[30;0f[42m[30mProgress: [  2%][49m[39m [##................................................................................................] 8Unpacking curl (8.14.1-2+deb13u3) over (7.88.1-10+deb12u12) ...
+7[30;0f[42m[30mProgress: [  5%][49m[39m [####..............................................................................................] 8[1mdpkg:[0m libcurl4:arm64: dependency problems, but removing anyway as you requested:
+ apache2-bin depends on libcurl4 (>= 7.28.0).
+
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 52349 files and directories currently installed.)
+Removing libcurl4:arm64 (7.88.1-10+deb12u12) ...
+7[30;0f[42m[30mProgress: [  7%][49m[39m [######............................................................................................] 87[30;0f[42m[30mProgress: [  9%][49m[39m [#########.........................................................................................] 8Selecting previously unselected package libcurl4t64:arm64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 52343 files and directories currently installed.)
+Preparing to unpack .../0-libcurl4t64_8.14.1-2+deb13u3_arm64.deb ...
+7[30;0f[42m[30mProgress: [ 12%][49m[39m [###########.......................................................................................] 8Unpacking libcurl4t64:arm64 (8.14.1-2+deb13u3) ...
+7[30;0f[42m[30mProgress: [ 14%][49m[39m [#############.....................................................................................] 8Selecting previously unselected package cmake-data.
+Preparing to unpack .../1-cmake-data_3.31.6-2_all.deb ...
+7[30;0f[42m[30mProgress: [ 16%][49m[39m [###############...................................................................................] 8Unpacking cmake-data (3.31.6-2) ...
+7[30;0f[42m[30mProgress: [ 19%][49m[39m [##################................................................................................] 8Selecting previously unselected package libarchive13t64:arm64.
+Preparing to unpack .../2-libarchive13t64_3.7.4-4+deb13u1_arm64.deb ...
+7[30;0f[42m[30mProgress: [ 21%][49m[39m [####################..............................................................................] 8Unpacking libarchive13t64:arm64 (3.7.4-4+deb13u1) ...
+7[30;0f[42m[30mProgress: [ 23%][49m[39m [######################............................................................................] 8Selecting previously unselected package libjsoncpp26:arm64.
+Preparing to unpack .../3-libjsoncpp26_1.9.6-3_arm64.deb ...
+7[30;0f[42m[30mProgress: [ 26%][49m[39m [#########################.........................................................................] 8Unpacking libjsoncpp26:arm64 (1.9.6-3) ...
+7[30;0f[42m[30mProgress: [ 28%][49m[39m [###########################.......................................................................] 8Selecting previously unselected package librhash1:arm64.
+Preparing to unpack .../4-librhash1_1.4.5-1_arm64.deb ...
+7[30;0f[42m[30mProgress: [ 30%][49m[39m [#############################.....................................................................] 8Unpacking librhash1:arm64 (1.4.5-1) ...
+7[30;0f[42m[30mProgress: [ 33%][49m[39m [###############################...................................................................] 8Selecting previously unselected package libuv1t64:arm64.
+Preparing to unpack .../5-libuv1t64_1.50.0-2_arm64.deb ...
+7[30;0f[42m[30mProgress: [ 35%][49m[39m [##################################................................................................] 8Unpacking libuv1t64:arm64 (1.50.0-2) ...
+7[30;0f[42m[30mProgress: [ 37%][49m[39m [####################################..............................................................] 8Selecting previously unselected package cmake.
+Preparing to unpack .../6-cmake_3.31.6-2_arm64.deb ...
+7[30;0f[42m[30mProgress: [ 40%][49m[39m [######################################............................................................] 8Unpacking cmake (3.31.6-2) ...
+7[30;0f[42m[30mProgress: [ 42%][49m[39m [#########################################.........................................................] 8Preparing to unpack .../7-libcurl3t64-gnutls_8.14.1-2+deb13u3_arm64.deb ...
+7[30;0f[42m[30mProgress: [ 44%][49m[39m [###########################################.......................................................] 8Unpacking libcurl3t64-gnutls:arm64 (8.14.1-2+deb13u3) over (8.14.1-2) ...
+7[30;0f[42m[30mProgress: [ 47%][49m[39m [#############################################.....................................................] 8Selecting previously unselected package make.
+Preparing to unpack .../8-make_4.4.1-2_arm64.deb ...
+7[30;0f[42m[30mProgress: [ 49%][49m[39m [###############################################...................................................] 8Unpacking make (4.4.1-2) ...
+7[30;0f[42m[30mProgress: [ 51%][49m[39m [##################################################................................................] 8Setting up libcurl4t64:arm64 (8.14.1-2+deb13u3) ...
+7[30;0f[42m[30mProgress: [ 53%][49m[39m [####################################################..............................................] 87[30;0f[42m[30mProgress: [ 56%][49m[39m [######################################################............................................] 8Setting up libuv1t64:arm64 (1.50.0-2) ...
+7[30;0f[42m[30mProgress: [ 58%][49m[39m [########################################################..........................................] 87[30;0f[42m[30mProgress: [ 60%][49m[39m [###########################################################.......................................] 8Setting up libcurl3t64-gnutls:arm64 (8.14.1-2+deb13u3) ...
+7[30;0f[42m[30mProgress: [ 63%][49m[39m [#############################################################.....................................] 87[30;0f[42m[30mProgress: [ 65%][49m[39m [###############################################################...................................] 8Setting up make (4.4.1-2) ...
+7[30;0f[42m[30mProgress: [ 67%][49m[39m [##################################################################................................] 87[30;0f[42m[30mProgress: [ 70%][49m[39m [####################################################################..............................] 8Setting up libjsoncpp26:arm64 (1.9.6-3) ...
+7[30;0f[42m[30mProgress: [ 72%][49m[39m [######################################################################............................] 87[30;0f[42m[30mProgress: [ 74%][49m[39m [########################################################################..........................] 8Setting up cmake-data (3.31.6-2) ...
+7[30;0f[42m[30mProgress: [ 77%][49m[39m [###########################################################################.......................] 87[30;0f[42m[30mProgress: [ 79%][49m[39m [#############################################################################.....................] 8Setting up librhash1:arm64 (1.4.5-1) ...
+7[30;0f[42m[30mProgress: [ 81%][49m[39m [###############################################################################...................] 87[30;0f[42m[30mProgress: [ 84%][49m[39m [##################################################################################................] 8Setting up curl (8.14.1-2+deb13u3) ...
+7[30;0f[42m[30mProgress: [ 86%][49m[39m [####################################################################################..............] 87[30;0f[42m[30mProgress: [ 88%][49m[39m [######################################################################################............] 8Setting up libarchive13t64:arm64 (3.7.4-4+deb13u1) ...
+7[30;0f[42m[30mProgress: [ 91%][49m[39m [########################################################################################..........] 87[30;0f[42m[30mProgress: [ 93%][49m[39m [###########################################################################################.......] 8Setting up cmake (3.31.6-2) ...
+7[30;0f[42m[30mProgress: [ 95%][49m[39m [#############################################################################################.....] 87[30;0f[42m[30mProgress: [ 98%][49m[39m [###############################################################################################...] 8Processing triggers for libc-bin (2.41-12) ...
+
+7[0;30r8[1A[J[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider[00m# mkdir build
+[?2004l[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider[00m# cd build/
+[?2004l[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# cmake ..
+[?2004l-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is unknown
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+[31mCMake Error at CMakeLists.txt:5 (project):
+  No CMAKE_CXX_COMPILER could be found.
+
+  Tell CMake where to find the compiler by setting either the environment
+  variable "CXX" or the CMake cache entry CMAKE_CXX_COMPILER to the full path
+  to the compiler, or to the compiler name if it is in the PATH.
+
+[0m
+-- Configuring incomplete, errors occurred!
+[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# apt install g++
+[?2004lReading package lists... 0%Reading package lists... 100%                              Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%                                Reading state information... 0%Reading state information... 0%                                The following packages were automatically installed and are no longer required:
+  libwlroots10  libxss1  suckless-tools
+Use 'apt autoremove' to remove them.
+
+Installing:
+[32m  g++
+[0m
+Installing dependencies:
+[32m  g++-14  g++-14-aarch64-linux-gnu  g++-aarch64-linux-gnu  libstdc++-14-dev
+[0m
+Suggested packages:
+  gcc-14-doc  libstdc++-14-doc
+
+Summary:
+  Upgrading: 0, Installing: 5, Removing: 0, Not Upgrading: 203
+  Download size: 12.4 MB
+  Space needed: 56.8 MB / 677 MB available
+
+Continue? [Y/n] Y
+[33m0% [Working][0m            Get:1 https://deb.debian.org/debian trixie/main arm64 libstdc++-14-dev arm64 14.2.0-19 [2295 kB]
+[33m0% [1 libstdc++-14-dev 0 B/2295 kB 0%][0m[33m                                      19% [Working][0m             Get:2 https://deb.debian.org/debian trixie/main arm64 g++-14-aarch64-linux-gnu arm64 14.2.0-19 [10.1 MB]
+[33m19% [2 g++-14-aarch64-linux-gnu 2800 B/10.1 MB 0%][0m[33m39% [2 g++-14-aarch64-linux-gnu 3144 kB/10.1 MB 31%][0m[33m70% [2 g++-14-aarch64-linux-gnu 7896 kB/10.1 MB 78%][0m[33m                                                    88% [Waiting for headers][0m                         Get:3 https://deb.debian.org/debian trixie/main arm64 g++-14 arm64 14.2.0-19 [22.5 kB]
+[33m88% [3 g++-14 12.3 kB/22.5 kB 55%][0m[33m                                  92% [Waiting for headers][0m                         Get:4 https://deb.debian.org/debian trixie/main arm64 g++-aarch64-linux-gnu arm64 4:14.2.0-1 [1200 B]
+[33m92% [4 g++-aarch64-linux-gnu 1200 B/1200 B 100%][0m[33m                                                96% [Working][0m             Get:5 https://deb.debian.org/debian trixie/main arm64 g++ arm64 4:14.2.0-1 [1332 B]
+[33m96% [5 g++ 1332 B/1332 B 100%][0m[33m                              100% [Working][0m              Fetched 12.4 MB in 2s (6769 kB/s)
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 79, <STDIN> line 5.)
+debconf: falling back to frontend: Readline
+
+7[0;29r8[1ASelecting previously unselected package libstdc++-14-dev:arm64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 56284 files and directories currently installed.)
+Preparing to unpack .../libstdc++-14-dev_14.2.0-19_arm64.deb ...
+7[30;0f[42m[30mProgress: [  0%][49m[39m [..................................................................................................] 87[30;0f[42m[30mProgress: [  5%][49m[39m [####..............................................................................................] 8Unpacking libstdc++-14-dev:arm64 (14.2.0-19) ...
+7[30;0f[42m[30mProgress: [ 10%][49m[39m [#########.........................................................................................] 8Selecting previously unselected package g++-14-aarch64-linux-gnu.
+Preparing to unpack .../g++-14-aarch64-linux-gnu_14.2.0-19_arm64.deb ...
+7[30;0f[42m[30mProgress: [ 14%][49m[39m [#############.....................................................................................] 8Unpacking g++-14-aarch64-linux-gnu (14.2.0-19) ...
+7[30;0f[42m[30mProgress: [ 19%][49m[39m [##################................................................................................] 8Selecting previously unselected package g++-14.
+Preparing to unpack .../g++-14_14.2.0-19_arm64.deb ...
+7[30;0f[42m[30mProgress: [ 24%][49m[39m [#######################...........................................................................] 8Unpacking g++-14 (14.2.0-19) ...
+7[30;0f[42m[30mProgress: [ 29%][49m[39m [###########################.......................................................................] 8Selecting previously unselected package g++-aarch64-linux-gnu.
+Preparing to unpack .../g++-aarch64-linux-gnu_4%3a14.2.0-1_arm64.deb ...
+7[30;0f[42m[30mProgress: [ 33%][49m[39m [################################..................................................................] 8Unpacking g++-aarch64-linux-gnu (4:14.2.0-1) ...
+7[30;0f[42m[30mProgress: [ 38%][49m[39m [#####################################.............................................................] 8Selecting previously unselected package g++.
+Preparing to unpack .../g++_4%3a14.2.0-1_arm64.deb ...
+7[30;0f[42m[30mProgress: [ 43%][49m[39m [##########################################........................................................] 8Unpacking g++ (4:14.2.0-1) ...
+7[30;0f[42m[30mProgress: [ 48%][49m[39m [##############################################....................................................] 8Setting up libstdc++-14-dev:arm64 (14.2.0-19) ...
+7[30;0f[42m[30mProgress: [ 52%][49m[39m [###################################################...............................................] 87[30;0f[42m[30mProgress: [ 57%][49m[39m [#######################################################...........................................] 8Setting up g++-14-aarch64-linux-gnu (14.2.0-19) ...
+7[30;0f[42m[30mProgress: [ 62%][49m[39m [############################################################......................................] 87[30;0f[42m[30mProgress: [ 67%][49m[39m [#################################################################.................................] 8Setting up g++-aarch64-linux-gnu (4:14.2.0-1) ...
+7[30;0f[42m[30mProgress: [ 71%][49m[39m [######################################################################............................] 87[30;0f[42m[30mProgress: [ 76%][49m[39m [##########################################################################........................] 8Setting up g++-14 (14.2.0-19) ...
+7[30;0f[42m[30mProgress: [ 81%][49m[39m [###############################################################################...................] 87[30;0f[42m[30mProgress: [ 86%][49m[39m [####################################################################################..............] 8Setting up g++ (4:14.2.0-1) ...
+7[30;0f[42m[30mProgress: [ 90%][49m[39m [########################################################################################..........] 8update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+7[30;0f[42m[30mProgress: [ 95%][49m[39m [#############################################################################################.....] 8
+7[0;30r8[1A[J[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# apt install g++[7Pcmake ..
+[?2004l-- The CXX compiler identification is GNU 14.2.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.1")
+-- Checking for modules 'wayland-client;wayland-cursor;xkbcommon'
+--   Package 'wayland-client', required by 'virtual:world', not found
+--   Package 'wayland-cursor', required by 'virtual:world', not found
+--   Package 'xkbcommon', required by 'virtual:world', not found
+-- Checking for module 'libdrm'
+--   Package 'libdrm', required by 'virtual:world', not found
+[31mCMake Error at /usr/share/cmake-3.31/Modules/FindPkgConfig.cmake:645 (message):
+  The following required packages were not found:
+
+   - libdrm
+
+Call Stack (most recent call first):
+  /usr/share/cmake-3.31/Modules/FindPkgConfig.cmake:873 (_pkg_check_modules_internal)
+  CMakeLists.txt:12 (pkg_check_modules)
+
+[0m
+-- Configuring incomplete, errors occurred!
+[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# apt install libwayland-dev
+[?2004lReading package lists... 0%Reading package lists... 100%                              Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%                                Reading state information... 0%Reading state information... 0%                                The following packages were automatically installed and are no longer required:
+  libwlroots10  libxss1  suckless-tools
+Use 'apt autoremove' to remove them.
+
+Installing:
+[32m  libwayland-dev
+[0m
+Installing dependencies:
+[32m  libffi-dev  libwayland-bin
+[0m
+Suggested packages:
+  libwayland-doc
+
+Summary:
+  Upgrading: 0, Installing: 3, Removing: 0, Not Upgrading: 203
+  Download size: 152 kB
+  Space needed: 1022 kB / 619 MB available
+
+Continue? [Y/n] y
+[33m0% [Working][0m            Get:1 https://deb.debian.org/debian trixie/main arm64 libffi-dev arm64 3.4.8-2 [57.2 kB]
+[33m0% [1 libffi-dev 0 B/57.2 kB 0%][0m[33m                                37% [Working][0m             Get:2 https://deb.debian.org/debian trixie/main arm64 libwayland-bin arm64 1.23.1-3 [20.8 kB]
+[33m40% [2 libwayland-bin 6836 B/20.8 kB 33%][0m[33m                                         54% [Waiting for headers][0m                         Get:3 https://deb.debian.org/debian trixie/main arm64 libwayland-dev arm64 1.23.1-3 [73.9 kB]
+[33m57% [3 libwayland-dev 4096 B/73.9 kB 6%][0m[33m                                        100% [Working][0m              Fetched 152 kB in 0s (605 kB/s)
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 79, <STDIN> line 3.)
+debconf: falling back to frontend: Readline
+
+7[0;29r8[1ASelecting previously unselected package libffi-dev:arm64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 57177 files and directories currently installed.)
+Preparing to unpack .../libffi-dev_3.4.8-2_arm64.deb ...
+7[30;0f[42m[30mProgress: [  0%][49m[39m [..................................................................................................] 87[30;0f[42m[30mProgress: [  8%][49m[39m [#######...........................................................................................] 8Unpacking libffi-dev:arm64 (3.4.8-2) ...
+7[30;0f[42m[30mProgress: [ 15%][49m[39m [###############...................................................................................] 8Selecting previously unselected package libwayland-bin.
+Preparing to unpack .../libwayland-bin_1.23.1-3_arm64.deb ...
+7[30;0f[42m[30mProgress: [ 23%][49m[39m [######################............................................................................] 8Unpacking libwayland-bin (1.23.1-3) ...
+7[30;0f[42m[30mProgress: [ 31%][49m[39m [##############################....................................................................] 8Selecting previously unselected package libwayland-dev:arm64.
+Preparing to unpack .../libwayland-dev_1.23.1-3_arm64.deb ...
+7[30;0f[42m[30mProgress: [ 38%][49m[39m [#####################################.............................................................] 8Unpacking libwayland-dev:arm64 (1.23.1-3) ...
+7[30;0f[42m[30mProgress: [ 46%][49m[39m [#############################################.....................................................] 8Setting up libffi-dev:arm64 (3.4.8-2) ...
+7[30;0f[42m[30mProgress: [ 54%][49m[39m [####################################################..............................................] 87[30;0f[42m[30mProgress: [ 62%][49m[39m [############################################################......................................] 8Setting up libwayland-bin (1.23.1-3) ...
+7[30;0f[42m[30mProgress: [ 69%][49m[39m [###################################################################...............................] 87[30;0f[42m[30mProgress: [ 77%][49m[39m [###########################################################################.......................] 8Setting up libwayland-dev:arm64 (1.23.1-3) ...
+7[30;0f[42m[30mProgress: [ 85%][49m[39m [##################################################################################................] 87[30;0f[42m[30mProgress: [ 92%][49m[39m [##########################################################################################........] 8
+7[0;30r8[1A[J[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# apt install libwayland-dev   client0
+[?2004lReading package lists... 0%Reading package lists... 100%                              Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%                                Reading state information... 0%Reading state information... 0%                                libwayland-client0 is already the newest version (1.23.1-3).
+libwayland-client0 set to manually installed.
+The following packages were automatically installed and are no longer required:
+  libwlroots10  libxss1  suckless-tools
+Use 'apt autoremove' to remove them.
+
+Summary:
+  Upgrading: 0, Installing: 0, Removing: 0, Not Upgrading: 203
+[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# apt install libwayland-client0                  [7mlibdrm-dev[27mlibdrm-dev
+[?2004lReading package lists... 0%Reading package lists... 100%                              Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%                                Reading state information... 0%Reading state information... 0%                                The following packages were automatically installed and are no longer required:
+  libwlroots10  libxss1  suckless-tools
+Use 'apt autoremove' to remove them.
+
+Installing:
+[32m  libdrm-dev
+[0m
+Installing dependencies:
+[32m  libdrm-etnaviv1  libdrm-freedreno1  libdrm-nouveau2  libdrm-radeon1  libdrm-tegra0  libpciaccess-dev  libpciaccess0
+[0m
+Suggested packages:
+  pciutils
+
+Summary:
+  Upgrading: 0, Installing: 8, Removing: 0, Not Upgrading: 203
+  Download size: 514 kB
+  Space needed: 2335 kB / 618 MB available
+
+Continue? [Y/n] y
+[33m0% [Working][0m            Get:1 https://deb.debian.org/debian trixie/main arm64 libdrm-radeon1 arm64 2.4.124-2 [21.5 kB]
+[33m0% [1 libdrm-radeon1 1400 B/21.5 kB 7%][0m[33m                                       6% [Working][0m            Get:2 https://deb.debian.org/debian trixie/main arm64 libdrm-nouveau2 arm64 2.4.124-2 [19.2 kB]
+[33m6% [2 libdrm-nouveau2 4096 B/19.2 kB 21%][0m[33m                                         11% [Waiting for headers][0m                         Get:3 https://deb.debian.org/debian trixie/main arm64 libdrm-freedreno1 arm64 2.4.124-2 [21.2 kB]
+[33m12% [3 libdrm-freedreno1 7000 B/21.2 kB 33%][0m[33m                                            17% [Waiting for headers][0m                         Get:4 https://deb.debian.org/debian trixie/main arm64 libdrm-tegra0 arm64 2.4.124-2 [11.8 kB]
+[33m17% [4 libdrm-tegra0 602 B/11.8 kB 5%][0m[33m                                      21% [Waiting for headers][0m                         Get:5 https://deb.debian.org/debian trixie/main arm64 libdrm-etnaviv1 arm64 2.4.124-2 [14.5 kB]
+[33m21% [5 libdrm-etnaviv1 0 B/14.5 kB 0%][0m[33m                                      26% [Working][0m             Get:6 https://deb.debian.org/debian trixie/main arm64 libpciaccess0 arm64 0.17-3+b3 [51.2 kB]
+[33m27% [6 libpciaccess0 4200 B/51.2 kB 8%][0m[33m                                       37% [Waiting for headers][0m                         Get:7 https://deb.debian.org/debian trixie/main arm64 libpciaccess-dev arm64 0.17-3+b3 [56.0 kB]
+[33m37% [7 libpciaccess-dev 4200 B/56.0 kB 8%][0m[33m                                          48% [Waiting for headers][0m                         Get:8 https://deb.debian.org/debian trixie/main arm64 libdrm-dev arm64 2.4.124-2 [318 kB]
+[33m48% [8 libdrm-dev 0 B/318 kB 0%][0m[33m                                100% [Working][0m              Fetched 514 kB in 0s (1239 kB/s)
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 79, <STDIN> line 8.)
+debconf: falling back to frontend: Readline
+
+7[0;29r8[1ASelecting previously unselected package libdrm-radeon1:arm64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 57244 files and directories currently installed.)
+Preparing to unpack .../0-libdrm-radeon1_2.4.124-2_arm64.deb ...
+7[30;0f[42m[30mProgress: [  0%][49m[39m [..................................................................................................] 87[30;0f[42m[30mProgress: [  3%][49m[39m [##................................................................................................] 8Unpacking libdrm-radeon1:arm64 (2.4.124-2) ...
+7[30;0f[42m[30mProgress: [  6%][49m[39m [#####.............................................................................................] 8Selecting previously unselected package libdrm-nouveau2:arm64.
+Preparing to unpack .../1-libdrm-nouveau2_2.4.124-2_arm64.deb ...
+7[30;0f[42m[30mProgress: [  9%][49m[39m [########..........................................................................................] 8Unpacking libdrm-nouveau2:arm64 (2.4.124-2) ...
+7[30;0f[42m[30mProgress: [ 12%][49m[39m [###########.......................................................................................] 8Selecting previously unselected package libdrm-freedreno1:arm64.
+Preparing to unpack .../2-libdrm-freedreno1_2.4.124-2_arm64.deb ...
+7[30;0f[42m[30mProgress: [ 15%][49m[39m [##############....................................................................................] 8Unpacking libdrm-freedreno1:arm64 (2.4.124-2) ...
+7[30;0f[42m[30mProgress: [ 18%][49m[39m [#################.................................................................................] 8Selecting previously unselected package libdrm-tegra0:arm64.
+Preparing to unpack .../3-libdrm-tegra0_2.4.124-2_arm64.deb ...
+7[30;0f[42m[30mProgress: [ 21%][49m[39m [####################..............................................................................] 8Unpacking libdrm-tegra0:arm64 (2.4.124-2) ...
+7[30;0f[42m[30mProgress: [ 24%][49m[39m [#######################...........................................................................] 8Selecting previously unselected package libdrm-etnaviv1:arm64.
+Preparing to unpack .../4-libdrm-etnaviv1_2.4.124-2_arm64.deb ...
+7[30;0f[42m[30mProgress: [ 27%][49m[39m [##########################........................................................................] 8Unpacking libdrm-etnaviv1:arm64 (2.4.124-2) ...
+7[30;0f[42m[30mProgress: [ 30%][49m[39m [#############################.....................................................................] 8Selecting previously unselected package libpciaccess0:arm64.
+Preparing to unpack .../5-libpciaccess0_0.17-3+b3_arm64.deb ...
+7[30;0f[42m[30mProgress: [ 33%][49m[39m [################################..................................................................] 8Unpacking libpciaccess0:arm64 (0.17-3+b3) ...
+7[30;0f[42m[30mProgress: [ 36%][49m[39m [###################################...............................................................] 8Selecting previously unselected package libpciaccess-dev:arm64.
+Preparing to unpack .../6-libpciaccess-dev_0.17-3+b3_arm64.deb ...
+7[30;0f[42m[30mProgress: [ 39%][49m[39m [######################################............................................................] 8Unpacking libpciaccess-dev:arm64 (0.17-3+b3) ...
+7[30;0f[42m[30mProgress: [ 42%][49m[39m [#########################################.........................................................] 8Selecting previously unselected package libdrm-dev:arm64.
+Preparing to unpack .../7-libdrm-dev_2.4.124-2_arm64.deb ...
+7[30;0f[42m[30mProgress: [ 45%][49m[39m [############################################......................................................] 8Unpacking libdrm-dev:arm64 (2.4.124-2) ...
+7[30;0f[42m[30mProgress: [ 48%][49m[39m [###############################################...................................................] 8Setting up libpciaccess0:arm64 (0.17-3+b3) ...
+7[30;0f[42m[30mProgress: [ 52%][49m[39m [##################################################................................................] 87[30;0f[42m[30mProgress: [ 55%][49m[39m [#####################################################.............................................] 8Setting up libdrm-nouveau2:arm64 (2.4.124-2) ...
+7[30;0f[42m[30mProgress: [ 58%][49m[39m [########################################################..........................................] 87[30;0f[42m[30mProgress: [ 61%][49m[39m [###########################################################.......................................] 8Setting up libdrm-etnaviv1:arm64 (2.4.124-2) ...
+7[30;0f[42m[30mProgress: [ 64%][49m[39m [##############################################################....................................] 87[30;0f[42m[30mProgress: [ 67%][49m[39m [#################################################################.................................] 8Setting up libpciaccess-dev:arm64 (0.17-3+b3) ...
+7[30;0f[42m[30mProgress: [ 70%][49m[39m [####################################################################..............................] 87[30;0f[42m[30mProgress: [ 73%][49m[39m [#######################################################################...........................] 8Setting up libdrm-radeon1:arm64 (2.4.124-2) ...
+7[30;0f[42m[30mProgress: [ 76%][49m[39m [##########################################################################........................] 87[30;0f[42m[30mProgress: [ 79%][49m[39m [#############################################################################.....................] 8Setting up libdrm-freedreno1:arm64 (2.4.124-2) ...
+7[30;0f[42m[30mProgress: [ 82%][49m[39m [################################################################################..................] 87[30;0f[42m[30mProgress: [ 85%][49m[39m [###################################################################################...............] 8Setting up libdrm-tegra0:arm64 (2.4.124-2) ...
+7[30;0f[42m[30mProgress: [ 88%][49m[39m [######################################################################################............] 87[30;0f[42m[30mProgress: [ 91%][49m[39m [#########################################################################################.........] 8Setting up libdrm-dev:arm64 (2.4.124-2) ...
+7[30;0f[42m[30mProgress: [ 94%][49m[39m [############################################################################################......] 87[30;0f[42m[30mProgress: [ 97%][49m[39m [###############################################################################################...] 8Processing triggers for libc-bin (2.41-12) ...
+
+7[0;30r8[1A[J[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# ls
+[?2004lCMakeCache.txt  [0m[34;42mCMakeFiles[0m
+[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# rm CMake     *
+[?2004lrm: cannot remove 'CMakeFiles': Is a directory
+[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# rm *-*r*f* *
+[?2004l[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# cmake ..
+[?2004l-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.1")
+-- Checking for modules 'wayland-client;wayland-cursor;xkbcommon'
+--   Package 'xkbcommon', required by 'virtual:world', not found
+-- Checking for module 'libdrm'
+--   Found libdrm, version 2.4.124
+-- Checking for module 'wayland-protocols>=1.25'
+--   Package 'wayland-protocols', required by 'virtual:world', not found
+[31mCMake Error at /usr/share/cmake-3.31/Modules/FindPkgConfig.cmake:645 (message):
+  The following required packages were not found:
+
+   - wayland-protocols>=1.25
+
+Call Stack (most recent call first):
+  /usr/share/cmake-3.31/Modules/FindPkgConfig.cmake:873 (_pkg_check_modules_internal)
+  CMakeLists.txt:16 (pkg_check_modules)
+
+[0m
+-- Configuring incomplete, errors occurred!
+[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# apt install [7mlibxkbcommon-dev[27mlibxkbcommon-dev
+[?2004lReading package lists... 0%Reading package lists... 100%                              Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%                                Reading state information... 0%Reading state information... 0%                                The following packages were automatically installed and are no longer required:
+  libwlroots10  libxss1  suckless-tools
+Use 'apt autoremove' to remove them.
+
+Installing:
+[32m  libxkbcommon-dev
+[0m
+Summary:
+  Upgrading: 0, Installing: 1, Removing: 0, Not Upgrading: 203
+  Download size: 53.6 kB
+  Space needed: 366 kB / 615 MB available
+
+[33m0% [Working][0m            Get:1 https://deb.debian.org/debian trixie/main arm64 libxkbcommon-dev arm64 1.7.0-2 [53.6 kB]
+[33m4% [1 libxkbcommon-dev 2800 B/53.6 kB 5%][0m[33m                                         100% [Working][0m              Fetched 53.6 kB in 0s (266 kB/s)
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 79, <STDIN> line 1.)
+debconf: falling back to frontend: Readline
+
+7[0;29r8[1ASelecting previously unselected package libxkbcommon-dev:arm64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 57369 files and directories currently installed.)
+Preparing to unpack .../libxkbcommon-dev_1.7.0-2_arm64.deb ...
+7[30;0f[42m[30mProgress: [  0%][49m[39m [..................................................................................................] 87[30;0f[42m[30mProgress: [ 20%][49m[39m [###################...............................................................................] 8Unpacking libxkbcommon-dev:arm64 (1.7.0-2) ...
+7[30;0f[42m[30mProgress: [ 40%][49m[39m [#######################################...........................................................] 8Setting up libxkbcommon-dev:arm64 (1.7.0-2) ...
+7[30;0f[42m[30mProgress: [ 60%][49m[39m [##########################################################........................................] 87[30;0f[42m[30mProgress: [ 80%][49m[39m [##############################################################################....................] 8
+7[0;30r8[1A[J[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# apt install libxkbcommon-devcmake ..[Krm -rf *
+[?2004l[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# rm -rf *apt install libxkbcommon-devcmake ..[K
+[?2004l-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.1")
+-- Checking for modules 'wayland-client;wayland-cursor;xkbcommon'
+--   Found wayland-client, version 1.23.1
+--   Found wayland-cursor, version 1.23.1
+--   Found xkbcommon, version 1.7.0
+-- Checking for module 'libdrm'
+--   Found libdrm, version 2.4.124
+-- Checking for module 'wayland-protocols>=1.25'
+--   Package 'wayland-protocols', required by 'virtual:world', not found
+[31mCMake Error at /usr/share/cmake-3.31/Modules/FindPkgConfig.cmake:645 (message):
+  The following required packages were not found:
+
+   - wayland-protocols>=1.25
+
+Call Stack (most recent call first):
+  /usr/share/cmake-3.31/Modules/FindPkgConfig.cmake:873 (_pkg_check_modules_internal)
+  CMakeLists.txt:16 (pkg_check_modules)
+
+[0m
+-- Configuring incomplete, errors occurred!
+[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# apt search [7mwayland-protocols[27mwayland-protocols
+[?2004lSorting... 0%Sorting... 0%Sorting... 0%              Full Text Search... 50%Full Text Search... 50%Full Text Search... 68%Full Text Search... 98%                        [32mlibrust-wayland-protocols-0.29-dev[0m/stable 0.29.5-3 arm64
+  Generated API for the officials wayland protocol extensions - Rust source code
+
+[32mlibrust-wayland-protocols-dev[0m/stable 0.32.6-1 arm64
+  Generated API for the officials wayland protocol extensions - Rust source code
+
+[32mlibrust-wayland-protocols-misc-dev[0m/stable 0.3.6-2 arm64
+  Generated API for misc and deprecated wayland protocol extensions - Rust source code
+
+[32mlibrust-wayland-protocols-plasma-dev[0m/stable 0.3.6-1 arm64
+  Generated API for the Plasma wayland protocol extensions - Rust source code
+
+[32mlibrust-wayland-protocols-wlr-dev[0m/stable 0.3.6-1 arm64
+  Generated API for the WLR wayland protocol extensions - Rust source code
+
+[32mplasma-wayland-protocols[0m/stable 1.17.0-1 arm64
+  Wayland protocols for Plasma
+
+[32mwayland-protocols[0m/stable 1.44-1 all
+  wayland compositor protocols
+
+[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# apt install [7mwayland-protocols[27mwayland-protocols
+[?2004lReading package lists... 0%Reading package lists... 100%                              Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%                                Reading state information... 0%Reading state information... 0%                                The following packages were automatically installed and are no longer required:
+  libwlroots10  libxss1  suckless-tools
+Use 'apt autoremove' to remove them.
+
+Installing:
+[32m  wayland-protocols
+[0m
+Summary:
+  Upgrading: 0, Installing: 1, Removing: 0, Not Upgrading: 203
+  Download size: 125 kB
+  Space needed: 1087 kB / 615 MB available
+
+[33m0% [Working][0m            Get:1 https://deb.debian.org/debian trixie/main arm64 wayland-protocols all 1.44-1 [125 kB]
+[33m0% [1 wayland-protocols 0 B/125 kB 0%][0m[33m                                      100% [Working][0m              Fetched 125 kB in 0s (511 kB/s)
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 79, <STDIN> line 1.)
+debconf: falling back to frontend: Readline
+
+7[0;29r8[1ASelecting previously unselected package wayland-protocols.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 57380 files and directories currently installed.)
+Preparing to unpack .../wayland-protocols_1.44-1_all.deb ...
+7[30;0f[42m[30mProgress: [  0%][49m[39m [..................................................................................................] 87[30;0f[42m[30mProgress: [ 20%][49m[39m [###################...............................................................................] 8Unpacking wayland-protocols (1.44-1) ...
+7[30;0f[42m[30mProgress: [ 40%][49m[39m [#######################################...........................................................] 8Setting up wayland-protocols (1.44-1) ...
+7[30;0f[42m[30mProgress: [ 60%][49m[39m [##########################################################........................................] 87[30;0f[42m[30mProgress: [ 80%][49m[39m [##############################################################################....................] 8
+7[0;30r8[1A[J[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# apt install wayland-protocols[1Psearch wayland-protocolscmake ..[Krm -rf *
+[?2004l[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# rm -rf *apt install wayland-protocols[1Psearch wayland-protocolscmake ..[K
+[?2004l-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.1")
+-- Checking for modules 'wayland-client;wayland-cursor;xkbcommon'
+--   Found wayland-client, version 1.23.1
+--   Found wayland-cursor, version 1.23.1
+--   Found xkbcommon, version 1.7.0
+-- Checking for module 'libdrm'
+--   Found libdrm, version 2.4.124
+-- Checking for module 'wayland-protocols>=1.25'
+--   Found wayland-protocols, version 1.44
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- 
+-- Using lv_conf.h from the top-level project directory
+-- Enabling the building of ThorVG internal
+-- Configuring done (2.5s)
+-- Generating done (0.4s)
+-- Build files have been written to: /MountPnt/USER/EthercatTestWin-Gui-Guider/build
+[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# cmake ..rm -rf *apt install wayland-protocolsrm -rf *[K
+[?2004l[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# rm -rf *cmake ..rm -rf *cmake ..
+[?2004l-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.1")
+-- Checking for modules 'wayland-client;wayland-cursor;xkbcommon'
+--   Found wayland-client, version 1.23.1
+--   Found wayland-cursor, version 1.23.1
+--   Found xkbcommon, version 1.7.0
+-- Checking for module 'libdrm'
+--   Found libdrm, version 2.4.124
+-- Checking for module 'wayland-protocols>=1.25'
+--   Found wayland-protocols, version 1.44
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- 
+-- Using lv_conf.h from the top-level project directory
+-- Enabling the building of ThorVG internal
+-- Configuring done (2.4s)
+-- Generating done (0.4s)
+-- Build files have been written to: /MountPnt/USER/EthercatTestWin-Gui-Guider/build
+[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# ls
+[?2004lCMakeCache.txt  [0m[34;42mCMakeFiles[0m  Makefile  cmake_install.cmake  [34;42mlvgl[0m
+[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# make
+[?2004l[  0%] Built target generate_xdg_shell_protocol
+[  0%] Built target generate_linux_dmabuf_protocol
+[  0%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgAccessor.cpp.o[0m
+[  0%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgAnimation.cpp.o[0m
+[  0%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgCanvas.cpp.o[0m
+[  1%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgCapi.cpp.o[0m
+[  1%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgCompressor.cpp.o[0m
+[  1%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgFill.cpp.o[0m
+[  1%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgGlCanvas.cpp.o[0m
+[  1%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgInitializer.cpp.o[0m
+[  2%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgLoader.cpp.o[0m
+[  2%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgLottieAnimation.cpp.o[0m
+[  2%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgLottieBuilder.cpp.o[0m
+[  2%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgLottieExpressions.cpp.o[0m
+[  2%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgLottieInterpolator.cpp.o[0m
+[  3%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgLottieLoader.cpp.o[0m
+[  3%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgLottieModel.cpp.o[0m
+[  3%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgLottieModifier.cpp.o[0m
+[  3%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgLottieParser.cpp.o[0m
+[  3%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgLottieParserHandler.cpp.o[0m
+[  4%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgMath.cpp.o[0m
+[  4%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgPaint.cpp.o[0m
+[  4%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgPicture.cpp.o[0m
+[  4%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgRawLoader.cpp.o[0m
+[  4%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgRender.cpp.o[0m
+[  5%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgSaver.cpp.o[0m
+[  5%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgScene.cpp.o[0m
+[  5%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgShape.cpp.o[0m
+[  5%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgStr.cpp.o[0m
+[  5%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgSvgCssStyle.cpp.o[0m
+[  6%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgSvgLoader.cpp.o[0m
+[  6%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgSvgPath.cpp.o[0m
+[  6%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgSvgSceneBuilder.cpp.o[0m
+[  6%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgSvgUtil.cpp.o[0m
+[  6%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgSwCanvas.cpp.o[0m
+[  7%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgSwFill.cpp.o[0m
+[  7%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgSwImage.cpp.o[0m
+[  7%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgSwMath.cpp.o[0m
+[  7%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgSwMemPool.cpp.o[0m
+[  7%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgSwPostEffect.cpp.o[0m
+[  8%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgSwRaster.cpp.o[0m
+[  8%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgSwRenderer.cpp.o[0m
+[  8%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgSwRle.cpp.o[0m
+[  8%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgSwShape.cpp.o[0m
+[  8%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgSwStroke.cpp.o[0m
+[  9%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgTaskScheduler.cpp.o[0m
+[  9%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgText.cpp.o[0m
+[  9%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgWgCanvas.cpp.o[0m
+[  9%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/libs/thorvg/tvgXmlParser.cpp.o[0m
+[  9%] [32mBuilding CXX object lvgl/CMakeFiles/lvgl_thorvg.dir/src/others/vg_lite_tvg/vg_lite_tvg.cpp.o[0m
+[ 10%] [32m[1mLinking CXX static library lib/liblvgl_thorvg.a[0m
+[ 10%] Built target lvgl_thorvg
+[ 10%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/core/lv_group.c.o[0m
+[ 11%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/core/lv_obj.c.o[0m
+[ 11%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/core/lv_obj_class.c.o[0m
+[ 11%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/core/lv_obj_draw.c.o[0m
+[ 11%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/core/lv_obj_event.c.o[0m
+[ 11%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/core/lv_obj_id_builtin.c.o[0m
+[ 12%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/core/lv_obj_pos.c.o[0m
+[ 12%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/core/lv_obj_property.c.o[0m
+[ 12%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/core/lv_obj_scroll.c.o[0m
+[ 12%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/core/lv_obj_style.c.o[0m
+[ 12%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/core/lv_obj_style_gen.c.o[0m
+[ 12%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/core/lv_obj_tree.c.o[0m
+[ 13%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/core/lv_refr.c.o[0m
+[ 13%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/display/lv_display.c.o[0m
+[ 13%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/dma2d/lv_draw_dma2d.c.o[0m
+[ 13%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/dma2d/lv_draw_dma2d_fill.c.o[0m
+[ 13%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/dma2d/lv_draw_dma2d_img.c.o[0m
+[ 14%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/lv_draw.c.o[0m
+[ 14%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/lv_draw_3d.c.o[0m
+[ 14%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/lv_draw_arc.c.o[0m
+[ 14%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/lv_draw_buf.c.o[0m
+[ 14%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/lv_draw_image.c.o[0m
+[ 15%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/lv_draw_label.c.o[0m
+[ 15%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/lv_draw_line.c.o[0m
+[ 15%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/lv_draw_mask.c.o[0m
+[ 15%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/lv_draw_rect.c.o[0m
+[ 15%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/lv_draw_triangle.c.o[0m
+[ 16%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/lv_draw_vector.c.o[0m
+[ 16%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/lv_image_decoder.c.o[0m
+[ 16%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nema_gfx/lv_draw_nema_gfx.c.o[0m
+[ 16%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nema_gfx/lv_draw_nema_gfx_arc.c.o[0m
+[ 16%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nema_gfx/lv_draw_nema_gfx_border.c.o[0m
+[ 17%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nema_gfx/lv_draw_nema_gfx_fill.c.o[0m
+[ 17%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nema_gfx/lv_draw_nema_gfx_img.c.o[0m
+[ 17%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nema_gfx/lv_draw_nema_gfx_label.c.o[0m
+[ 17%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nema_gfx/lv_draw_nema_gfx_layer.c.o[0m
+[ 17%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nema_gfx/lv_draw_nema_gfx_line.c.o[0m
+[ 18%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nema_gfx/lv_draw_nema_gfx_stm32_hal.c.o[0m
+[ 18%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nema_gfx/lv_draw_nema_gfx_triangle.c.o[0m
+[ 18%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nema_gfx/lv_draw_nema_gfx_utils.c.o[0m
+[ 18%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nema_gfx/lv_nema_gfx_path.c.o[0m
+[ 18%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/g2d/lv_draw_buf_g2d.c.o[0m
+[ 19%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/g2d/lv_draw_g2d.c.o[0m
+[ 19%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/g2d/lv_draw_g2d_fill.c.o[0m
+[ 19%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/g2d/lv_draw_g2d_img.c.o[0m
+[ 19%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/g2d/lv_g2d_buf_map.c.o[0m
+[ 19%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/g2d/lv_g2d_utils.c.o[0m
+[ 20%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/pxp/lv_draw_buf_pxp.c.o[0m
+[ 20%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/pxp/lv_draw_pxp.c.o[0m
+[ 20%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/pxp/lv_draw_pxp_fill.c.o[0m
+[ 20%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/pxp/lv_draw_pxp_img.c.o[0m
+[ 20%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/pxp/lv_draw_pxp_layer.c.o[0m
+[ 21%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/pxp/lv_pxp_cfg.c.o[0m
+[ 21%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/pxp/lv_pxp_osa.c.o[0m
+[ 21%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/pxp/lv_pxp_utils.c.o[0m
+[ 21%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/vglite/lv_draw_buf_vglite.c.o[0m
+[ 21%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/vglite/lv_draw_vglite.c.o[0m
+[ 21%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/vglite/lv_draw_vglite_arc.c.o[0m
+[ 22%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/vglite/lv_draw_vglite_border.c.o[0m
+[ 22%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/vglite/lv_draw_vglite_fill.c.o[0m
+[ 22%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/vglite/lv_draw_vglite_img.c.o[0m
+[ 22%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/vglite/lv_draw_vglite_label.c.o[0m
+[ 22%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/vglite/lv_draw_vglite_layer.c.o[0m
+[ 23%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/vglite/lv_draw_vglite_line.c.o[0m
+[ 23%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/vglite/lv_draw_vglite_triangle.c.o[0m
+[ 23%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/vglite/lv_vglite_buf.c.o[0m
+[ 23%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/vglite/lv_vglite_matrix.c.o[0m
+[ 23%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/vglite/lv_vglite_path.c.o[0m
+[ 24%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/nxp/vglite/lv_vglite_utils.c.o[0m
+[ 24%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/opengles/lv_draw_opengles.c.o[0m
+[ 24%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/renesas/dave2d/lv_draw_dave2d.c.o[0m
+[ 24%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/renesas/dave2d/lv_draw_dave2d_arc.c.o[0m
+[ 24%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/renesas/dave2d/lv_draw_dave2d_border.c.o[0m
+[ 25%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/renesas/dave2d/lv_draw_dave2d_fill.c.o[0m
+[ 25%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/renesas/dave2d/lv_draw_dave2d_image.c.o[0m
+[ 25%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/renesas/dave2d/lv_draw_dave2d_label.c.o[0m
+[ 25%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/renesas/dave2d/lv_draw_dave2d_line.c.o[0m
+[ 25%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/renesas/dave2d/lv_draw_dave2d_mask_rectangle.c.o[0m
+[ 26%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/renesas/dave2d/lv_draw_dave2d_triangle.c.o[0m
+[ 26%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/renesas/dave2d/lv_draw_dave2d_utils.c.o[0m
+[ 26%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sdl/lv_draw_sdl.c.o[0m
+[ 26%] [32mBuilding ASM object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/blend/helium/lv_blend_helium.S.o[0m
+[ 26%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/blend/lv_draw_sw_blend.c.o[0m
+[ 27%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/blend/lv_draw_sw_blend_to_al88.c.o[0m
+[ 27%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/blend/lv_draw_sw_blend_to_argb8888.c.o[0m
+[ 27%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/blend/lv_draw_sw_blend_to_argb8888_premultiplied.c.o[0m
+[ 27%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/blend/lv_draw_sw_blend_to_i1.c.o[0m
+[ 27%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/blend/lv_draw_sw_blend_to_l8.c.o[0m
+[ 28%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/blend/lv_draw_sw_blend_to_rgb565.c.o[0m
+[ 28%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/blend/lv_draw_sw_blend_to_rgb565_swapped.c.o[0m
+[ 28%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/blend/lv_draw_sw_blend_to_rgb888.c.o[0m
+[ 28%] [32mBuilding ASM object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/blend/neon/lv_blend_neon.S.o[0m
+[ 28%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/lv_draw_sw.c.o[0m
+[ 29%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/lv_draw_sw_arc.c.o[0m
+[ 29%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/lv_draw_sw_border.c.o[0m
+[ 29%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/lv_draw_sw_box_shadow.c.o[0m
+[ 29%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/lv_draw_sw_fill.c.o[0m
+[ 29%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/lv_draw_sw_grad.c.o[0m
+[ 30%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/lv_draw_sw_img.c.o[0m
+[ 30%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/lv_draw_sw_letter.c.o[0m
+[ 30%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/lv_draw_sw_line.c.o[0m
+[ 30%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/lv_draw_sw_mask.c.o[0m
+[ 30%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/lv_draw_sw_mask_rect.c.o[0m
+[ 30%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/lv_draw_sw_transform.c.o[0m
+[ 31%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/lv_draw_sw_triangle.c.o[0m
+[ 31%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/lv_draw_sw_utils.c.o[0m
+[ 31%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/sw/lv_draw_sw_vector.c.o[0m
+[ 31%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/vg_lite/lv_draw_buf_vg_lite.c.o[0m
+[ 31%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/vg_lite/lv_draw_vg_lite.c.o[0m
+[ 32%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/vg_lite/lv_draw_vg_lite_arc.c.o[0m
+[ 32%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/vg_lite/lv_draw_vg_lite_border.c.o[0m
+[ 32%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/vg_lite/lv_draw_vg_lite_box_shadow.c.o[0m
+[ 32%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/vg_lite/lv_draw_vg_lite_fill.c.o[0m
+[ 32%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/vg_lite/lv_draw_vg_lite_img.c.o[0m
+[ 33%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/vg_lite/lv_draw_vg_lite_label.c.o[0m
+[ 33%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/vg_lite/lv_draw_vg_lite_layer.c.o[0m
+[ 33%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/vg_lite/lv_draw_vg_lite_line.c.o[0m
+[ 33%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/vg_lite/lv_draw_vg_lite_mask_rect.c.o[0m
+[ 33%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/vg_lite/lv_draw_vg_lite_triangle.c.o[0m
+[ 34%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/vg_lite/lv_draw_vg_lite_vector.c.o[0m
+[ 34%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/vg_lite/lv_vg_lite_decoder.c.o[0m
+[ 34%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/vg_lite/lv_vg_lite_grad.c.o[0m
+[ 34%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/vg_lite/lv_vg_lite_math.c.o[0m
+[ 34%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/vg_lite/lv_vg_lite_path.c.o[0m
+[ 35%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/vg_lite/lv_vg_lite_pending.c.o[0m
+[ 35%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/vg_lite/lv_vg_lite_stroke.c.o[0m
+[ 35%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/draw/vg_lite/lv_vg_lite_utils.c.o[0m
+[ 35%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/display/drm/lv_linux_drm.c.o[0m
+[ 35%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/display/fb/lv_linux_fbdev.c.o[0m
+[ 36%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/display/ft81x/lv_ft81x.c.o[0m
+[ 36%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/display/ili9341/lv_ili9341.c.o[0m
+[ 36%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/display/lcd/lv_lcd_generic_mipi.c.o[0m
+[ 36%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/display/renesas_glcdc/lv_renesas_glcdc.c.o[0m
+[ 36%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/display/st7735/lv_st7735.c.o[0m
+[ 37%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/display/st7789/lv_st7789.c.o[0m
+[ 37%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/display/st7796/lv_st7796.c.o[0m
+[ 37%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/display/st_ltdc/lv_st_ltdc.c.o[0m
+[ 37%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/evdev/lv_evdev.c.o[0m
+[ 37%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/glfw/lv_glfw_window.c.o[0m
+[ 38%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/glfw/lv_opengles_debug.c.o[0m
+[ 38%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/glfw/lv_opengles_driver.c.o[0m
+[ 38%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/glfw/lv_opengles_texture.c.o[0m
+[ 38%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/libinput/lv_libinput.c.o[0m
+[ 38%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/libinput/lv_xkb.c.o[0m
+[ 39%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/nuttx/lv_nuttx_cache.c.o[0m
+[ 39%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/nuttx/lv_nuttx_entry.c.o[0m
+[ 39%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/nuttx/lv_nuttx_fbdev.c.o[0m
+[ 39%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/nuttx/lv_nuttx_image_cache.c.o[0m
+[ 39%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/nuttx/lv_nuttx_lcd.c.o[0m
+[ 39%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/nuttx/lv_nuttx_libuv.c.o[0m
+[ 40%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/nuttx/lv_nuttx_profiler.c.o[0m
+[ 40%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/nuttx/lv_nuttx_touchscreen.c.o[0m
+[ 40%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/qnx/lv_qnx.c.o[0m
+[ 40%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/sdl/lv_sdl_keyboard.c.o[0m
+[ 40%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/sdl/lv_sdl_mouse.c.o[0m
+[ 41%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/sdl/lv_sdl_mousewheel.c.o[0m
+[ 41%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/sdl/lv_sdl_window.c.o[0m
+[ 41%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/uefi/lv_uefi_context.c.o[0m
+[ 41%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/uefi/lv_uefi_display.c.o[0m
+[ 41%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/uefi/lv_uefi_indev_keyboard.c.o[0m
+[ 42%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/uefi/lv_uefi_indev_pointer.c.o[0m
+[ 42%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/uefi/lv_uefi_indev_touch.c.o[0m
+[ 42%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/uefi/lv_uefi_private.c.o[0m
+[ 42%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/wayland/lv_wayland.c.o[0m
+[ 42%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/wayland/lv_wayland_smm.c.o[0m
+[ 43%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/wayland/lv_wl_cache.c.o[0m
+[ 43%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/wayland/lv_wl_dmabuf.c.o[0m
+[ 43%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/wayland/lv_wl_keyboard.c.o[0m
+[ 43%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/wayland/lv_wl_pointer.c.o[0m
+[ 43%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/wayland/lv_wl_pointer_axis.c.o[0m
+[ 44%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/wayland/lv_wl_seat.c.o[0m
+[ 44%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/wayland/lv_wl_shell.c.o[0m
+[ 44%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/wayland/lv_wl_shm.c.o[0m
+[ 44%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/wayland/lv_wl_touch.c.o[0m
+[ 44%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/wayland/lv_wl_window.c.o[0m
+[ 45%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/wayland/lv_wl_window_decorations.c.o[0m
+[ 45%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/wayland/lv_wl_xdg_shell.c.o[0m
+[ 45%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/windows/lv_windows_context.c.o[0m
+[ 45%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/windows/lv_windows_display.c.o[0m
+[ 45%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/windows/lv_windows_input.c.o[0m
+[ 46%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/x11/lv_x11_display.c.o[0m
+[ 46%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/drivers/x11/lv_x11_input.c.o[0m
+[ 46%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_binfont_loader.c.o[0m
+[ 46%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font.c.o[0m
+[ 46%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_dejavu_16_persian_hebrew.c.o[0m
+[ 47%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_fmt_txt.c.o[0m
+[ 47%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_montserrat_10.c.o[0m
+[ 47%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_montserrat_12.c.o[0m
+[ 47%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_montserrat_14.c.o[0m
+[ 47%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_montserrat_14_aligned.c.o[0m
+[ 48%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_montserrat_16.c.o[0m
+[ 48%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_montserrat_18.c.o[0m
+[ 48%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_montserrat_20.c.o[0m
+[ 48%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_montserrat_22.c.o[0m
+[ 48%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_montserrat_24.c.o[0m
+[ 48%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_montserrat_26.c.o[0m
+[ 49%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_montserrat_28.c.o[0m
+[ 49%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_montserrat_28_compressed.c.o[0m
+[ 49%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_montserrat_30.c.o[0m
+[ 49%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_montserrat_32.c.o[0m
+[ 49%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_montserrat_34.c.o[0m
+[ 50%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_montserrat_36.c.o[0m
+[ 50%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_montserrat_38.c.o[0m
+[ 50%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_montserrat_40.c.o[0m
+[ 50%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_montserrat_42.c.o[0m
+[ 50%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_montserrat_44.c.o[0m
+[ 51%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_montserrat_46.c.o[0m
+[ 51%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_montserrat_48.c.o[0m
+[ 51%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_montserrat_8.c.o[0m
+[ 51%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_simsun_14_cjk.c.o[0m
+[ 51%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_simsun_16_cjk.c.o[0m
+[ 52%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_source_han_sans_sc_14_cjk.c.o[0m
+[ 52%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_source_han_sans_sc_16_cjk.c.o[0m
+[ 52%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_unscii_16.c.o[0m
+[ 52%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/font/lv_font_unscii_8.c.o[0m
+[ 52%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/indev/lv_indev.c.o[0m
+[ 53%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/indev/lv_indev_gesture.c.o[0m
+[ 53%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/indev/lv_indev_scroll.c.o[0m
+[ 53%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/layouts/flex/lv_flex.c.o[0m
+[ 53%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/layouts/grid/lv_grid.c.o[0m
+[ 53%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/layouts/lv_layout.c.o[0m
+[ 54%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/barcode/code128.c.o[0m
+[ 54%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/barcode/lv_barcode.c.o[0m
+[ 54%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/bin_decoder/lv_bin_decoder.c.o[0m
+[ 54%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/bmp/lv_bmp.c.o[0m
+[ 54%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/expat/xmlparse.c.o[0m
+[ 55%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/expat/xmlrole.c.o[0m
+[ 55%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/expat/xmltok.c.o[0m
+[ 55%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/expat/xmltok_impl.c.o[0m
+[ 55%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/expat/xmltok_ns.c.o[0m
+[ 55%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/ffmpeg/lv_ffmpeg.c.o[0m
+[ 56%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/freetype/lv_freetype.c.o[0m
+[ 56%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/freetype/lv_freetype_glyph.c.o[0m
+[ 56%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/freetype/lv_freetype_image.c.o[0m
+[ 56%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/freetype/lv_freetype_outline.c.o[0m
+[ 56%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/freetype/lv_ftsystem.c.o[0m
+[ 57%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/fsdrv/lv_fs_cbfs.c.o[0m
+[ 57%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/fsdrv/lv_fs_fatfs.c.o[0m
+[ 57%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/fsdrv/lv_fs_littlefs.c.o[0m
+[ 57%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/fsdrv/lv_fs_memfs.c.o[0m
+[ 57%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/fsdrv/lv_fs_posix.c.o[0m
+[ 57%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/fsdrv/lv_fs_rawfs.c.o[0m
+[ 58%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/fsdrv/lv_fs_stdio.c.o[0m
+[ 58%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/fsdrv/lv_fs_uefi.c.o[0m
+[ 58%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/fsdrv/lv_fs_win32.c.o[0m
+[ 58%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/gif/gifdec.c.o[0m
+[ 58%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/gif/lv_gif.c.o[0m
+[ 59%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/libjpeg_turbo/lv_libjpeg_turbo.c.o[0m
+[ 59%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/libpng/lv_libpng.c.o[0m
+[ 59%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/lodepng/lodepng.c.o[0m
+[ 59%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/lodepng/lv_lodepng.c.o[0m
+[ 59%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/lz4/lz4.c.o[0m
+[ 60%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/qrcode/lv_qrcode.c.o[0m
+[ 60%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/qrcode/qrcodegen.c.o[0m
+[ 60%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/rle/lv_rle.c.o[0m
+[ 60%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/rlottie/lv_rlottie.c.o[0m
+[ 60%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/svg/lv_svg.c.o[0m
+[ 61%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/svg/lv_svg_decoder.c.o[0m
+[ 61%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/svg/lv_svg_parser.c.o[0m
+[ 61%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/svg/lv_svg_render.c.o[0m
+[ 61%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/svg/lv_svg_token.c.o[0m
+[ 61%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/tiny_ttf/lv_tiny_ttf.c.o[0m
+[ 62%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/tjpgd/lv_tjpgd.c.o[0m
+[ 62%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/libs/tjpgd/tjpgd.c.o[0m
+[ 62%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/lv_init.c.o[0m
+[ 62%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/cache/class/lv_cache_lru_ll.c.o[0m
+[ 62%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/cache/class/lv_cache_lru_rb.c.o[0m
+[ 63%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/cache/instance/lv_image_cache.c.o[0m
+[ 63%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/cache/instance/lv_image_header_cache.c.o[0m
+[ 63%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/cache/lv_cache.c.o[0m
+[ 63%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/cache/lv_cache_entry.c.o[0m
+[ 63%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_anim.c.o[0m
+[ 64%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_anim_timeline.c.o[0m
+[ 64%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_area.c.o[0m
+[ 64%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_array.c.o[0m
+[ 64%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_async.c.o[0m
+[ 64%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_bidi.c.o[0m
+[ 65%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_circle_buf.c.o[0m
+[ 65%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_color.c.o[0m
+[ 65%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_color_op.c.o[0m
+[ 65%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_event.c.o[0m
+[ 65%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_fs.c.o[0m
+[ 66%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_grad.c.o[0m
+[ 66%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_iter.c.o[0m
+[ 66%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_ll.c.o[0m
+[ 66%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_log.c.o[0m
+[ 66%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_lru.c.o[0m
+[ 66%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_math.c.o[0m
+[ 67%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_matrix.c.o[0m
+[ 67%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_palette.c.o[0m
+[ 67%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_profiler_builtin.c.o[0m
+[ 67%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_rb.c.o[0m
+[ 67%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_style.c.o[0m
+[ 68%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_style_gen.c.o[0m
+[ 68%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_templ.c.o[0m
+[ 68%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_text.c.o[0m
+[ 68%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_text_ap.c.o[0m
+[ 68%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_timer.c.o[0m
+[ 69%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_tree.c.o[0m
+[ 69%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/misc/lv_utils.c.o[0m
+[ 69%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/osal/lv_cmsis_rtos2.c.o[0m
+[ 69%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/osal/lv_freertos.c.o[0m
+[ 69%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/osal/lv_linux.c.o[0m
+[ 70%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/osal/lv_mqx.c.o[0m
+[ 70%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/osal/lv_os.c.o[0m
+[ 70%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/osal/lv_os_none.c.o[0m
+[ 70%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/osal/lv_pthread.c.o[0m
+[ 70%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/osal/lv_rtthread.c.o[0m
+[ 71%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/osal/lv_sdl2.c.o[0m
+[ 71%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/osal/lv_windows.c.o[0m
+[ 71%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/file_explorer/lv_file_explorer.c.o[0m
+[ 71%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/font_manager/lv_font_manager.c.o[0m
+[ 71%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/font_manager/lv_font_manager_recycle.c.o[0m
+[ 72%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/fragment/lv_fragment.c.o[0m
+[ 72%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/fragment/lv_fragment_manager.c.o[0m
+[ 72%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/gridnav/lv_gridnav.c.o[0m
+[ 72%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/ime/lv_ime_pinyin.c.o[0m
+[ 72%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/imgfont/lv_imgfont.c.o[0m
+[ 73%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/monkey/lv_monkey.c.o[0m
+[ 73%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/observer/lv_observer.c.o[0m
+[ 73%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/snapshot/lv_snapshot.c.o[0m
+[ 73%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/sysmon/lv_sysmon.c.o[0m
+[ 73%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/test/lv_test_display.c.o[0m
+[ 74%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/test/lv_test_helpers.c.o[0m
+[ 74%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/test/lv_test_indev.c.o[0m
+[ 74%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/test/lv_test_indev_gesture.c.o[0m
+[ 74%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/test/lv_test_screenshot_compare.c.o[0m
+[ 74%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/vg_lite_tvg/vg_lite_matrix.c.o[0m
+[ 75%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/lv_xml.c.o[0m
+[ 75%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/lv_xml_base_types.c.o[0m
+[ 75%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/lv_xml_component.c.o[0m
+[ 75%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/lv_xml_parser.c.o[0m
+[ 75%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/lv_xml_style.c.o[0m
+[ 75%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/lv_xml_update.c.o[0m
+[ 76%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/lv_xml_utils.c.o[0m
+[ 76%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/lv_xml_widget.c.o[0m
+[ 76%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/parsers/lv_xml_arc_parser.c.o[0m
+[ 76%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/parsers/lv_xml_bar_parser.c.o[0m
+[ 76%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/parsers/lv_xml_button_parser.c.o[0m
+[ 77%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/parsers/lv_xml_buttonmatrix_parser.c.o[0m
+[ 77%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/parsers/lv_xml_calendar_parser.c.o[0m
+[ 77%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/parsers/lv_xml_canvas_parser.c.o[0m
+[ 77%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/parsers/lv_xml_chart_parser.c.o[0m
+[ 77%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/parsers/lv_xml_checkbox_parser.c.o[0m
+[ 78%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/parsers/lv_xml_dropdown_parser.c.o[0m
+[ 78%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/parsers/lv_xml_event_parser.c.o[0m
+[ 78%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/parsers/lv_xml_image_parser.c.o[0m
+[ 78%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/parsers/lv_xml_keyboard_parser.c.o[0m
+[ 78%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/parsers/lv_xml_label_parser.c.o[0m
+[ 79%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/parsers/lv_xml_obj_parser.c.o[0m
+[ 79%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/parsers/lv_xml_roller_parser.c.o[0m
+[ 79%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/parsers/lv_xml_scale_parser.c.o[0m
+[ 79%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/parsers/lv_xml_slider_parser.c.o[0m
+[ 79%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/parsers/lv_xml_spangroup_parser.c.o[0m
+[ 80%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/parsers/lv_xml_table_parser.c.o[0m
+[ 80%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/parsers/lv_xml_tabview_parser.c.o[0m
+[ 80%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/others/xml/parsers/lv_xml_textarea_parser.c.o[0m
+[ 80%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/stdlib/builtin/lv_mem_core_builtin.c.o[0m
+[ 80%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/stdlib/builtin/lv_sprintf_builtin.c.o[0m
+[ 81%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/stdlib/builtin/lv_string_builtin.c.o[0m
+[ 81%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/stdlib/builtin/lv_tlsf.c.o[0m
+[ 81%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/stdlib/clib/lv_mem_core_clib.c.o[0m
+[ 81%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/stdlib/clib/lv_sprintf_clib.c.o[0m
+[ 81%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/stdlib/clib/lv_string_clib.c.o[0m
+[ 82%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/stdlib/lv_mem.c.o[0m
+[ 82%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/stdlib/micropython/lv_mem_core_micropython.c.o[0m
+[ 82%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/stdlib/rtthread/lv_mem_core_rtthread.c.o[0m
+[ 82%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/stdlib/rtthread/lv_sprintf_rtthread.c.o[0m
+[ 82%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/stdlib/rtthread/lv_string_rtthread.c.o[0m
+[ 83%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/stdlib/uefi/lv_mem_core_uefi.c.o[0m
+[ 83%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/themes/default/lv_theme_default.c.o[0m
+[ 83%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/themes/lv_theme.c.o[0m
+[ 83%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/themes/mono/lv_theme_mono.c.o[0m
+[ 83%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/themes/simple/lv_theme_simple.c.o[0m
+[ 84%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/tick/lv_tick.c.o[0m
+[ 84%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/3dtexture/lv_3dtexture.c.o[0m
+[ 84%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/animimage/lv_animimage.c.o[0m
+[ 84%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/arc/lv_arc.c.o[0m
+[ 84%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/bar/lv_bar.c.o[0m
+[ 84%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/button/lv_button.c.o[0m
+[ 85%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/buttonmatrix/lv_buttonmatrix.c.o[0m
+[ 85%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/calendar/lv_calendar.c.o[0m
+[ 85%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/calendar/lv_calendar_chinese.c.o[0m
+[ 85%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/calendar/lv_calendar_header_arrow.c.o[0m
+[ 85%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/calendar/lv_calendar_header_dropdown.c.o[0m
+[ 86%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/canvas/lv_canvas.c.o[0m
+[ 86%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/chart/lv_chart.c.o[0m
+[ 86%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/checkbox/lv_checkbox.c.o[0m
+[ 86%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/dropdown/lv_dropdown.c.o[0m
+[ 86%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/image/lv_image.c.o[0m
+[ 87%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/imagebutton/lv_imagebutton.c.o[0m
+[ 87%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/keyboard/lv_keyboard.c.o[0m
+[ 87%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/label/lv_label.c.o[0m
+[ 87%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/led/lv_led.c.o[0m
+[ 87%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/line/lv_line.c.o[0m
+[ 88%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/list/lv_list.c.o[0m
+[ 88%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/lottie/lv_lottie.c.o[0m
+[ 88%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/menu/lv_menu.c.o[0m
+[ 88%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/msgbox/lv_msgbox.c.o[0m
+[ 88%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/objx_templ/lv_objx_templ.c.o[0m
+[ 89%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/property/lv_animimage_properties.c.o[0m
+[ 89%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/property/lv_dropdown_properties.c.o[0m
+[ 89%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/property/lv_image_properties.c.o[0m
+[ 89%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/property/lv_keyboard_properties.c.o[0m
+[ 89%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/property/lv_label_properties.c.o[0m
+[ 90%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/property/lv_obj_properties.c.o[0m
+[ 90%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/property/lv_roller_properties.c.o[0m
+[ 90%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/property/lv_slider_properties.c.o[0m
+[ 90%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/property/lv_style_properties.c.o[0m
+[ 90%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/property/lv_textarea_properties.c.o[0m
+[ 91%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/roller/lv_roller.c.o[0m
+[ 91%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/scale/lv_scale.c.o[0m
+[ 91%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/slider/lv_slider.c.o[0m
+[ 91%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/span/lv_span.c.o[0m
+[ 91%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/spinbox/lv_spinbox.c.o[0m
+[ 92%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/spinner/lv_spinner.c.o[0m
+[ 92%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/switch/lv_switch.c.o[0m
+[ 92%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/table/lv_table.c.o[0m
+[ 92%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/tabview/lv_tabview.c.o[0m
+[ 92%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/textarea/lv_textarea.c.o[0m
+[ 93%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/tileview/lv_tileview.c.o[0m
+[ 93%] [32mBuilding C object lvgl/CMakeFiles/lvgl.dir/src/widgets/win/lv_win.c.o[0m
+[ 93%] [32m[1mLinking CXX static library lib/liblvgl.a[0m
+[ 93%] Built target lvgl
+[ 93%] [32mBuilding C object CMakeFiles/gui_guider.dir/custom/custom.c.o[0m
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:[m[K In function '[01m[Kupdate_Ethercat_screen_data_cb[m[K':
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:252:61:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableSlave[m[K'; did you mean '[01m[KscrECATregs_tableSlave[m[K'?
+  252 |                         lv_table_set_cell_value ( guider_ui.[01;31m[KscrECATnet_tableSlave[m[K,SlaveIndex+1,0, buffer );
+      |                                                             [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                             [32m[KscrECATregs_tableSlave[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:262:61:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableSlave[m[K'; did you mean '[01m[KscrECATregs_tableSlave[m[K'?
+  262 |                         lv_table_set_cell_value ( guider_ui.[01;31m[KscrECATnet_tableSlave[m[K,SlaveIndex+1,1, buffer );
+      |                                                             [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                             [32m[KscrECATregs_tableSlave[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:273:61:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableSlave[m[K'; did you mean '[01m[KscrECATregs_tableSlave[m[K'?
+  273 |                         lv_table_set_cell_value ( guider_ui.[01;31m[KscrECATnet_tableSlave[m[K,SlaveIndex+1,2, buffer );
+      |                                                             [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                             [32m[KscrECATregs_tableSlave[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:278:69:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableSlave[m[K'; did you mean '[01m[KscrECATregs_tableSlave[m[K'?
+  278 |                                 lv_table_set_cell_value ( guider_ui.[01;31m[KscrECATnet_tableSlave[m[K,SlaveIndex+1,3, "" );
+      |                                                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                                     [32m[KscrECATregs_tableSlave[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:282:61:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableSlave[m[K'; did you mean '[01m[KscrECATregs_tableSlave[m[K'?
+  282 |                         lv_table_set_cell_value ( guider_ui.[01;31m[KscrECATnet_tableSlave[m[K,SlaveIndex+1,3, buffer );
+      |                                                             [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                             [32m[KscrECATregs_tableSlave[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:293:53:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableInput[m[K'; did you mean '[01m[KscrECATnet_tableInputData[m[K'?
+  293 |                 lv_table_set_cell_value ( guider_ui.[01;31m[KscrECATnet_tableInput[m[K,row+1,0,(char *)varIn->name );
+      |                                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                     [32m[KscrECATnet_tableInputData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:295:61:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableInput[m[K'; did you mean '[01m[KscrECATnet_tableInputData[m[K'?
+  295 |                         lv_table_set_cell_value ( guider_ui.[01;31m[KscrECATnet_tableInput[m[K,row+1,1, buffer );
+      |                                                             [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                             [32m[KscrECATnet_tableInputData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:296:61:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableInput[m[K'; did you mean '[01m[KscrECATnet_tableInputData[m[K'?
+  296 |                         lv_table_set_cell_value ( guider_ui.[01;31m[KscrECATnet_tableInput[m[K,row+1,2,(char *)varIn->value );
+      |                                                             [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                             [32m[KscrECATnet_tableInputData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:306:51:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableOutput[m[K'; did you mean '[01m[KscrECATnet_tableOutputData[m[K'?
+  306 |                 lv_table_set_cell_value(guider_ui.[01;31m[KscrECATnet_tableOutput[m[K,row+1,0,(char*)varOut->name);
+      |                                                   [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                   [32m[KscrECATnet_tableOutputData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:308:61:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableOutput[m[K'; did you mean '[01m[KscrECATnet_tableOutputData[m[K'?
+  308 |                         lv_table_set_cell_value ( guider_ui.[01;31m[KscrECATnet_tableOutput[m[K,row+1,1, buffer );
+      |                                                             [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                             [32m[KscrECATnet_tableOutputData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:309:61:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableOutput[m[K'; did you mean '[01m[KscrECATnet_tableOutputData[m[K'?
+  309 |                         lv_table_set_cell_value ( guider_ui.[01;31m[KscrECATnet_tableOutput[m[K,row+1,2,(char*)varOut->value );
+      |                                                             [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                             [32m[KscrECATnet_tableOutputData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:349:60:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableEmcy[m[K'; did you mean '[01m[KscrECATnet_tableEmcyData[m[K'?
+  349 |                         lv_table_set_cell_value( guider_ui.[01;31m[KscrECATnet_tableEmcy[m[K,(row-4)+1,0, buffer );
+      |                                                            [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                            [32m[KscrECATnet_tableEmcyData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:351:60:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableEmcy[m[K'; did you mean '[01m[KscrECATnet_tableEmcyData[m[K'?
+  351 |                         lv_table_set_cell_value( guider_ui.[01;31m[KscrECATnet_tableEmcy[m[K,(row-4)+1,1, buffer );
+      |                                                            [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                            [32m[KscrECATnet_tableEmcyData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:353:60:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableEmcy[m[K'; did you mean '[01m[KscrECATnet_tableEmcyData[m[K'?
+  353 |                         lv_table_set_cell_value( guider_ui.[01;31m[KscrECATnet_tableEmcy[m[K,(row-4)+1,2, buffer );
+      |                                                            [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                            [32m[KscrECATnet_tableEmcyData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:355:60:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableEmcy[m[K'; did you mean '[01m[KscrECATnet_tableEmcyData[m[K'?
+  355 |                         lv_table_set_cell_value( guider_ui.[01;31m[KscrECATnet_tableEmcy[m[K,(row-4)+1,3, buffer );
+      |                                                            [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                            [32m[KscrECATnet_tableEmcyData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:357:60:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableEmcy[m[K'; did you mean '[01m[KscrECATnet_tableEmcyData[m[K'?
+  357 |                         lv_table_set_cell_value( guider_ui.[01;31m[KscrECATnet_tableEmcy[m[K,(row-4)+1,4, buffer );
+      |                                                            [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                            [32m[KscrECATnet_tableEmcyData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:359:60:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableEmcy[m[K'; did you mean '[01m[KscrECATnet_tableEmcyData[m[K'?
+  359 |                         lv_table_set_cell_value( guider_ui.[01;31m[KscrECATnet_tableEmcy[m[K,(row-4)+1,5, buffer );
+      |                                                            [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                            [32m[KscrECATnet_tableEmcyData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:361:60:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableEmcy[m[K'; did you mean '[01m[KscrECATnet_tableEmcyData[m[K'?
+  361 |                         lv_table_set_cell_value( guider_ui.[01;31m[KscrECATnet_tableEmcy[m[K,(row-4)+1,6, buffer );
+      |                                                            [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                            [32m[KscrECATnet_tableEmcyData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:363:60:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableEmcy[m[K'; did you mean '[01m[KscrECATnet_tableEmcyData[m[K'?
+  363 |                         lv_table_set_cell_value( guider_ui.[01;31m[KscrECATnet_tableEmcy[m[K,(row-4)+1,7, buffer );
+      |                                                            [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                            [32m[KscrECATnet_tableEmcyData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:368:60:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableEmcy[m[K'; did you mean '[01m[KscrECATnet_tableEmcyData[m[K'?
+  368 |                         lv_table_set_cell_value( guider_ui.[01;31m[KscrECATnet_tableEmcy[m[K,(row-4)+1,0, buffer );
+      |                                                            [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                            [32m[KscrECATnet_tableEmcyData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:370:64:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableEmcy[m[K'; did you mean '[01m[KscrECATnet_tableEmcyData[m[K'?
+  370 |                             lv_table_set_cell_value( guider_ui.[01;31m[KscrECATnet_tableEmcy[m[K,(row-4)+1,j, "" );
+      |                                                                [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                                [32m[KscrECATnet_tableEmcyData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:376:64:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableEmcy[m[K'; did you mean '[01m[KscrECATnet_tableEmcyData[m[K'?
+  376 |                             lv_table_set_cell_value( guider_ui.[01;31m[KscrECATnet_tableEmcy[m[K,(row-4)+1,j, buffer );
+      |                                                                [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                                [32m[KscrECATnet_tableEmcyData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:386:53:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableInfo[m[K'; did you mean '[01m[KscrECATnet_labelUndo[m[K'?
+  386 |                 lv_table_set_cell_value ( guider_ui.[01;31m[KscrECATnet_tableInfo[m[K,2,1, buffer );
+      |                                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                     [32m[KscrECATnet_labelUndo[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:388:53:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableInfo[m[K'; did you mean '[01m[KscrECATnet_labelUndo[m[K'?
+  388 |                 lv_table_set_cell_value ( guider_ui.[01;31m[KscrECATnet_tableInfo[m[K,3,1, buffer );
+      |                                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                     [32m[KscrECATnet_labelUndo[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:390:53:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableInfo[m[K'; did you mean '[01m[KscrECATnet_labelUndo[m[K'?
+  390 |                 lv_table_set_cell_value ( guider_ui.[01;31m[KscrECATnet_tableInfo[m[K,4,1, buffer );
+      |                                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                     [32m[KscrECATnet_labelUndo[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:392:53:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableInfo[m[K'; did you mean '[01m[KscrECATnet_labelUndo[m[K'?
+  392 |                 lv_table_set_cell_value ( guider_ui.[01;31m[KscrECATnet_tableInfo[m[K,5,1, buffer );
+      |                                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                     [32m[KscrECATnet_labelUndo[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:394:53:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableInfo[m[K'; did you mean '[01m[KscrECATnet_labelUndo[m[K'?
+  394 |                 lv_table_set_cell_value ( guider_ui.[01;31m[KscrECATnet_tableInfo[m[K,6,1, buffer );
+      |                                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                     [32m[KscrECATnet_labelUndo[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:396:53:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableInfo[m[K'; did you mean '[01m[KscrECATnet_labelUndo[m[K'?
+  396 |                 lv_table_set_cell_value ( guider_ui.[01;31m[KscrECATnet_tableInfo[m[K,7,1, buffer );
+      |                                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                     [32m[KscrECATnet_labelUndo[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:397:53:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableInfo[m[K'; did you mean '[01m[KscrECATnet_labelUndo[m[K'?
+  397 |                 lv_table_set_cell_value ( guider_ui.[01;31m[KscrECATnet_tableInfo[m[K,8,1, (char*)SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].EoEaddrString );
+      |                                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                     [32m[KscrECATnet_labelUndo[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:[m[K In function '[01m[KscrECATnet_init[m[K':
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:976:45:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableNetwork[m[K'; did you mean '[01m[KscrECATnet_tableNetworkData[m[K'?
+  976 |         lv_table_set_column_width(guider_ui.[01;31m[KscrECATnet_tableNetwork[m[K, i, tableNetwork_col_w[i]);
+      |                                             [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                             [32m[KscrECATnet_tableNetworkData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:978:45:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableConfig[m[K'; did you mean '[01m[KscrECATnet_tableConfigData[m[K'?
+  978 |         lv_table_set_column_width(guider_ui.[01;31m[KscrECATnet_tableConfig[m[K, i, tableConfig_col_w[i]);
+      |                                             [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                             [32m[KscrECATnet_tableConfigData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:980:45:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableSlave[m[K'; did you mean '[01m[KscrECATregs_tableSlave[m[K'?
+  980 |         lv_table_set_column_width(guider_ui.[01;31m[KscrECATnet_tableSlave[m[K, i, tableSlaveData_col_w[i]);
+      |                                             [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                             [32m[KscrECATregs_tableSlave[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:983:45:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableInput[m[K'; did you mean '[01m[KscrECATnet_tableInputData[m[K'?
+  983 |         lv_table_set_column_width(guider_ui.[01;31m[KscrECATnet_tableInput[m[K, i, tableInOut_col_w[i]);
+      |                                             [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                             [32m[KscrECATnet_tableInputData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:984:45:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableOutput[m[K'; did you mean '[01m[KscrECATnet_tableOutputData[m[K'?
+  984 |         lv_table_set_column_width(guider_ui.[01;31m[KscrECATnet_tableOutput[m[K, i, tableInOut_col_w[i]);
+      |                                             [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                             [32m[KscrECATnet_tableOutputData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:987:45:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableEmcy[m[K'; did you mean '[01m[KscrECATnet_tableEmcyData[m[K'?
+  987 |         lv_table_set_column_width(guider_ui.[01;31m[KscrECATnet_tableEmcy[m[K, i, tableEmcy_col_w[i]);
+      |                                             [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                             [32m[KscrECATnet_tableEmcyData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:990:45:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableInfo[m[K'; did you mean '[01m[KscrECATnet_labelUndo[m[K'?
+  990 |         lv_table_set_column_width(guider_ui.[01;31m[KscrECATnet_tableInfo[m[K, i, tableInfoDC_col_w[i]);
+      |                                             [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                             [32m[KscrECATnet_labelUndo[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:991:45:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableDC[m[K'; did you mean '[01m[KscrECATnet_tableDCData[m[K'?
+  991 |         lv_table_set_column_width(guider_ui.[01;31m[KscrECATnet_tableDC[m[K, i, tableInfoDC_col_w[i]);
+      |                                             [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+      |                                             [32m[KscrECATnet_tableDCData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:993:41:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableAL[m[K'; did you mean '[01m[KscrECATnet_tableALData[m[K'?
+  993 |     lv_table_set_column_width(guider_ui.[01;31m[KscrECATnet_tableAL[m[K, 0, 435);
+      |                                         [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+      |                                         [32m[KscrECATnet_tableALData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:995:37:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableNetwork[m[K'; did you mean '[01m[KscrECATnet_tableNetworkData[m[K'?
+  995 |     set_style_row_0_table(guider_ui.[01;31m[KscrECATnet_tableNetwork[m[K);
+      |                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                     [32m[KscrECATnet_tableNetworkData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:996:37:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableConfig[m[K'; did you mean '[01m[KscrECATnet_tableConfigData[m[K'?
+  996 |     set_style_row_0_table(guider_ui.[01;31m[KscrECATnet_tableConfig[m[K);
+      |                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                     [32m[KscrECATnet_tableConfigData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:997:37:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableSlave[m[K'; did you mean '[01m[KscrECATregs_tableSlave[m[K'?
+  997 |     set_style_row_0_table(guider_ui.[01;31m[KscrECATnet_tableSlave[m[K);
+      |                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                     [32m[KscrECATregs_tableSlave[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:998:37:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableInput[m[K'; did you mean '[01m[KscrECATnet_tableInputData[m[K'?
+  998 |     set_style_row_0_table(guider_ui.[01;31m[KscrECATnet_tableInput[m[K);
+      |                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                     [32m[KscrECATnet_tableInputData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:999:37:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableOutput[m[K'; did you mean '[01m[KscrECATnet_tableOutputData[m[K'?
+  999 |     set_style_row_0_table(guider_ui.[01;31m[KscrECATnet_tableOutput[m[K);
+      |                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                     [32m[KscrECATnet_tableOutputData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:1000:37:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableAL[m[K'; did you mean '[01m[KscrECATnet_tableALData[m[K'?
+ 1000 |     set_style_row_0_table(guider_ui.[01;31m[KscrECATnet_tableAL[m[K);
+      |                                     [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+      |                                     [32m[KscrECATnet_tableALData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:1001:37:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableEmcy[m[K'; did you mean '[01m[KscrECATnet_tableEmcyData[m[K'?
+ 1001 |     set_style_row_0_table(guider_ui.[01;31m[KscrECATnet_tableEmcy[m[K);
+      |                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                     [32m[KscrECATnet_tableEmcyData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:1002:37:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableInfo[m[K'; did you mean '[01m[KscrECATnet_labelUndo[m[K'?
+ 1002 |     set_style_row_0_table(guider_ui.[01;31m[KscrECATnet_tableInfo[m[K);
+      |                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                     [32m[KscrECATnet_labelUndo[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:1003:37:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableDC[m[K'; did you mean '[01m[KscrECATnet_tableDCData[m[K'?
+ 1003 |     set_style_row_0_table(guider_ui.[01;31m[KscrECATnet_tableDC[m[K);
+      |                                     [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+      |                                     [32m[KscrECATnet_tableDCData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:1004:31:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableSlave[m[K'; did you mean '[01m[KscrECATregs_tableSlave[m[K'?
+ 1004 |     lv_obj_add_flag(guider_ui.[01;31m[KscrECATnet_tableSlave[m[K, LV_OBJ_FLAG_SEND_DRAW_TASK_EVENTS);
+      |                               [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+      |                               [32m[KscrECATregs_tableSlave[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:1005:35:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableSlave[m[K'; did you mean '[01m[KscrECATregs_tableSlave[m[K'?
+ 1005 |     lv_obj_add_event_cb(guider_ui.[01;31m[KscrECATnet_tableSlave[m[K, select_row_table_draw_event_cb, LV_EVENT_DRAW_TASK_ADDED, NULL);
+      |                                   [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                   [32m[KscrECATregs_tableSlave[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:1009:46:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableSlave[m[K'; did you mean '[01m[KscrECATregs_tableSlave[m[K'?
+ 1009 |             lv_table_set_cell_ctrl(guider_ui.[01;31m[KscrECATnet_tableSlave[m[K, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
+      |                                              [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                              [32m[KscrECATregs_tableSlave[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:1014:46:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableInput[m[K'; did you mean '[01m[KscrECATnet_tableInputData[m[K'?
+ 1014 |             lv_table_set_cell_ctrl(guider_ui.[01;31m[KscrECATnet_tableInput[m[K, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
+      |                                              [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                              [32m[KscrECATnet_tableInputData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:1019:46:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableOutput[m[K'; did you mean '[01m[KscrECATnet_tableOutputData[m[K'?
+ 1019 |             lv_table_set_cell_ctrl(guider_ui.[01;31m[KscrECATnet_tableOutput[m[K, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
+      |                                              [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                              [32m[KscrECATnet_tableOutputData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:1023:42:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableAL[m[K'; did you mean '[01m[KscrECATnet_tableALData[m[K'?
+ 1023 |         lv_table_set_cell_ctrl(guider_ui.[01;31m[KscrECATnet_tableAL[m[K, r, 0, LV_TABLE_CELL_CTRL_TEXT_CROP);
+      |                                          [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+      |                                          [32m[KscrECATnet_tableALData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:1026:46:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableEmcy[m[K'; did you mean '[01m[KscrECATnet_tableEmcyData[m[K'?
+ 1026 |             lv_table_set_cell_ctrl(guider_ui.[01;31m[KscrECATnet_tableEmcy[m[K, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
+      |                                              [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                              [32m[KscrECATnet_tableEmcyData[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:1031:46:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableInfo[m[K'; did you mean '[01m[KscrECATnet_labelUndo[m[K'?
+ 1031 |             lv_table_set_cell_ctrl(guider_ui.[01;31m[KscrECATnet_tableInfo[m[K, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
+      |                                              [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                              [32m[KscrECATnet_labelUndo[m[K
+[01m[K/MountPnt/USER/EthercatTestWin-Gui-Guider/custom/custom.c:1036:46:[m[K [01;31m[Kerror: [m[K'[01m[Klv_ui[m[K' has no member named '[01m[KscrECATnet_tableDC[m[K'; did you mean '[01m[KscrECATnet_tableDCData[m[K'?
+ 1036 |             lv_table_set_cell_ctrl(guider_ui.[01;31m[KscrECATnet_tableDC[m[K, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
+      |                                              [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+      |                                              [32m[KscrECATnet_tableDCData[m[K
+make[2]: *** [CMakeFiles/gui_guider.dir/build.make:87: CMakeFiles/gui_guider.dir/custom/custom.c.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:182: CMakeFiles/gui_guider.dir/all] Error 2
+make: *** [Makefile:136: all] Error 2
+[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# make
+[?2004l[  0%] Built target generate_xdg_shell_protocol
+[  0%] Built target generate_linux_dmabuf_protocol
+[ 10%] Built target lvgl_thorvg
+[ 93%] Built target lvgl
+[ 93%] [32mBuilding C object CMakeFiles/gui_guider.dir/custom/custom.c.o[0m
+[ 93%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/events_init.c.o[0m
+[ 93%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/gui_guider.c.o[0m
+[ 93%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/guider_fonts/lv_font_montserratMedium_12.c.o[0m
+[ 94%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/guider_fonts/lv_font_montserratMedium_13.c.o[0m
+[ 94%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/guider_fonts/lv_font_montserratMedium_14.c.o[0m
+[ 94%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/guider_fonts/lv_font_montserratMedium_16.c.o[0m
+[ 94%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/guider_fonts/lv_font_montserratMedium_18.c.o[0m
+[ 94%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/guider_fonts/lv_font_montserratMedium_28.c.o[0m
+[ 95%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/images/_Down_RGB565A8_40x40.c.o[0m
+[ 95%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/images/_End_RGB565A8_40x40.c.o[0m
+[ 95%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/images/_Home_RGB565A8_40x40.c.o[0m
+[ 95%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/images/_Logo1_Nero_RGB565A8_330x110.c.o[0m
+[ 95%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/images/_Up_RGB565A8_40x40.c.o[0m
+[ 96%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/images/_Vuota_RGB565A8_160x160.c.o[0m
+[ 96%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/images/_banda_RGB565A8_100x100.c.o[0m
+[ 96%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/images/_log_RGB565A8_100x100.c.o[0m
+[ 96%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/images/_main_RGB565A8_100x100.c.o[0m
+[ 96%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/images/_nodi_RGB565A8_100x100.c.o[0m
+[ 97%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/images/_registri_RGB565A8_100x100.c.o[0m
+[ 97%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/setup_scr_scrECATband.c.o[0m
+[ 97%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/setup_scr_scrECATlost.c.o[0m
+[ 97%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/setup_scr_scrECATmsgs.c.o[0m
+[ 97%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/setup_scr_scrECATnet.c.o[0m
+[ 98%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/setup_scr_scrECATregs.c.o[0m
+[ 98%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/setup_scr_scrMain.c.o[0m
+[ 98%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/setup_scr_scrSelect.c.o[0m
+[ 98%] [32mBuilding C object CMakeFiles/gui_guider.dir/generated/widgets_init.c.o[0m
+[ 98%] [32mBuilding C object CMakeFiles/gui_guider.dir/ports/linux/main.c.o[0m
+[ 99%] [32mBuilding C object CMakeFiles/gui_guider.dir/ports/linux/mouse_cursor_icon.c.o[0m
+[ 99%] [32mBuilding C object CMakeFiles/gui_guider.dir/ports/linux/wl_protocols/wayland_xdg_shell.c.o[0m
+[ 99%] [32mBuilding C object CMakeFiles/gui_guider.dir/ports/linux/wl_protocols/wayland_linux_dmabuf.c.o[0m
+[ 99%] [32m[1mLinking CXX executable gui_guider[0m
+[100%] Built target gui_guider
+[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# ./gui_guider 
+[?2004l^C
+[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# exit
+[?2004lexit
+
+Script done on 2026-05-22 12:25:40+00:00 [COMMAND_EXIT_CODE="130"]
+Script started on 2026-05-22 14:33:44+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# [7mexport XDG_RUNTIME_DIR=/tmp[27mexport XDG_RUNTIME_DIR=/tmp
+[?2004l[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# [7mexport WAYLAND_DISPLAY=wayland-1[27mexport WAYLAND_DISPLAY=wayland-1
+[?2004l[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# ./gui_guider 
+[?2004l^CPosted all semaphores
+Posted all semaphores
+[?2004h]0;root@cnc-x: /MountPnt/USER/EthercatTestWin-Gui-Guider/build[01;32mroot@cnc-x[00m:[01;34m/MountPnt/USER/EthercatTestWin-Gui-Guider/build[00m# exit
+[?2004lexit
+
+Script done on 2026-05-22 14:34:07+00:00 [COMMAND_EXIT_CODE="0"]

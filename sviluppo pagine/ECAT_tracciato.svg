@@ -1,0 +1,19 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Documento -->
+  <rect x="12" y="8" width="40" height="48" rx="6" fill="#F9FAFB" stroke="#6B7280" stroke-width="2"></rect>
+  
+  <!-- Angolo piegato -->
+  <path d="M40 8 L52 20 L40 20 Z" fill="#E5E7EB"></path>
+
+  <!-- Linee log -->
+  <line x1="18" y1="26" x2="46" y2="26" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round"></line>
+  <line x1="18" y1="34" x2="46" y2="34" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round"></line>
+  
+  <!-- Riga errore -->
+  <line x1="18" y1="42" x2="34" y2="42" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round"></line>
+
+  <!-- X errore -->
+  <circle cx="44" cy="42" r="8" fill="#EF4444"></circle>
+  <line x1="40" y1="38" x2="48" y2="46" stroke="white" stroke-width="2.5" stroke-linecap="round"></line>
+  <line x1="48" y1="38" x2="40" y2="46" stroke="white" stroke-width="2.5" stroke-linecap="round"></line>
+</svg>
