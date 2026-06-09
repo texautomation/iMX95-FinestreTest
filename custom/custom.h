@@ -22,11 +22,9 @@ extern "C" {
 #include "screen_ECATLost.h"
 #include "screen_ECATBandwidth.h"
 
-#ifndef	ECAT_NUM_SLAVES
-	#define ECAT_NUM_SLAVES             5			/*numero slave presenti*/
-#endif
-void custom_init(lv_ui *ui);
+extern int slaveNum;								/*numero slave presenti*/
 
+void custom_init(lv_ui *ui);
 
 #ifdef __cplusplus
 }

@@ -40,7 +40,7 @@
 /**********************
  *  STATIC VARIABLES
  **********************/
-static lv_timer_t * my_timer;
+static lv_timer_t * ECATRefresh_timer;
 
 /**********************
  *  GLOBAL VARIABLES
@@ -59,7 +59,7 @@ lv_style_t style_checked;
 lv_style_t style_btn;
 lv_style_t style_header;
 
-
+int slaveNum = 5;
 
 /**
  * Create a demo application
@@ -216,5 +216,5 @@ void custom_init(lv_ui *ui)
     lv_style_set_bg_opa(&style_header, LV_OPA_COVER);
     lv_style_set_text_color(&style_header, lv_color_white());
 
-    my_timer = lv_timer_create(update_Ethercat_screen_data_cb, 1000, NULL);
+    ECATRefresh_timer = lv_timer_create(update_Ethercat_screen_data_cb, 1000, NULL);
 }

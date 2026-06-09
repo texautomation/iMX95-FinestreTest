@@ -24,7 +24,7 @@ static void scrMain_contDiag_event_handler (lv_event_t *e)
     switch (code) {
     case LV_EVENT_RELEASED:
     {
-        ui_load_scr_animation(&guider_ui, &guider_ui.scrSelect, guider_ui.scrSelect_del, &guider_ui.scrMain_del, setup_scr_scrSelect, LV_SCR_LOAD_ANIM_NONE, 200, 200, false, true);
+        ui_load_scr_animation(&guider_ui, &guider_ui.scrSelect, guider_ui.scrSelect_del, &guider_ui.scrMain_del, setup_scr_scrSelect, LV_SCR_LOAD_ANIM_NONE, 200, 200, true, false);
         break;
     }
     default:
@@ -59,7 +59,6 @@ static void scrSelect_contECATWin_event_handler (lv_event_t *e)
     case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.scrECATnet, guider_ui.scrECATnet_del, &guider_ui.scrSelect_del, setup_scr_scrECATnet, LV_SCR_LOAD_ANIM_NONE, 200, 200, true, false);
-        net_row_sel = 1;
         scrECATnet_init();
         break;
     }
@@ -249,7 +248,6 @@ static void scrECATnet_contRegs_event_handler (lv_event_t *e)
     case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.scrECATregs, guider_ui.scrECATregs_del, &guider_ui.scrECATnet_del, setup_scr_scrECATregs, LV_SCR_LOAD_ANIM_NONE, 200, 200, true, false);
-        regs_row_sel = 1;
         // la finestra va inizializzata tutte le volte
         scrECATregs_init();
         break;
@@ -267,6 +265,8 @@ static void scrECATnet_contMsgs_event_handler (lv_event_t *e)
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.scrECATmsgs, guider_ui.scrECATmsgs_del, &guider_ui.scrECATnet_del, setup_scr_scrECATmsgs, LV_SCR_LOAD_ANIM_NONE, 200, 200, true, false);
         scrECATmsgs_init();
+
+
         break;
     }
     default:
@@ -320,8 +320,6 @@ static void scrECATnet_tableSlave_event_handler (lv_event_t *e)
             int len, i, j;
             uint32_t n_rows = lv_table_get_row_count(table);
             uint32_t n_cols = lv_table_get_column_count(table);
-            //if ( row > 0 && row <= 5 /* numero slave presenti*/ )
-            //    net_row_sel = row;
             // Crea il popup (Message Box)
             lv_obj_t * mbox = lv_msgbox_create(NULL);
             /* IMPORTANTISSIMO */
@@ -565,8 +563,6 @@ static void scrECATmsgs_contRegs_event_handler (lv_event_t *e)
     case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.scrECATregs, guider_ui.scrECATregs_del, &guider_ui.scrECATmsgs_del, setup_scr_scrECATregs, LV_SCR_LOAD_ANIM_NONE, 200, 200, true, false);
-        regs_row_sel = 1;
-        // la finestra va inizializzata tutte le volte
         scrECATregs_init();
         break;
     }
@@ -582,7 +578,6 @@ static void scrECATmsgs_contNet_event_handler (lv_event_t *e)
     case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.scrECATnet, guider_ui.scrECATnet_del, &guider_ui.scrECATmsgs_del, setup_scr_scrECATnet, LV_SCR_LOAD_ANIM_NONE, 200, 200, true, false);
-        net_row_sel = 1;
         scrECATnet_init();
         break;
     }
@@ -754,7 +749,6 @@ static void scrECATregs_contNet_event_handler (lv_event_t *e)
     case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.scrECATnet, guider_ui.scrECATnet_del, &guider_ui.scrECATregs_del, setup_scr_scrECATnet, LV_SCR_LOAD_ANIM_NONE, 200, 200, true, false);
-        net_row_sel = 1;
         scrECATnet_init();
         break;
     }
@@ -811,8 +805,6 @@ static void scrECATregs_tableSlave_event_handler (lv_event_t *e)
             //lv_obj_t * txt;
             uint32_t n_rows = lv_table_get_row_count(table);
             uint32_t n_cols = lv_table_get_column_count(table);
-            //if ( row > 0 && row <= 5 /* numero slave presenti*/ )
-            //    regs_row_sel = row;
             // Crea il popup (Message Box)
             lv_obj_t * mbox = lv_msgbox_create(NULL);
             /* IMPORTANTISSIMO */
@@ -985,7 +977,6 @@ static void scrECATlost_contRegs_event_handler (lv_event_t *e)
     case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.scrECATregs, guider_ui.scrECATregs_del, &guider_ui.scrECATlost_del, setup_scr_scrECATregs, LV_SCR_LOAD_ANIM_NONE, 200, 200, true, false);
-        regs_row_sel = 1;
         // la finestra va inizializzata tutte le volte
         scrECATregs_init();
         break;
@@ -1017,7 +1008,6 @@ static void scrECATlost_contNet_event_handler (lv_event_t *e)
     case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.scrECATnet, guider_ui.scrECATnet_del, &guider_ui.scrECATlost_del, setup_scr_scrECATnet, LV_SCR_LOAD_ANIM_NONE, 200, 200, true, false);
-        net_row_sel = 1;
         scrECATnet_init();
         break;
     }
@@ -1090,7 +1080,6 @@ static void scrECATband_contRegs_event_handler (lv_event_t *e)
     case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.scrECATregs, guider_ui.scrECATregs_del, &guider_ui.scrECATband_del, setup_scr_scrECATregs, LV_SCR_LOAD_ANIM_NONE, 200, 200, true, false);
-        regs_row_sel = 1;
         // la finestra va inizializzata tutte le volte
         scrECATregs_init();
         break;
@@ -1122,7 +1111,6 @@ static void scrECATband_contNet_event_handler (lv_event_t *e)
     case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.scrECATnet, guider_ui.scrECATnet_del, &guider_ui.scrECATband_del, setup_scr_scrECATnet, LV_SCR_LOAD_ANIM_NONE, 200, 200, true, false);
-        net_row_sel = 1;
         scrECATnet_init();
         break;
     }

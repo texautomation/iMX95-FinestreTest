@@ -46,7 +46,7 @@ static lv_point_t obj_start;
 static const lv_coord_t net_tableNetwork_col_w[] = {300, 200, 200, 217};
 static const lv_coord_t net_tableConfig_col_w[] = {120,110,110,110,110,110,120,127};
 static const lv_coord_t net_tableSlave_col_w[] = {70,135,160,115};
-static const lv_coord_t net_tableInOut_col_w[] = {350,40,90};
+static const lv_coord_t net_tableInOut_col_w[] = {330,40,110};
 static const lv_coord_t net_tableEmcy_col_w[] = {110,127,33,33,33,33,33,33};
 static const lv_coord_t net_tableInfoDC_col_w[] = {130,305};
 
@@ -63,16 +63,12 @@ static const char* const NodeSTM[]      =  {"force init",         "autoinc stat"
                                      "read st.code",       "error ack",          "EoE",                "write file",
                                      "read file",          "fatal" };
 
-static const unsigned short days_tab[]={0, 31, 31+28, 31+28+31, 31+28+31+30, 31+28+31+30+31,
-	31+28+31+30+31+30, 31+28+31+30+31+30+31, 31+28+31+30+31+30+31+31,
-	31+28+31+30+31+30+31+31+30, 31+28+31+30+31+30+31+31+30+31,
-	31+28+31+30+31+30+31+31+30+31+30,365};
-	
 /**********************
  *  GLOBAL VARIABLES
  **********************/
 volatile int net_row_sel = 1; 
- 
+int net_row_sel_prev = 1;
+
 void select_row_table_draw_event_cb(lv_event_t * e);
 
 /**
@@ -90,26 +86,28 @@ static const char *get_node_status(int state)
 void update_scrECATnet(void)
 {
 	char buffer[128];
-	int SlaveIndex, subIndex, row, rowSel;;
-    // 2. Aggiorna i dati della screen
+	int SlaveIndex, subIndex, row, rowSel;
+    uint32_t n_rows, n_cols;
+    int n_input, n_output;
+
+    // Aggiorna i dati della screen
 	sem_wait(SLAVE_INFO_sem);
     sem_wait(SLAVE_DATA_sem);
-	//slave selezionato: slave 1
-	rowSel = net_row_sel;
-    if ( ( rowSel <= 0 ) || ( rowSel > ECAT_NUM_SLAVES ) )
-	{
-
-		sem_post(SLAVE_INFO_sem);
-		sem_post(SLAVE_DATA_sem);
-		return;
-	}
+    // slave selezionato di default: slave 1
+    if ( net_row_sel < 1 ) 
+        net_row_sel = 1;
+    else if ( net_row_sel > slaveNum ) 
+        net_row_sel = slaveNum;    
+	rowSel = net_row_sel;    
+    n_rows = lv_table_get_row_count(guider_ui.scrECATnet_tableSlave);
+    n_cols = lv_table_get_column_count(guider_ui.scrECATnet_tableSlave);
 	//--------------------------------------------------------------------------------------------------
 	// slave data
 	//--------------------------------------------------------------------------------------------------
-	for	( SlaveIndex = 0; SlaveIndex < ECAT_NUM_SLAVES/*numero slave rilevati e comunque SlaveIndex < ECATSM_MAX_SLAVE_INDEX*/; SlaveIndex++ )
+	for	( SlaveIndex = 0; SlaveIndex < slaveNum; SlaveIndex++ )
 	{
 		ECATFRK_SLAVE_DATA *slave = &(SLAVE_DATA_shm->sharedMemorySlaveData[SlaveIndex]);
-		ECATFRK_SLAVE_INFORMATION *info =	&(SLAVE_INFO_shm->sharedMemorySlaveInformation[SlaveIndex]);
+		ECATFRK_SLAVE_INFORMATION *info = &(SLAVE_INFO_shm->sharedMemorySlaveInformation[SlaveIndex]);
 		int time = slave->timeout_uS / 1000;
 		//----------------------------------------------------------------------------------------------
 		// column 0 -> address
@@ -152,36 +150,67 @@ void update_scrECATnet(void)
 			lv_table_set_cell_value ( guider_ui.scrECATnet_tableSlave,SlaveIndex+1,3, buffer );
 		}	
 	}
+    //ripulisco le restanti righe della tableslave, saltando l'intestazione
+	for ( ; SlaveIndex < (n_rows - 1); SlaveIndex++ )
+	{
+        for ( int j = 0; j < n_cols; j++ )
+            lv_table_set_cell_value(guider_ui.scrECATnet_tableSlave, SlaveIndex+1, j, "");
+	}	
     //------------------------------------------------------------------------------------------------
 	// input data
-	//------------------------------------------------------------------------------------------------
+	//------------------------------------------------------------------------------------------------   
+    n_rows = lv_table_get_row_count(guider_ui.scrECATnet_tableInput);
+    n_cols = lv_table_get_column_count(guider_ui.scrECATnet_tableInput);
 	for ( row = 0; row < SLAVE_DATA_shm->sharedMemorySlaveData[rowSel-1].inputVarNum; row++ )
 	{
-		if ( row >= ECATFK_MAX_INPUT_VAR )
-			break;
 		ECATFRK_SLAVE_VARIABLE *varIn = &(SLAVE_DATA_shm->sharedMemorySlaveData[rowSel-1].varInput[row]);
     	lv_table_set_cell_value ( guider_ui.scrECATnet_tableInput,row,0,(char *)varIn->name );
 		snprintf ( buffer, sizeof(buffer), "%2d", varIn->size ); 
 		lv_table_set_cell_value ( guider_ui.scrECATnet_tableInput,row,1, buffer );
 		lv_table_set_cell_value ( guider_ui.scrECATnet_tableInput,row,2,(char *)varIn->value );
-		for(int c = 0; c < 3; c++) 
-            lv_table_set_cell_ctrl(guider_ui.scrECATnet_tableInput, row, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
+    }	
+    // pulisco quelle in eccesso
+    for ( ; row < n_rows; row++ )
+    {
+        for ( int j = 0; j < n_cols; j++ )
+            lv_table_set_cell_value(guider_ui.scrECATnet_tableInput, row, j, "");
+    }	
+    // Se è stato selezionato uno slave diverso, riporto lo scroll all'inizio della tabella
+    if ( net_row_sel_prev != net_row_sel )
+    {
+        lv_obj_update_layout(guider_ui.scrECATnet_contInput);
+        lv_obj_update_layout(guider_ui.scrECATnet_tableInput);
+        lv_obj_scroll_to_y(guider_ui.scrECATnet_contInput, 0, LV_ANIM_OFF);
+        lv_obj_scroll_to_y(guider_ui.scrECATnet_tableInput, 0, LV_ANIM_OFF); 
     }
     //------------------------------------------------------------------------------------------------
 	// output data
 	//------------------------------------------------------------------------------------------------
-    for ( row = 0; row < SLAVE_DATA_shm->sharedMemorySlaveData[rowSel-1].outputVarNum; row++ )
+    n_rows = lv_table_get_row_count(guider_ui.scrECATnet_tableOutput);
+    n_cols = lv_table_get_column_count(guider_ui.scrECATnet_tableOutput);
+	for ( row = 0; row < SLAVE_DATA_shm->sharedMemorySlaveData[rowSel-1].outputVarNum; row++ )
 	{
-		if ( row >= ECATFK_MAX_OUTPUT_VAR )
-			break;
 		ECATFRK_SLAVE_VARIABLE *varOut = &(SLAVE_DATA_shm->sharedMemorySlaveData[rowSel-1].varOutput[row]);
     	lv_table_set_cell_value(guider_ui.scrECATnet_tableOutput,row,0,(char*)varOut->name);
     	snprintf ( buffer, sizeof(buffer), "%2d", varOut->size ); 
 		lv_table_set_cell_value ( guider_ui.scrECATnet_tableOutput,row,1, buffer );
-		lv_table_set_cell_value ( guider_ui.scrECATnet_tableOutput,row,2,(char*)varOut->value );  
-		for(int c = 0; c < 3; c++) 
-            lv_table_set_cell_ctrl(guider_ui.scrECATnet_tableOutput, row, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
-	}
+		lv_table_set_cell_value ( guider_ui.scrECATnet_tableOutput,row,2,(char*)varOut->value ); 
+    }	
+    // pulisco quelle in eccesso
+    for ( ; row < n_rows; row++ )
+    {
+        for ( int j = 0; j < n_cols; j++ )
+            lv_table_set_cell_value(guider_ui.scrECATnet_tableOutput, row, j, "");
+    }	
+    // Se è stato selezionato uno slave diverso, riporto lo scroll all'inizio della tabella
+    if ( net_row_sel_prev != net_row_sel )
+    {
+        net_row_sel_prev = net_row_sel;
+        lv_obj_update_layout(guider_ui.scrECATnet_contOutput);
+        lv_obj_update_layout(guider_ui.scrECATnet_tableOutput);
+        lv_obj_scroll_to_y(guider_ui.scrECATnet_contOutput, 0, LV_ANIM_OFF);
+        lv_obj_scroll_to_y(guider_ui.scrECATnet_tableOutput, 0, LV_ANIM_OFF); 
+    }
     //------------------------------------------------------------------------------------------------
 	// errors & emergency
 	//------------------------------------------------------------------------------------------------
@@ -322,7 +351,23 @@ void set_style_row_0_table(lv_obj_t *table)
 
 void scrECATnet_init(void)
 {
-    int i, r, c;
+    int i, r, c, slaveIndex;
+    uint32_t n_rows = lv_table_get_row_count(guider_ui.scrECATnet_tableSlave);
+    net_row_sel = 1;
+    net_row_sel_prev = 1;
+    /* se il numero di righe della tabella non è sufficiente, ne aggiungo altre.
+     * ATTENZIONE!!! Occorre essere sicuri che nella memoria condivisa i dati siano quelli validi.  
+    */
+    if ( slaveNum > ECATSM_MAX_SLAVE_INDEX ) 
+        slaveNum = ECATSM_MAX_SLAVE_INDEX;
+    if ( slaveNum + 1 > n_rows )
+    {
+        n_rows = slaveNum + 1;
+        lv_table_set_row_count ( guider_ui.scrECATnet_tableSlave, n_rows );
+    }
+    lv_table_set_row_count ( guider_ui.scrECATnet_tableInput, ECATFK_MAX_INPUT_VAR );
+    lv_table_set_row_count ( guider_ui.scrECATnet_tableOutput, ECATFK_MAX_OUTPUT_VAR );
+    // set column width
     for(i = 0; i < sizeof(net_tableNetwork_col_w)/sizeof(net_tableNetwork_col_w[0]); i++) 
         lv_table_set_column_width(guider_ui.scrECATnet_tableNetwork, i, net_tableNetwork_col_w[i]);
     for(i = 0; i < sizeof(net_tableConfig_col_w)/sizeof(net_tableConfig_col_w[0]); i++) 
@@ -346,36 +391,45 @@ void scrECATnet_init(void)
     set_style_row_0_table(guider_ui.scrECATnet_tableNetwork);
     set_style_row_0_table(guider_ui.scrECATnet_tableConfig);
     set_style_row_0_table(guider_ui.scrECATnet_tableSlave);
-    //set_style_row_0_table(guider_ui.scrECATnet_tableInput);
-    //set_style_row_0_table(guider_ui.scrECATnet_tableOutput);
     set_style_row_0_table(guider_ui.scrECATnet_tableAL);
     set_style_row_0_table(guider_ui.scrECATnet_tableEmcy);
     set_style_row_0_table(guider_ui.scrECATnet_tableInfo);
     set_style_row_0_table(guider_ui.scrECATnet_tableDC);
     lv_obj_add_flag(guider_ui.scrECATnet_tableSlave, LV_OBJ_FLAG_SEND_DRAW_TASK_EVENTS);
-    lv_obj_add_event_cb(guider_ui.scrECATnet_tableSlave, select_row_table_draw_event_cb, LV_EVENT_DRAW_TASK_ADDED, NULL);  
+    lv_obj_add_event_cb(guider_ui.scrECATnet_tableSlave, select_row_table_draw_event_cb, LV_EVENT_DRAW_TASK_ADDED, NULL); 
     // Applica il CLIP (crop) a tutte le celle
-    for(r = 0; r < 10; r++) {
-        for(c = 0; c < 4; c++) {
+    for(r = 0; r < n_rows; r++) 
+    {
+        for(c = 0; c < 4; c++) 
             lv_table_set_cell_ctrl(guider_ui.scrECATnet_tableSlave, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
-        }
+    }
+    for(r = 0; r < ECATFK_MAX_INPUT_VAR; r++) 
+    {
+        for(c = 0; c < 3; c++) 
+            lv_table_set_cell_ctrl(guider_ui.scrECATnet_tableInput, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
+    }
+    for(r = 0; r < ECATFK_MAX_OUTPUT_VAR; r++) 
+    {
+        for(c = 0; c < 3; c++) 
+            lv_table_set_cell_ctrl(guider_ui.scrECATnet_tableOutput, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
     }
     for(r = 0; r < 3; r++) 
         lv_table_set_cell_ctrl(guider_ui.scrECATnet_tableAL, r, 0, LV_TABLE_CELL_CTRL_TEXT_CROP);
-    for(r = 0; r < 7; r++) {
-        for(c = 0; c < 8; c++) {
+    for(r = 0; r < 7; r++) 
+    {
+        for(c = 0; c < 8; c++)
             lv_table_set_cell_ctrl(guider_ui.scrECATnet_tableEmcy, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
-        }
+
     }
-    for(r = 0; r < 10; r++) {
-        for(c = 0; c < 2; c++) {
+    for(r = 0; r < 10; r++) 
+    {
+        for(c = 0; c < 2; c++) 
             lv_table_set_cell_ctrl(guider_ui.scrECATnet_tableInfo, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
-        }
     }
-    for(r = 0; r < 6; r++) {
-        for(c = 0; c < 2; c++) {
+    for(r = 0; r < 6; r++) 
+    {
+        for(c = 0; c < 2; c++) 
             lv_table_set_cell_ctrl(guider_ui.scrECATnet_tableDC, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
-        }
     }
 }
 
@@ -567,7 +621,7 @@ void msgbox_event_cb(lv_event_t * e)
     lv_table_get_selected_cell(table, &row, &col);
 	
     /* ignora header */
-    if((row == 0) || (row > ECAT_NUM_SLAVES ))
+    if((row == 0) || (row > slaveNum ))
         return;
 	
     lv_obj_t * content = lv_obj_get_parent(table);

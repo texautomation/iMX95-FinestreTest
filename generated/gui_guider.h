@@ -153,39 +153,39 @@ typedef struct
 	lv_obj_t *scrECATmsgs_labelMain;
 	lv_obj_t *scrECATmsgs_contWin;
 	lv_obj_t *scrECATmsgs_contError;
-	lv_obj_t *scrECATmsgs_tableError;
 	lv_obj_t *scrECATmsgs_contError5;
 	lv_obj_t *scrECATmsgs_contError4;
 	lv_obj_t *scrECATmsgs_contError3;
 	lv_obj_t *scrECATmsgs_contError2;
 	lv_obj_t *scrECATmsgs_contError1;
+	lv_obj_t *scrECATmsgs_tableError;
 	lv_obj_t *scrECATmsgs_contTitleError;
 	lv_obj_t *scrECATmsgs_labelTitleError;
 	lv_obj_t *scrECATmsgs_contWarning;
-	lv_obj_t *scrECATmsgs_tableWarning;
 	lv_obj_t *scrECATmsgs_contWarning5;
 	lv_obj_t *scrECATmsgs_contWarning4;
 	lv_obj_t *scrECATmsgs_contWarning3;
 	lv_obj_t *scrECATmsgs_contWarning2;
 	lv_obj_t *scrECATmsgs_contWarning1;
+	lv_obj_t *scrECATmsgs_tableWarning;
 	lv_obj_t *scrECATmsgs_contTitleWarning;
 	lv_obj_t *scrECATmsgs_labelTitleWarning;
 	lv_obj_t *scrECATmsgs_contInfo;
-	lv_obj_t *scrECATmsgs_tableInfo;
 	lv_obj_t *scrECATmsgs_contInfo5;
 	lv_obj_t *scrECATmsgs_contInfo4;
 	lv_obj_t *scrECATmsgs_contInfo3;
 	lv_obj_t *scrECATmsgs_contInfo2;
 	lv_obj_t *scrECATmsgs_contInfo1;
+	lv_obj_t *scrECATmsgs_tableInfo;
 	lv_obj_t *scrECATmsgs_contTitleInfo;
 	lv_obj_t *scrECATmsgs_labelTitleInfo;
 	lv_obj_t *scrECATmsgs_contDebug;
-	lv_obj_t *scrECATmsgs_tableDebug;
 	lv_obj_t *scrECATmsgs_contDebug5;
 	lv_obj_t *scrECATmsgs_contDebug4;
 	lv_obj_t *scrECATmsgs_contDebug3;
 	lv_obj_t *scrECATmsgs_contDebug2;
 	lv_obj_t *scrECATmsgs_contDebug1;
+	lv_obj_t *scrECATmsgs_tableDebug;
 	lv_obj_t *scrECATmsgs_contTitleDebug;
 	lv_obj_t *scrECATmsgs_labelTitleDebug;
 	lv_obj_t *scrECATmsgs_contConfig;
@@ -271,6 +271,8 @@ typedef struct
 	lv_obj_t *scrECATregs_tableFwRxError;
 	lv_obj_t *scrECATregs_contRxError;
 	lv_obj_t *scrECATregs_tableRxError;
+	lv_obj_t *scrECATregs_contEscDLStatus;
+	lv_obj_t *scrECATregs_tableEscDLStatus;
 	lv_obj_t *scrECATregs_contSlave;
 	lv_obj_t *scrECATregs_tableSlave;
 	lv_obj_t *scrECATregs_contSlaveTitle;
@@ -635,11 +637,11 @@ LV_IMAGE_DECLARE(_log_RGB565A8_100x100);
 LV_IMAGE_DECLARE(_main_RGB565A8_100x100);
 
 LV_FONT_DECLARE(lv_font_montserratMedium_18)
-LV_FONT_DECLARE(lv_font_montserratMedium_12)
+LV_FONT_DECLARE(lv_font_montserratMedium_16)
 LV_FONT_DECLARE(lv_font_montserratMedium_13)
 LV_FONT_DECLARE(lv_font_montserratMedium_14)
 LV_FONT_DECLARE(lv_font_montserratMedium_28)
-LV_FONT_DECLARE(lv_font_montserratMedium_16)
+LV_FONT_DECLARE(lv_font_montserratMedium_12)
 
 
 #ifdef __cplusplus

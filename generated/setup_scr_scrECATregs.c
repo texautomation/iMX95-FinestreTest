@@ -951,10 +951,72 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_obj_set_style_pad_left(ui->scrECATregs_tableRxError, 3, LV_PART_ITEMS|LV_STATE_DEFAULT);
     lv_obj_set_style_pad_right(ui->scrECATregs_tableRxError, 3, LV_PART_ITEMS|LV_STATE_DEFAULT);
 
+    //Write codes scrECATregs_contEscDLStatus
+    ui->scrECATregs_contEscDLStatus = lv_obj_create(ui->scrECATregs_contWin);
+    lv_obj_set_pos(ui->scrECATregs_contEscDLStatus, 0, 240);
+    lv_obj_set_size(ui->scrECATregs_contEscDLStatus, 917, 60);
+    lv_obj_set_scrollbar_mode(ui->scrECATregs_contEscDLStatus, LV_SCROLLBAR_MODE_OFF);
+    lv_obj_remove_flag(ui->scrECATregs_contEscDLStatus, LV_OBJ_FLAG_SCROLLABLE);
+
+    //Write style for scrECATregs_contEscDLStatus, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_border_width(ui->scrECATregs_contEscDLStatus, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->scrECATregs_contEscDLStatus, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->scrECATregs_contEscDLStatus, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui->scrECATregs_contEscDLStatus, lv_color_hex(0xe1e6ee), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_grad_dir(ui->scrECATregs_contEscDLStatus, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui->scrECATregs_contEscDLStatus, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->scrECATregs_contEscDLStatus, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->scrECATregs_contEscDLStatus, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->scrECATregs_contEscDLStatus, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->scrECATregs_contEscDLStatus, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+    //Write codes scrECATregs_tableEscDLStatus
+    ui->scrECATregs_tableEscDLStatus = lv_table_create(ui->scrECATregs_contEscDLStatus);
+    lv_obj_set_pos(ui->scrECATregs_tableEscDLStatus, 0, 0);
+    lv_obj_set_scrollbar_mode(ui->scrECATregs_tableEscDLStatus, LV_SCROLLBAR_MODE_OFF);
+    lv_obj_add_flag(ui->scrECATregs_tableEscDLStatus, LV_OBJ_FLAG_EVENT_BUBBLE);
+    lv_table_set_column_count(ui->scrECATregs_tableEscDLStatus,2);
+    lv_table_set_row_count(ui->scrECATregs_tableEscDLStatus,3);
+    lv_table_set_cell_value(ui->scrECATregs_tableEscDLStatus,0,0,"ESC DL status");
+    lv_table_set_cell_value(ui->scrECATregs_tableEscDLStatus,1,0,"0x0110");
+    lv_table_set_cell_value(ui->scrECATregs_tableEscDLStatus,2,0,"0x0111");
+    lv_table_set_cell_value(ui->scrECATregs_tableEscDLStatus,0,1,"");
+    lv_table_set_cell_value(ui->scrECATregs_tableEscDLStatus,1,1,"");
+    lv_table_set_cell_value(ui->scrECATregs_tableEscDLStatus,2,1,"");
+
+    //Write style for scrECATregs_tableEscDLStatus, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_pad_top(ui->scrECATregs_tableEscDLStatus, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->scrECATregs_tableEscDLStatus, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->scrECATregs_tableEscDLStatus, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->scrECATregs_tableEscDLStatus, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->scrECATregs_tableEscDLStatus, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui->scrECATregs_tableEscDLStatus, lv_color_hex(0xb0b0b0), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_grad_dir(ui->scrECATregs_tableEscDLStatus, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_width(ui->scrECATregs_tableEscDLStatus, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->scrECATregs_tableEscDLStatus, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->scrECATregs_tableEscDLStatus, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+    //Write style for scrECATregs_tableEscDLStatus, Part: LV_PART_ITEMS, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_text_color(ui->scrECATregs_tableEscDLStatus, lv_color_hex(0x000000), LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui->scrECATregs_tableEscDLStatus, &lv_font_montserratMedium_14, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui->scrECATregs_tableEscDLStatus, 255, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui->scrECATregs_tableEscDLStatus, LV_TEXT_ALIGN_LEFT, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->scrECATregs_tableEscDLStatus, 255, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui->scrECATregs_tableEscDLStatus, lv_color_hex(0xb0b0b0), LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_grad_dir(ui->scrECATregs_tableEscDLStatus, LV_GRAD_DIR_NONE, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_width(ui->scrECATregs_tableEscDLStatus, 1, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_opa(ui->scrECATregs_tableEscDLStatus, 255, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_color(ui->scrECATregs_tableEscDLStatus, lv_color_hex(0xd5dee6), LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_side(ui->scrECATregs_tableEscDLStatus, LV_BORDER_SIDE_TOP | LV_BORDER_SIDE_BOTTOM, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui->scrECATregs_tableEscDLStatus, 3, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->scrECATregs_tableEscDLStatus, 3, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->scrECATregs_tableEscDLStatus, 3, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->scrECATregs_tableEscDLStatus, 3, LV_PART_ITEMS|LV_STATE_DEFAULT);
+
     //Write codes scrECATregs_contSlave
     ui->scrECATregs_contSlave = lv_obj_create(ui->scrECATregs_contWin);
     lv_obj_set_pos(ui->scrECATregs_contSlave, 0, 0);
-    lv_obj_set_size(ui->scrECATregs_contSlave, 917, 300);
+    lv_obj_set_size(ui->scrECATregs_contSlave, 917, 240);
     lv_obj_set_scrollbar_mode(ui->scrECATregs_contSlave, LV_SCROLLBAR_MODE_OFF);
     lv_obj_remove_flag(ui->scrECATregs_contSlave, LV_OBJ_FLAG_SCROLLABLE);
 
@@ -976,7 +1038,7 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_obj_set_scrollbar_mode(ui->scrECATregs_tableSlave, LV_SCROLLBAR_MODE_OFF);
     lv_obj_add_flag(ui->scrECATregs_tableSlave, LV_OBJ_FLAG_EVENT_BUBBLE);
     lv_table_set_column_count(ui->scrECATregs_tableSlave,23);
-    lv_table_set_row_count(ui->scrECATregs_tableSlave,14);
+    lv_table_set_row_count(ui->scrECATregs_tableSlave,11);
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,0,"slave");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,1,0,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,2,0,"");
@@ -988,9 +1050,6 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,8,0,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,9,0,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,10,0,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,11,0,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,12,0,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,13,0,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,1,"vendor");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,1,1,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,2,1,"");
@@ -1002,9 +1061,6 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,8,1,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,9,1,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,10,1,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,11,1,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,12,1,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,13,1,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,2,"product");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,1,2,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,2,2,"");
@@ -1016,10 +1072,7 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,8,2,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,9,2,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,10,2,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,11,2,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,12,2,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,13,2,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,3,"00");
+    lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,3,"10");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,1,3,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,2,3,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,3,3,"");
@@ -1030,10 +1083,7 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,8,3,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,9,3," ");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,10,3,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,11,3,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,12,3,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,13,3,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,4,"01");
+    lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,4,"11");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,1,4,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,2,4,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,3,4,"");
@@ -1044,9 +1094,6 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,8,4,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,9,4,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,10,4,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,11,4,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,12,4,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,13,4,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,5,"00");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,1,5,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,2,5,"");
@@ -1058,9 +1105,6 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,8,5,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,9,5,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,10,5,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,11,5,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,12,5,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,13,5,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,6,"01");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,1,6,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,2,6,"");
@@ -1072,9 +1116,6 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,8,6,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,9,6,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,10,6,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,11,6,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,12,6,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,13,6,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,7,"02");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,1,7,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,2,7,"");
@@ -1086,9 +1127,6 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,8,7,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,9,7,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,10,7,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,11,7,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,12,7,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,13,7,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,8,"03");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,1,8,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,2,8,"");
@@ -1100,9 +1138,6 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,8,8,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,9,8,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,10,8,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,11,8,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,12,8,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,13,8,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,9,"04");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,1,9,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,2,9,"");
@@ -1114,9 +1149,6 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,8,9,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,9,9,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,10,9,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,11,9,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,12,9,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,13,9,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,10,"05");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,1,10,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,2,10,"");
@@ -1128,9 +1160,6 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,8,10,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,9,10,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,10,10,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,11,10,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,12,10,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,13,10,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,11,"06");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,1,11,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,2,11,"");
@@ -1142,9 +1171,6 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,8,11,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,9,11,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,10,11,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,11,11,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,12,11,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,13,11,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,12,"07");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,1,12,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,2,12,"");
@@ -1156,9 +1182,6 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,8,12,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,9,12,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,10,12,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,11,12,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,12,12,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,13,12,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,13,"08");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,1,13,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,2,13,"");
@@ -1170,9 +1193,6 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,8,13,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,9,13,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,10,13,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,11,13,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,12,13,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,13,13,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,14,"09");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,1,14,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,2,14,"");
@@ -1184,9 +1204,6 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,8,14,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,9,14,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,10,14,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,11,14,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,12,14,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,13,14,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,15,"0A");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,1,15,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,2,15,"");
@@ -1198,9 +1215,6 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,8,15,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,9,15,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,10,15,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,11,15,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,12,15,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,13,15,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,16,"0B");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,1,16,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,2,16,"");
@@ -1212,9 +1226,6 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,8,16,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,9,16,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,10,16,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,11,16,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,12,16,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,13,16,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,17,"0C");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,1,17,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,2,17,"");
@@ -1226,9 +1237,6 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,8,17,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,9,17,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,10,17,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,11,17,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,12,17,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,13,17,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,18,"0D");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,1,18,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,2,18,"");
@@ -1240,9 +1248,6 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,8,18,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,9,18,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,10,18,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,11,18,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,12,18,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,13,18,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,19,"10");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,1,19,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,2,19,"");
@@ -1254,9 +1259,6 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,8,19,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,9,19,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,10,19,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,11,19,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,12,19,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,13,19,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,20,"11");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,1,20,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,2,20,"");
@@ -1268,9 +1270,6 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,8,20,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,9,20,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,10,20,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,11,20,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,12,20,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,13,20,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,21,"12");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,1,21,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,2,21,"");
@@ -1282,9 +1281,6 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,8,21,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,9,21,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,10,21,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,11,21,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,12,21,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,13,21,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,0,22,"13");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,1,22,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,2,22,"");
@@ -1296,9 +1292,6 @@ void setup_scr_scrECATregs(lv_ui *ui)
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,8,22,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,9,22,"");
     lv_table_set_cell_value(ui->scrECATregs_tableSlave,10,22,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,11,22,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,12,22,"");
-    lv_table_set_cell_value(ui->scrECATregs_tableSlave,13,22,"");
 
     //Write style for scrECATregs_tableSlave, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
     lv_obj_set_style_pad_top(ui->scrECATregs_tableSlave, 0, LV_PART_MAIN|LV_STATE_DEFAULT);

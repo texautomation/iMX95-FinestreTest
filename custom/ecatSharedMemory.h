@@ -40,7 +40,7 @@ extern "C" {
 /****************************************************************************
 * definizioni *
 **************/
-#define ECATSM_MAX_SLAVE_INDEX	128
+#define ECATSM_MAX_SLAVE_INDEX	127
 /***************************************************************************/
 
 /****************************************************************************
@@ -49,7 +49,7 @@ extern "C" {
 typedef struct smESCregisters
 {
 	#define ESC_REGISTERS_0x0110 2
-	#define ESC_REGISTERS_0x0300 19
+	#define ESC_REGISTERS_0x0300 20
 	uint8_t sharedMemoryRegister_0x110_to_0x111[ECATSM_MAX_SLAVE_INDEX][ESC_REGISTERS_0x0110];
 	uint8_t sharedMemoryRegister_0x300_to_0x313[ECATSM_MAX_SLAVE_INDEX][ESC_REGISTERS_0x0300];
 } smESCregisters;

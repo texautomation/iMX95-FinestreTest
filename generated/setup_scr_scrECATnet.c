@@ -997,8 +997,8 @@ void setup_scr_scrECATnet(lv_ui *ui)
 
     //Write codes scrECATnet_labelTitleOutput3
     ui->scrECATnet_labelTitleOutput3 = lv_label_create(ui->scrECATnet_contTitleOutput);
-    lv_obj_set_pos(ui->scrECATnet_labelTitleOutput3, 393, 3);
-    lv_obj_set_size(ui->scrECATnet_labelTitleOutput3, 87, 14);
+    lv_obj_set_pos(ui->scrECATnet_labelTitleOutput3, 373, 3);
+    lv_obj_set_size(ui->scrECATnet_labelTitleOutput3, 107, 14);
     lv_label_set_text(ui->scrECATnet_labelTitleOutput3, "value");
     lv_label_set_long_mode(ui->scrECATnet_labelTitleOutput3, LV_LABEL_LONG_WRAP);
 
@@ -1020,7 +1020,7 @@ void setup_scr_scrECATnet(lv_ui *ui)
 
     //Write codes scrECATnet_labelTitleOutput2
     ui->scrECATnet_labelTitleOutput2 = lv_label_create(ui->scrECATnet_contTitleOutput);
-    lv_obj_set_pos(ui->scrECATnet_labelTitleOutput2, 353, 3);
+    lv_obj_set_pos(ui->scrECATnet_labelTitleOutput2, 333, 3);
     lv_obj_set_size(ui->scrECATnet_labelTitleOutput2, 40, 14);
     lv_label_set_text(ui->scrECATnet_labelTitleOutput2, "size");
     lv_label_set_long_mode(ui->scrECATnet_labelTitleOutput2, LV_LABEL_LONG_WRAP);
@@ -1044,7 +1044,7 @@ void setup_scr_scrECATnet(lv_ui *ui)
     //Write codes scrECATnet_labelTitleOutput1
     ui->scrECATnet_labelTitleOutput1 = lv_label_create(ui->scrECATnet_contTitleOutput);
     lv_obj_set_pos(ui->scrECATnet_labelTitleOutput1, 3, 3);
-    lv_obj_set_size(ui->scrECATnet_labelTitleOutput1, 350, 14);
+    lv_obj_set_size(ui->scrECATnet_labelTitleOutput1, 330, 14);
     lv_label_set_text(ui->scrECATnet_labelTitleOutput1, "output data");
     lv_label_set_long_mode(ui->scrECATnet_labelTitleOutput1, LV_LABEL_LONG_WRAP);
 
@@ -1159,8 +1159,8 @@ void setup_scr_scrECATnet(lv_ui *ui)
 
     //Write codes scrECATnet_labelTitleInput3
     ui->scrECATnet_labelTitleInput3 = lv_label_create(ui->scrECATnet_contTitleInput);
-    lv_obj_set_pos(ui->scrECATnet_labelTitleInput3, 393, 3);
-    lv_obj_set_size(ui->scrECATnet_labelTitleInput3, 87, 14);
+    lv_obj_set_pos(ui->scrECATnet_labelTitleInput3, 373, 3);
+    lv_obj_set_size(ui->scrECATnet_labelTitleInput3, 107, 14);
     lv_label_set_text(ui->scrECATnet_labelTitleInput3, "value");
     lv_label_set_long_mode(ui->scrECATnet_labelTitleInput3, LV_LABEL_LONG_WRAP);
 
@@ -1182,7 +1182,7 @@ void setup_scr_scrECATnet(lv_ui *ui)
 
     //Write codes scrECATnet_labelTitleInput2
     ui->scrECATnet_labelTitleInput2 = lv_label_create(ui->scrECATnet_contTitleInput);
-    lv_obj_set_pos(ui->scrECATnet_labelTitleInput2, 353, 3);
+    lv_obj_set_pos(ui->scrECATnet_labelTitleInput2, 333, 3);
     lv_obj_set_size(ui->scrECATnet_labelTitleInput2, 40, 14);
     lv_label_set_text(ui->scrECATnet_labelTitleInput2, "size");
     lv_label_set_long_mode(ui->scrECATnet_labelTitleInput2, LV_LABEL_LONG_WRAP);
@@ -1206,7 +1206,7 @@ void setup_scr_scrECATnet(lv_ui *ui)
     //Write codes scrECATnet_labelTitleInput1
     ui->scrECATnet_labelTitleInput1 = lv_label_create(ui->scrECATnet_contTitleInput);
     lv_obj_set_pos(ui->scrECATnet_labelTitleInput1, 3, 3);
-    lv_obj_set_size(ui->scrECATnet_labelTitleInput1, 350, 14);
+    lv_obj_set_size(ui->scrECATnet_labelTitleInput1, 330, 14);
     lv_label_set_text(ui->scrECATnet_labelTitleInput1, "input data");
     lv_label_set_long_mode(ui->scrECATnet_labelTitleInput1, LV_LABEL_LONG_WRAP);
 
