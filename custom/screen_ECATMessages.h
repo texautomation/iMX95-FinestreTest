@@ -16,8 +16,8 @@ extern "C" {
 extern smNetworkLogger *NETLOG_shm;
 extern sem_t* NETLOG_sem;
 
-extern void scrECATmsgs_init(void);
-extern void update_scrECATmsgs(void);
+void update_scrECATmsgs(void);
+void scrECATmsgs_init(void);
 
 #ifdef __cplusplus
 }

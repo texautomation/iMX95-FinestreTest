@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "lvgl.h"
-
+#include "screen_ECATLost.h"
 
 /*********************
  *      DEFINES

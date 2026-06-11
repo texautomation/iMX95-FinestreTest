@@ -25,6 +25,9 @@ extern "C" {
 extern int slaveNum;								/*numero slave presenti*/
 
 void custom_init(lv_ui *ui);
+void select_row_table_draw_event_cb(lv_event_t * e);
+void apri_msgbox_selezione_slave ( lv_event_t *e );
+void set_style_title_table(lv_obj_t *table);
 
 #ifdef __cplusplus
 }

@@ -16,7 +16,6 @@
 #endif
 
 #include "custom.h"
-const lv_coord_t col_w[] = { 140,200,140,140 };
 
 static void scrMain_contDiag_event_handler (lv_event_t *e)
 {
@@ -308,129 +307,7 @@ static void scrECATnet_tableSlave_event_handler (lv_event_t *e)
     switch (code) {
     case LV_EVENT_PRESSED:
     {
-        uint32_t row;
-        uint32_t col;
-        lv_obj_t * table = lv_event_get_target(e);
-        // Ottieni riga e colonna selezionate
-        lv_table_get_selected_cell(table, &row, &col);
-
-        // Controlla se una riga valida è stata cliccata
-        if(row != LV_TABLE_CELL_NONE)
-        {
-            int len, i, j;
-            uint32_t n_rows = lv_table_get_row_count(table);
-            uint32_t n_cols = lv_table_get_column_count(table);
-            // Crea il popup (Message Box)
-            lv_obj_t * mbox = lv_msgbox_create(NULL);
-            /* IMPORTANTISSIMO */
-            lv_obj_clear_flag(mbox, LV_OBJ_FLAG_IGNORE_LAYOUT);
-            /* centra popup */
-            lv_obj_center(mbox);
-            lv_obj_t * title = lv_msgbox_add_title(mbox, "slave list");
-            lv_obj_add_flag(title, LV_OBJ_FLAG_CLICKABLE);
-            lv_obj_add_event_cb(title, drag_event_cb, LV_EVENT_PRESSED, mbox);
-            lv_obj_add_event_cb(title, drag_event_cb, LV_EVENT_PRESSING, mbox);
-            lv_obj_set_size(mbox, 660, 450);
-            lv_obj_t * content = lv_msgbox_get_content(mbox);
-            if ( content == NULL )
-                return;
-#if 0
-            // ✔ Crea lista dentro la msgbox
-            lv_obj_t * list = lv_list_create(content);
-            lv_obj_set_size(list, lv_pct(100), lv_pct(100));
-            lv_obj_add_style(list, &style_scrMain_list_1_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
-            for( i = 1; i < n_rows; i++ )
-            {
-                lv_obj_t * btn;
-                char buf[1024];
-                len = 0;
-                buf[0] = '\0';
-                const char *cell_0 = lv_table_get_cell_value(table, i, 0);
-                if(cell_0 == NULL || cell_0[0] == '\0')
-                    break;
-                for( j = 0; j < n_cols; j++ )
-                {
-                    // Prendi il testo della cella e mostralo nel popup
-                    const char *cell_text = lv_table_get_cell_value(table, i, j);
-                    //if(cell_text == NULL)
-                    //  continue;
-                    int n = snprintf(buf + len, sizeof(buf) - len, (i != 0 && j == 0) ? "\n%s " : "%s ", cell_text);
-                    if ( (n < 0) || (n >= (sizeof(buf) - len) ) )
-                        break;
-                    len += n;
-                }
-#if 0
-                msg_label = lv_msgbox_add_text(mbox, buf);
-                //lv_obj_add_flag(msg_label, LV_OBJ_FLAG_CLICKABLE);
-                if ( i == row )
-                    lv_obj_set_style_text_color(msg_label, lv_palette_main(LV_PALETTE_BLUE), 0);
-                else
-                    lv_obj_set_style_text_color(msg_label, lv_color_hex(0x000000), 0);
-                //lv_obj_add_event_cb(msg_label, msgbox_event_cb, LV_EVENT_CLICKED, NULL);
-#endif
-                btn = lv_list_add_btn(list, NULL, buf);
-                lv_obj_add_style(btn, &style_btn, LV_PART_MAIN);
-                // prendi la label interna del bottone
-                lv_obj_t * label = lv_obj_get_child(btn, 0);
-
-                // disattiva scrolling circolare
-                lv_label_set_long_mode(label, LV_LABEL_LONG_CLIP);
-                lv_obj_add_event_cb(btn, msgbox_event_cb, LV_EVENT_CLICKED, NULL);
-                if ( i == net_row_sel )
-                {
-                    // Applica al bottone
-                    lv_obj_add_style(btn, &style_checked, LV_STATE_CHECKED);
-                    lv_obj_add_state(btn, LV_STATE_CHECKED);
-                }
-            }
-#else
-            /* =========================
-             * TABELLA dentro la msgbox
-             * ========================= */
-            lv_obj_t * tbl = lv_table_create(content);
-            lv_obj_set_size(tbl, lv_pct(100), lv_pct(100));
-            /* numero righe/colonne */
-            lv_table_set_row_count(tbl, n_rows);
-            lv_table_set_column_count(tbl, n_cols);
-            /* larghezza colonne */
-            for(j = 0; j < n_cols; j++)
-            {
-                lv_table_set_column_width(tbl, j, col_w[j]);
-            }
-            /* copia dati */
-            for(i = 0; i < n_rows; i++)
-            {
-                for(j = 0; j < n_cols; j++)
-                {
-                    const char * txt = lv_table_get_cell_value(table, i, j);
-                    lv_table_set_cell_value(tbl, i, j, txt);
-
-                    /* header */
-                    if(i == 0)
-                    {
-                        lv_table_set_cell_ctrl( tbl, i, j, LV_TABLE_CELL_CTRL_CUSTOM_1);
-                    }
-                    /* riga selezionata */
-                    if(i == net_row_sel)
-                    {
-                        lv_table_set_cell_ctrl( tbl, i, j, LV_TABLE_CELL_CTRL_CUSTOM_2);
-                    }
-                }
-            }
-            lv_obj_add_flag(tbl, LV_OBJ_FLAG_SEND_DRAW_TASK_EVENTS);
-            lv_obj_clear_flag(tbl, LV_OBJ_FLAG_SCROLL_CHAIN);
-            lv_obj_add_flag(tbl, LV_OBJ_FLAG_SCROLLABLE);
-            lv_obj_add_flag(tbl, LV_OBJ_FLAG_GESTURE_BUBBLE);
-            lv_obj_add_flag(tbl, LV_OBJ_FLAG_EVENT_BUBBLE);
-            lv_obj_add_event_cb(tbl, table_draw_event_cb, LV_EVENT_DRAW_TASK_ADDED, NULL);
-            lv_obj_add_event_cb(tbl, msgbox_event_cb, LV_EVENT_VALUE_CHANGED, NULL);
-#endif
-            // Aggiungi un pulsante di chiusura
-            lv_msgbox_add_close_button(mbox);
-            // 3. (Opzionale) Aggiungi l'evento anche all'area di contenuto (lo sfondo dietro il testo)
-            //lv_obj_add_flag(content, LV_OBJ_FLAG_CLICKABLE);
-            //lv_obj_add_event_cb(content, msgbox_event_cb, LV_EVENT_CLICKED, mbox);
-        }
+        apri_msgbox_selezione_slave(e);
         break;
     }
     default:
@@ -791,78 +668,7 @@ static void scrECATregs_tableSlave_event_handler (lv_event_t *e)
     switch (code) {
     case LV_EVENT_PRESSED:
     {
-        uint32_t row;
-        uint32_t col;
-        lv_obj_t * table = lv_event_get_target(e);
-        // Ottieni riga e colonna selezionate
-        lv_table_get_selected_cell(table, &row, &col);
-
-        // Controlla se una riga valida è stata cliccata
-        if(row != LV_TABLE_CELL_NONE)
-        {
-            int i, j;
-            //lv_obj_t * msg_label;
-            //lv_obj_t * txt;
-            uint32_t n_rows = lv_table_get_row_count(table);
-            uint32_t n_cols = lv_table_get_column_count(table);
-            // Crea il popup (Message Box)
-            lv_obj_t * mbox = lv_msgbox_create(NULL);
-            /* IMPORTANTISSIMO */
-            lv_obj_clear_flag(mbox, LV_OBJ_FLAG_IGNORE_LAYOUT);
-            /* posizione iniziale
-            lv_obj_set_pos(mbox, 100, 50); */
-            /* centra popup */
-            lv_obj_center(mbox);
-            lv_obj_t * title = lv_msgbox_add_title(mbox, "slave list");
-            lv_obj_add_flag(title, LV_OBJ_FLAG_CLICKABLE);
-            lv_obj_add_event_cb(title, drag_event_cb, LV_EVENT_PRESSED, mbox);
-            lv_obj_add_event_cb(title, drag_event_cb, LV_EVENT_PRESSING, mbox);
-            lv_obj_set_size(mbox, 820, 450);
-            lv_obj_t * content = lv_msgbox_get_content(mbox);
-            if ( content == NULL )
-                return;
-            /* =========================
-             * TABELLA dentro la msgbox
-             * ========================= */
-            lv_obj_t * tbl = lv_table_create(content);
-            lv_obj_set_size(tbl, lv_pct(100), lv_pct(100));
-            /* numero righe/colonne */
-            lv_table_set_row_count(tbl, n_rows);
-            lv_table_set_column_count(tbl, n_cols);
-            for(j = 3; j < n_cols; j++)
-            {
-                lv_table_set_column_width(tbl, j, 70);
-            }
-            /* copia dati */
-            for(i = 0; i < n_rows; i++)
-            {
-                for(j = 0; j < n_cols; j++)
-                {
-                    //const char * txt = lv_table_get_cell_value(table, i, j);
-                    lv_table_set_cell_value(tbl, i, j, lv_table_get_cell_value(table, i, j));
-
-                    /* header */
-                    if(i == 0)
-                    {
-                        lv_table_set_cell_ctrl( tbl, i, j, LV_TABLE_CELL_CTRL_CUSTOM_1);
-                    }
-                    /* riga selezionata */
-                    if(i == regs_row_sel)
-                    {
-                        lv_table_set_cell_ctrl( tbl, i, j, LV_TABLE_CELL_CTRL_CUSTOM_2);
-                    }
-                }
-            }
-            lv_obj_add_flag(tbl, LV_OBJ_FLAG_SEND_DRAW_TASK_EVENTS);
-            lv_obj_clear_flag(tbl, LV_OBJ_FLAG_SCROLL_CHAIN);
-            lv_obj_add_flag(tbl, LV_OBJ_FLAG_SCROLLABLE);
-            lv_obj_add_flag(tbl, LV_OBJ_FLAG_GESTURE_BUBBLE);
-            lv_obj_add_flag(tbl, LV_OBJ_FLAG_EVENT_BUBBLE);
-            lv_obj_add_event_cb(tbl, table_draw_event_cb, LV_EVENT_DRAW_TASK_ADDED, NULL);
-            lv_obj_add_event_cb(tbl, msgbox_event_cb, LV_EVENT_VALUE_CHANGED, NULL);
-            // Aggiungi un pulsante di chiusura
-            lv_msgbox_add_close_button(mbox);
-        }
+        apri_msgbox_selezione_slave(e);
         break;
     }
     default:

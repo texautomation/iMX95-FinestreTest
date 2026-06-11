@@ -13,7 +13,7 @@
  *********************/
 #include <stdio.h>
 #include "lvgl.h"
-
+#include "screen_ECATBandwidth.h"
 
 /*********************
  *      DEFINES

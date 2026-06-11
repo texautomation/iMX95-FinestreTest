@@ -14,7 +14,7 @@ extern "C" {
 #endif
 
 
-extern void update_scrECATband(void);
+void update_scrECATband(void);
 
 #ifdef __cplusplus
 }

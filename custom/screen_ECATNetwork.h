@@ -17,13 +17,10 @@ extern smSlaveInformation * SLAVE_INFO_shm;
 extern sem_t* SLAVE_INFO_sem;
 extern smSlaveData* SLAVE_DATA_shm;
 extern sem_t* SLAVE_DATA_sem;
-extern volatile int regs_row_sel;
+extern int net_row_sel;
 
-extern void scrECATnet_init(void);
-extern void update_scrECATnet(void);
-extern void msgbox_event_cb(lv_event_t * e);
-extern void drag_event_cb(lv_event_t * e);
-extern void table_draw_event_cb(lv_event_t * e);
+void update_scrECATnet(void);
+void scrECATnet_init(void);
 
 #ifdef __cplusplus
 }

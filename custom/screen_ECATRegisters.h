@@ -17,12 +17,11 @@ extern smSlaveInformation * SLAVE_INFO_shm;
 extern sem_t* SLAVE_INFO_sem;
 extern smESCregisters *ESC_shm;
 extern sem_t* ESC_sem;
-extern volatile int net_row_sel;
+extern int regs_row_sel;
 
-extern void ECAT_reset_ESC_registers ( void );
-extern void set_style_row_0_table(lv_obj_t *table);
-extern void scrECATregs_init(void);
-extern void update_scrECATregs(void);
+void ECAT_reset_ESC_registers ( void );
+void update_scrECATregs(void);
+void scrECATregs_init(void);
 
 #ifdef __cplusplus
 }

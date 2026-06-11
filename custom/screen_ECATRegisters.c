@@ -49,9 +49,8 @@ static const lv_coord_t regs_tableSlave_col_w[] = {
 /**********************
  *  GLOBAL VARIABLES
  **********************/
-volatile int regs_row_sel = 1;
+int regs_row_sel = 1;
 
-extern void select_row_table_draw_event_cb(lv_event_t * e);
 
 /**
  * Create a application
@@ -194,13 +193,13 @@ void scrECATregs_init(void)
     lv_table_set_column_width(guider_ui.scrECATregs_tableLL, 0, 817);
     lv_table_set_column_width(guider_ui.scrECATregs_tableLL, 1, 100);
     //modifico lo stile dell' header delle tabelle
-    set_style_row_0_table(guider_ui.scrECATregs_tableSlave);
-    set_style_row_0_table(guider_ui.scrECATregs_tableEscDLStatus);
-    set_style_row_0_table(guider_ui.scrECATregs_tableRxError);
-    set_style_row_0_table(guider_ui.scrECATregs_tableFwRxError);
-    set_style_row_0_table(guider_ui.scrECATregs_tablePDI);
-    set_style_row_0_table(guider_ui.scrECATregs_tablePU);
-    set_style_row_0_table(guider_ui.scrECATregs_tableLL);
+    set_style_title_table(guider_ui.scrECATregs_tableSlave);
+    set_style_title_table(guider_ui.scrECATregs_tableEscDLStatus);
+    set_style_title_table(guider_ui.scrECATregs_tableRxError);
+    set_style_title_table(guider_ui.scrECATregs_tableFwRxError);
+    set_style_title_table(guider_ui.scrECATregs_tablePDI);
+    set_style_title_table(guider_ui.scrECATregs_tablePU);
+    set_style_title_table(guider_ui.scrECATregs_tableLL);
     // draw flags + callbacks (una sola volta!)
     // colore del testo nella riga selezionata
     lv_obj_add_flag(guider_ui.scrECATregs_tableSlave, LV_OBJ_FLAG_SEND_DRAW_TASK_EVENTS);

@@ -21,9 +21,7 @@
 /*********************
  *      DEFINES
  *********************/
-#ifndef ETHERCAT_MAX_ROW_SLAVE
-    #define ETHERCAT_MAX_ROW_SLAVE          9
-#endif
+#define ETHERCAT_MAX_ROW_SLAVE_TABLE      9
 
 
 /**********************
@@ -34,15 +32,11 @@
 /**********************
  *  STATIC PROTOTYPES
  **********************/
-static void title_table_draw_event_cb(lv_event_t * e);
 
 
 /**********************
  *  STATIC VARIABLES
  **********************/
-static lv_point_t drag_start;
-static lv_point_t obj_start;
- 
 static const lv_coord_t net_tableNetwork_col_w[] = {300, 200, 200, 217};
 static const lv_coord_t net_tableConfig_col_w[] = {120,110,110,110,110,110,120,127};
 static const lv_coord_t net_tableSlave_col_w[] = {70,135,160,115};
@@ -66,10 +60,9 @@ static const char* const NodeSTM[]      =  {"force init",         "autoinc stat"
 /**********************
  *  GLOBAL VARIABLES
  **********************/
-volatile int net_row_sel = 1; 
+int net_row_sel = 1; 
 int net_row_sel_prev = 1;
 
-void select_row_table_draw_event_cb(lv_event_t * e);
 
 /**
  * Create a application
@@ -214,7 +207,7 @@ void update_scrECATnet(void)
     //------------------------------------------------------------------------------------------------
 	// errors & emergency
 	//------------------------------------------------------------------------------------------------
-    for ( row = 1; row <= ETHERCAT_MAX_ROW_SLAVE; row++ )
+    for ( row = 1; row <= ETHERCAT_MAX_ROW_SLAVE_TABLE; row++ )
 	{
 		switch ( row )
 		{   
@@ -335,20 +328,6 @@ void update_scrECATnet(void)
     sem_post(SLAVE_DATA_sem);
 }
 
-// definisco lo stile per il titolo delle tabelle
-void set_style_row_0_table(lv_obj_t *table)
-{
-    uint16_t col_cnt = lv_table_get_col_cnt(table);
-    /* segno la riga 0 come header (custom flag) */
-    for(uint16_t col = 0; col < col_cnt; col++) 
-    {
-        lv_table_set_cell_ctrl(table, 0, col, LV_TABLE_CELL_CTRL_CUSTOM_1);
-    }
-    lv_obj_add_flag(table, LV_OBJ_FLAG_SEND_DRAW_TASK_EVENTS);
-    lv_obj_add_event_cb(table, title_table_draw_event_cb, LV_EVENT_DRAW_TASK_ADDED, NULL);
-  
-}
-
 void scrECATnet_init(void)
 {
     int i, r, c, slaveIndex;
@@ -388,13 +367,13 @@ void scrECATnet_init(void)
     }
     lv_table_set_column_width(guider_ui.scrECATnet_tableAL, 0, 435);
     //modifico lo stile dell' header delle tabelle
-    set_style_row_0_table(guider_ui.scrECATnet_tableNetwork);
-    set_style_row_0_table(guider_ui.scrECATnet_tableConfig);
-    set_style_row_0_table(guider_ui.scrECATnet_tableSlave);
-    set_style_row_0_table(guider_ui.scrECATnet_tableAL);
-    set_style_row_0_table(guider_ui.scrECATnet_tableEmcy);
-    set_style_row_0_table(guider_ui.scrECATnet_tableInfo);
-    set_style_row_0_table(guider_ui.scrECATnet_tableDC);
+    set_style_title_table(guider_ui.scrECATnet_tableNetwork);
+    set_style_title_table(guider_ui.scrECATnet_tableConfig);
+    set_style_title_table(guider_ui.scrECATnet_tableSlave);
+    set_style_title_table(guider_ui.scrECATnet_tableAL);
+    set_style_title_table(guider_ui.scrECATnet_tableEmcy);
+    set_style_title_table(guider_ui.scrECATnet_tableInfo);
+    set_style_title_table(guider_ui.scrECATnet_tableDC);
     lv_obj_add_flag(guider_ui.scrECATnet_tableSlave, LV_OBJ_FLAG_SEND_DRAW_TASK_EVENTS);
     lv_obj_add_event_cb(guider_ui.scrECATnet_tableSlave, select_row_table_draw_event_cb, LV_EVENT_DRAW_TASK_ADDED, NULL); 
     // Applica il CLIP (crop) a tutte le celle
@@ -431,213 +410,4 @@ void scrECATnet_init(void)
         for(c = 0; c < 2; c++) 
             lv_table_set_cell_ctrl(guider_ui.scrECATnet_tableDC, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
     }
-}
-
-// Callback per gestire lo stile della riga 0 ( header ) nelle tabelle
-static void title_table_draw_event_cb(lv_event_t * e) 
-{
-    lv_obj_t * table = lv_event_get_target(e);  
-    lv_draw_task_t * task = lv_event_get_draw_task(e);
-    if(!task)
-		return;
-
-    lv_draw_dsc_base_t * base = task->draw_dsc;
-    if(!base)
-		return;
-
-    if(base->part != LV_PART_ITEMS)
-		return;
-
-    uint32_t row = base->id1;
-    uint32_t col = base->id2;
-	
-	if (!lv_table_has_cell_ctrl(table, row, col, LV_TABLE_CELL_CTRL_CUSTOM_1))
-        return;
-
-    switch (task->type)
-    {
-        case LV_DRAW_TASK_TYPE_FILL:
-			/* sfondo celle */
-            ((lv_draw_fill_dsc_t *)task->draw_dsc)->color = lv_color_hex(0x606060);
-            break;
-
-        case LV_DRAW_TASK_TYPE_LABEL:
-			/* testo celle */
-            ((lv_draw_label_dsc_t *)task->draw_dsc)->color = lv_color_hex(0xFFFFFF);
-            break;
-
-        case LV_DRAW_TASK_TYPE_BORDER:
-			/* bordo celle */
-            ((lv_draw_border_dsc_t *)task->draw_dsc)->opa = LV_OPA_TRANSP;		// oppure ((lv_draw_border_dsc_t *)task->draw_dsc)->width = 0;
-            break;
-
-        default:
-            break;
-    }
-}
-
-// Callback per gestire lo stile della riga selezionata
-void select_row_table_draw_event_cb(lv_event_t * e) 
-{
-    lv_draw_task_t * draw_task = lv_event_get_draw_task(e);
-    lv_draw_dsc_base_t * base_dsc = draw_task->draw_dsc;
-
-	if (!draw_task || !draw_task->draw_dsc)
-		return;
-	
-    /* Verifica se stiamo disegnando le celle */
-    if (base_dsc->part != LV_PART_ITEMS)
-		return;
-	
-	/* In v9: id1 = riga, id2 = colonna */
-	uint32_t row = base_dsc->id1; 
-	uint32_t row_sel = -1;
-	
-	lv_obj_t * active_screen = lv_scr_act();
-	if(active_screen == guider_ui.scrECATnet) 
-		row_sel = net_row_sel;
-	else if(active_screen == guider_ui.scrECATregs) 
-		row_sel = regs_row_sel;
-	
-	if ( row_sel < 0 )
-		return;
-	
-	/* Se è la riga selezionata e il task è di tipo testo (label) */
-	if(row == row_sel && draw_task->type == LV_DRAW_TASK_TYPE_LABEL) 
-	{
-		((lv_draw_label_dsc_t *)draw_task->draw_dsc)->color = lv_palette_main(LV_PALETTE_BLUE);
-	}
-}
-
-void table_draw_event_cb(lv_event_t * e)
-{
-    lv_obj_t * table = lv_event_get_target(e);
-    lv_draw_task_t * task = lv_event_get_draw_task(e);
-    if(task == NULL) return;
-    lv_draw_dsc_base_t * base = task->draw_dsc;
-    if(base == NULL) return;
-    if(base->part != LV_PART_ITEMS) return;
-    uint32_t row = base->id1;
-    uint32_t col = base->id2;
-    /* =========================
-     * HEADER
-     * ========================= */
-    if(lv_table_has_cell_ctrl(table, row, col, LV_TABLE_CELL_CTRL_CUSTOM_1))
-    {
-        #if 0
-        /* sfondo */
-        if(task->type == LV_DRAW_TASK_TYPE_FILL)
-        {
-            lv_draw_fill_dsc_t * fill = (lv_draw_fill_dsc_t *)task->draw_dsc;
-            fill->color = lv_palette_main(LV_PALETTE_BLUE);
-        }
-        /* testo */
-        if(task->type == LV_DRAW_TASK_TYPE_LABEL)
-        {
-            lv_draw_label_dsc_t * label = (lv_draw_label_dsc_t *)task->draw_dsc;
-            label->color = lv_color_white();
-        }
-        #else
-        lv_draw_fill_dsc_t * fill;
-        lv_draw_label_dsc_t * label;
-        switch(task->type)
-        {
-            case LV_DRAW_TASK_TYPE_FILL:
-                fill = (lv_draw_fill_dsc_t *)task->draw_dsc;
-                fill->color = lv_palette_main(LV_PALETTE_BLUE);
-                break;
-
-            case LV_DRAW_TASK_TYPE_LABEL:
-                label = (lv_draw_label_dsc_t *)task->draw_dsc;
-                label->color = lv_color_white();
-                break;
-
-            default:
-                break;
-        }
-        #endif
-    }
-    /* =========================
-     * RIGA SELEZIONATA
-     * ========================= */
-    if(lv_table_has_cell_ctrl(table, row, col, LV_TABLE_CELL_CTRL_CUSTOM_2))
-    {
-        /* sfondo */
-        //if(task->type == LV_DRAW_TASK_TYPE_FILL)
-        //{
-        //    lv_draw_fill_dsc_t * fill = (lv_draw_fill_dsc_t *)task->draw_dsc;
-        //    fill->color = lv_palette_main(LV_PALETTE_BLUE);
-        //}
-        /* testo */
-        if(task->type == LV_DRAW_TASK_TYPE_LABEL)
-        {
-            lv_draw_label_dsc_t * label = (lv_draw_label_dsc_t *)task->draw_dsc;
-            label->color = lv_palette_main(LV_PALETTE_BLUE);
-        }
-    }
-}
-
-void drag_event_cb(lv_event_t * e)
-{
-     static lv_point_t last;
-
-    lv_event_code_t code = lv_event_get_code(e);
-
-    lv_obj_t * obj = lv_event_get_user_data(e);
-
-    lv_indev_t * indev = lv_indev_get_act();
-    if(!indev) return;
-
-    lv_point_t p;
-    lv_indev_get_point(indev, &p);
-
-    if(code == LV_EVENT_PRESSED)
-    {
-        last = p;
-    }
-    else if(code == LV_EVENT_PRESSING)
-    {
-        int dx = p.x - last.x;
-        int dy = p.y - last.y;
-
-        lv_obj_move_to(obj,
-                       lv_obj_get_x(obj) + dx,
-                       lv_obj_get_y(obj) + dy);
-
-        last = p;
-    }
-}
-
-// get row selected
-void msgbox_event_cb(lv_event_t * e)
-{
-    lv_obj_t * table = lv_event_get_target(e);
-	
-    // se non è una table, esco
-    if(lv_obj_get_class(table) != &lv_table_class)
-        return;
-	
-    uint32_t row, col;
-    lv_table_get_selected_cell(table, &row, &col);
-	
-    /* ignora header */
-    if((row == 0) || (row > slaveNum ))
-        return;
-	
-    lv_obj_t * content = lv_obj_get_parent(table);
-    if(content == NULL)
-        return;
-	
-    lv_obj_t * msgbox = lv_obj_get_parent(content);
-    if(msgbox == NULL)
-        return;
-	
-    lv_obj_t * active_screen = lv_scr_act();
-    if(active_screen == guider_ui.scrECATnet)
-        net_row_sel = row;
-    else if(active_screen == guider_ui.scrECATregs)
-        regs_row_sel = row;
-
-    lv_msgbox_close(msgbox);
-
 }
