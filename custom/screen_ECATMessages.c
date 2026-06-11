@@ -85,6 +85,37 @@ static void update_event_row(lv_obj_t * table, int errorType)
 void update_scrECATmsgs(void)
 {
 	// 2. Aggiorna i dati della screen
+    //------------------------------------------------------------------------------------------------
+    // network name      destination       source           type   
+    //------------------------------------------------------------------------------------------------
+    #if 0
+    sprintf ( buffer, "%-31s", mstCnfg->xml.master.name ); 
+    lv_label_set_text( ( guider_ui.scrECATmsgs_labelNetworkData1, buffer );
+    sprintf ( buffer, "%02x-%02x-%02x-%02x-%02x-%02x", mstCnfg->xml.master.destination[0], mstCnfg->xml.master.destination[1],
+			 mstCnfg->xml.master.destination[2], mstCnfg->xml.master.destination[3], mstCnfg->xml.master.destination[4], mstCnfg->xml.master.destination[5] ); 
+    lv_label_set_text( ( guider_ui.scrECATmsgs_labelNetworkData2, buffer );
+    sprintf ( buffer, "%02x-%02x-%02x-%02x-%02x-%02x", mstCnfg->xml.master.source[0], mstCnfg->xml.master.source[1],
+			 mstCnfg->xml.master.source[2], mstCnfg->xml.master.source[3], mstCnfg->xml.master.source[4], mstCnfg->xml.master.source[5] ); 
+    lv_label_set_text( ( guider_ui.scrECATmsgs_labelNetworkData3, buffer );
+    sprintf ( buffer, "0x%04x",  mstCnfg->xml.master.etherType ); 
+    lv_label_set_text( ( guider_ui.scrECATmsgs_labelNetworkData4, buffer );
+    /------------------------------------------------------------------------------------------------
+	// config   active      frame wrong     noECAT      lost        cable       sync        ecat cycle
+	//------------------------------------------------------------------------------------------------
+    sprintf ( buffer, "%3d/%3d", mstCnfg->slaveNum, *mstCnfg->activeSlaveNumPt ); 
+    lv_label_set_text( guider_ui.scrECATmsgs_labelConfigData1, buffer );
+    sprintf ( buffer, "%5d/%5d/%5d", mstCnfg->xml.frameWrongSource, mstCnfg->xml.frameNotECAT, mstCnfg->xml.cyclicFrameDontReceive ); 
+    lv_label_set_text( guider_ui.scrECATmsgs_labelConfigData2, buffer );
+    sprintf ( buffer, "%13s", link==1?"connected":(link==-1?"non init":link==-2?"not ready":"not connected" ); 
+    lv_label_set_text( guider_ui.scrECATmsgs_labelConfigData3, buffer );
+    sprintf ( buffer, "%4ld \265S", maxTempoSwapEtherCAT ); 
+    lv_label_set_text( guider_ui.scrECATmsgs_labelConfigData4, buffer );
+    sprintf ( buffer, "%4ld \265S", maxTempoDurataEtherCAT ); 
+    lv_label_set_text( guider_ui.scrECATmsgs_labelConfigData5, buffer );
+    #endif
+    //------------------------------------------------------------------------------------------------
+    //
+    //------------------------------------------------------------------------------------------------
 	for ( int i = 0; i < MAX_ERROR_TYPE; i++ )
     {
         switch ( i )

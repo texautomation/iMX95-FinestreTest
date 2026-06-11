@@ -98,16 +98,15 @@ void update_scrECATregs(void)
     // tableSlave    
 	for ( SlaveIndex = 0; SlaveIndex < slaveNum; SlaveIndex++ )
 	{   
-        int cnt;
-        snprintf ( buffer, sizeof(buffer), "%d", SLAVE_INFO_shm->sharedMemorySlaveInformation[SlaveIndex].indexAddress ); 
-        lv_table_set_cell_value(guider_ui.scrECATregs_tableSlave,SlaveIndex+1,0,buffer); 
-        lv_table_set_cell_value(guider_ui.scrECATregs_tableSlave,SlaveIndex+1,1,(char*)SLAVE_INFO_shm->sharedMemorySlaveInformation[SlaveIndex].vendorName); 
-        lv_table_set_cell_value(guider_ui.scrECATregs_tableSlave,SlaveIndex+1,2,(char*)SLAVE_INFO_shm->sharedMemorySlaveInformation[SlaveIndex].productName);               
+        int cnt = 0;
+        snprintf ( buffer, sizeof(buffer), "%04d", SLAVE_INFO_shm->sharedMemorySlaveInformation[SlaveIndex].indexAddress ); 
+        lv_table_set_cell_value(guider_ui.scrECATregs_tableSlave,SlaveIndex+1,cnt++,buffer); 
+        lv_table_set_cell_value(guider_ui.scrECATregs_tableSlave,SlaveIndex+1,cnt++,(char*)SLAVE_INFO_shm->sharedMemorySlaveInformation[SlaveIndex].vendorName); 
+        lv_table_set_cell_value(guider_ui.scrECATregs_tableSlave,SlaveIndex+1,cnt++,(char*)SLAVE_INFO_shm->sharedMemorySlaveInformation[SlaveIndex].productName);               
         snprintf(buffer, sizeof(buffer), "%02x", ESC_shm->sharedMemoryRegister_0x110_to_0x111[SlaveIndex][0]);
-        lv_table_set_cell_value(guider_ui.scrECATregs_tableSlave,SlaveIndex+1,3,buffer); 
+        lv_table_set_cell_value(guider_ui.scrECATregs_tableSlave,SlaveIndex+1,cnt++,buffer); 
         snprintf(buffer, sizeof(buffer), "%02x", ESC_shm->sharedMemoryRegister_0x110_to_0x111[SlaveIndex][1]);
-        lv_table_set_cell_value(guider_ui.scrECATregs_tableSlave,SlaveIndex+1,4,buffer);
-        cnt = 5;
+        lv_table_set_cell_value(guider_ui.scrECATregs_tableSlave,SlaveIndex+1,cnt++,buffer);
         for ( iReg = 0; iReg < ESC_REG_300_COUNT; iReg++ )
         {
             if ( iReg != 0x0E  && iReg != 0x0F )

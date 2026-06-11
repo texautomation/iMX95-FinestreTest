@@ -17,7 +17,6 @@
 #include "lvgl.h"
 #include "custom.h"
 
-
 /*********************
  *      DEFINES
  *********************/
@@ -86,6 +85,43 @@ void update_scrECATnet(void)
     // Aggiorna i dati della screen
 	sem_wait(SLAVE_INFO_sem);
     sem_wait(SLAVE_DATA_sem);
+    //int link = os_cableConnected();
+    sprintf ( buffer, "%3d", slaveNum ); 
+    lv_table_set_cell_value ( guider_ui.scrECATnet_tableConfig, 1, 0, buffer );
+    #if 0
+    /------------------------------------------------------------------------------------------------
+    // network name      destination       source           type   
+    //------------------------------------------------------------------------------------------------
+    sprintf ( buffer, "%-31s", mstCnfg->xml.master.name ); 
+    lv_table_set_cell_value ( guider_ui.scrECATnet_tableNetwork, 1, 0, buffer );
+    sprintf ( buffer, "%02x-%02x-%02x-%02x-%02x-%02x", mstCnfg->xml.master.destination[0], mstCnfg->xml.master.destination[1],
+			 mstCnfg->xml.master.destination[2], mstCnfg->xml.master.destination[3], mstCnfg->xml.master.destination[4], mstCnfg->xml.master.destination[5] ); 
+    lv_table_set_cell_value ( guider_ui.scrECATnet_tableNetwork, 1, 1, buffer );
+    sprintf ( buffer, "%02x-%02x-%02x-%02x-%02x-%02x", mstCnfg->xml.master.source[0], mstCnfg->xml.master.source[1],
+			 mstCnfg->xml.master.source[2], mstCnfg->xml.master.source[3], mstCnfg->xml.master.source[4], mstCnfg->xml.master.source[5] ); 
+    lv_table_set_cell_value ( guider_ui.scrECATnet_tableNetwork, 1, 2, buffer );
+    sprintf ( buffer, "0x%04x",  mstCnfg->xml.master.etherType ); 
+    lv_table_set_cell_value ( guider_ui.scrECATnet_tableNetwork, 1, 3, buffer );
+    /------------------------------------------------------------------------------------------------
+	// config   active      frame wrong     noECAT      lost        cable       sync        ecat cycle
+	//------------------------------------------------------------------------------------------------
+    sprintf ( buffer, "%3d", mstCnfg->slaveNum ); 
+    lv_table_set_cell_value ( guider_ui.scrECATnet_tableConfig, 1, 0, buffer );
+    sprintf ( buffer, "%3d", *mstCnfg->activeSlaveNumPt ); 
+    lv_table_set_cell_value ( guider_ui.scrECATnet_tableConfig, 1, 1, buffer );
+    sprintf ( buffer, "%5d", mstCnfg->xml.frameWrongSource ); 
+    lv_table_set_cell_value ( guider_ui.scrECATnet_tableConfig, 1, 2, buffer );
+    sprintf ( buffer, "%5d", mstCnfg->xml.frameNotECAT ); 
+    lv_table_set_cell_value ( guider_ui.scrECATnet_tableConfig, 1, 3, buffer );
+    sprintf ( buffer, "%5d", mstCnfg->xml.cyclicFrameDontReceive ); 
+    lv_table_set_cell_value ( guider_ui.scrECATnet_tableConfig, 1, 4, buffer );
+    sprintf ( buffer, "%13s", link==1?"connected    ":(link==-1?"non init     ":link==-2?"not ready    ":"not connected" ); 
+    lv_table_set_cell_value ( guider_ui.scrECATnet_tableConfig, 1, 5, buffer );
+    sprintf ( buffer, "%4ld \265S", maxTempoSwapEtherCAT ); 
+    lv_table_set_cell_value ( guider_ui.scrECATnet_tableConfig, 1, 6, buffer );
+    sprintf ( buffer, "%3d \265S", maxTempoDurataEtherCAT ); 
+    lv_table_set_cell_value ( guider_ui.scrECATnet_tableConfig, 1, 7, buffer );
+    #endif
     // slave selezionato di default: slave 1
     if ( net_row_sel < 1 ) 
         net_row_sel = 1;
@@ -97,58 +133,60 @@ void update_scrECATnet(void)
 	//--------------------------------------------------------------------------------------------------
 	// slave data
 	//--------------------------------------------------------------------------------------------------
-	for	( SlaveIndex = 0; SlaveIndex < slaveNum; SlaveIndex++ )
+	// non conto la riga 0 o intestazione
+    for	( SlaveIndex = 0; SlaveIndex < (n_rows - 1); SlaveIndex++ )
 	{
-		ECATFRK_SLAVE_DATA *slave = &(SLAVE_DATA_shm->sharedMemorySlaveData[SlaveIndex]);
-		ECATFRK_SLAVE_INFORMATION *info = &(SLAVE_INFO_shm->sharedMemorySlaveInformation[SlaveIndex]);
-		int time = slave->timeout_uS / 1000;
-		//----------------------------------------------------------------------------------------------
-		// column 0 -> address
-		//----------------------------------------------------------------------------------------------
-		snprintf(buffer,
-				 sizeof(buffer),
-				 "%4d",
-				 info->indexAddress);
+        if (  SlaveIndex < slaveNum )
+        {
+            ECATFRK_SLAVE_DATA *slave = &(SLAVE_DATA_shm->sharedMemorySlaveData[SlaveIndex]);
+            ECATFRK_SLAVE_INFORMATION *info = &(SLAVE_INFO_shm->sharedMemorySlaveInformation[SlaveIndex]);
+            int time = slave->timeout_uS / 1000;
+            //----------------------------------------------------------------------------------------------
+            // column 0 -> address
+            //----------------------------------------------------------------------------------------------
+            snprintf(buffer,
+                    sizeof(buffer),
+                    "%4d",
+                    info->indexAddress);
 
-		lv_table_set_cell_value ( guider_ui.scrECATnet_tableSlave,SlaveIndex+1,0, buffer );
-		//----------------------------------------------------------------------------------------------
-		// column 1 -> transition
-		//----------------------------------------------------------------------------------------------
-		snprintf(buffer,
-				 sizeof(buffer),
-				 "%6s-%-6s",
-				 get_node_status(slave->state),
-				 get_node_status(slave->targetState));
+            lv_table_set_cell_value ( guider_ui.scrECATnet_tableSlave,SlaveIndex+1,0, buffer );
+            //----------------------------------------------------------------------------------------------
+            // column 1 -> transition
+            //----------------------------------------------------------------------------------------------
+            snprintf(buffer,
+                    sizeof(buffer),
+                    "%6s-%-6s",
+                    get_node_status(slave->state),
+                    get_node_status(slave->targetState));
 
-			lv_table_set_cell_value ( guider_ui.scrECATnet_tableSlave,SlaveIndex+1,1, buffer ); 		
-		//----------------------------------------------------------------------------------------------
-		// column 2 -> state
-		//----------------------------------------------------------------------------------------------
-		snprintf(buffer,
-				 sizeof(buffer),
-                 "%s",       //"%12s",
-				 (slave->stm >= 0) ? 
-					 (slave->stm < (sizeof(NodeSTM) / sizeof(NodeSTM[0])) ? NodeSTM[slave->stm] : undefStatus) :
-					 "");
+                lv_table_set_cell_value ( guider_ui.scrECATnet_tableSlave,SlaveIndex+1,1, buffer ); 		
+            //----------------------------------------------------------------------------------------------
+            // column 2 -> state
+            //----------------------------------------------------------------------------------------------
+            snprintf(buffer,
+                    sizeof(buffer),
+                    "%s",       //"%12s",
+                    (slave->stm >= 0) ? 
+                        (slave->stm < (sizeof(NodeSTM) / sizeof(NodeSTM[0])) ? NodeSTM[slave->stm] : undefStatus) : "");
 
-		lv_table_set_cell_value ( guider_ui.scrECATnet_tableSlave,SlaveIndex+1,2, buffer );	
-		//----------------------------------------------------------------------------------------------
-		// column 3 -> retries - timeout
-		//----------------------------------------------------------------------------------------------
-		if ( SLAVE_DATA_shm->sharedMemorySlaveData[SlaveIndex].state==ECAT_OP_STATE )
-			lv_table_set_cell_value ( guider_ui.scrECATnet_tableSlave,SlaveIndex+1,3, "" );
-		else
-		{
-			snprintf ( buffer, sizeof(buffer), "%1d-%5d", slave->retries, time ); 
-			lv_table_set_cell_value ( guider_ui.scrECATnet_tableSlave,SlaveIndex+1,3, buffer );
+            lv_table_set_cell_value ( guider_ui.scrECATnet_tableSlave,SlaveIndex+1,2, buffer );	
+            //----------------------------------------------------------------------------------------------
+            // column 3 -> retries - timeout
+            //----------------------------------------------------------------------------------------------
+            if ( SLAVE_DATA_shm->sharedMemorySlaveData[SlaveIndex].state==ECAT_OP_STATE )
+                lv_table_set_cell_value ( guider_ui.scrECATnet_tableSlave,SlaveIndex+1,3, "" );
+            else
+            {
+                snprintf ( buffer, sizeof(buffer), "%1d-%5d", slave->retries, time ); 
+                lv_table_set_cell_value ( guider_ui.scrECATnet_tableSlave,SlaveIndex+1,3, buffer );
+            }
+        }
+        else //ripulisco le restanti righe della tableslave
+        {
+            for ( int j = 0; j < n_cols; j++ )
+                lv_table_set_cell_value(guider_ui.scrECATnet_tableSlave, SlaveIndex+1, j, "");
 		}	
 	}
-    //ripulisco le restanti righe della tableslave, saltando l'intestazione
-	for ( ; SlaveIndex < (n_rows - 1); SlaveIndex++ )
-	{
-        for ( int j = 0; j < n_cols; j++ )
-            lv_table_set_cell_value(guider_ui.scrECATnet_tableSlave, SlaveIndex+1, j, "");
-	}	
     //------------------------------------------------------------------------------------------------
 	// input data
 	//------------------------------------------------------------------------------------------------   
@@ -286,41 +324,41 @@ void update_scrECATnet(void)
     //------------------------------------------------------------------------------------------------
 	// information
 	//------------------------------------------------------------------------------------------------
-    //lv_table_set_cell_value( guider_ui.scrECATnet_tableInfo,1,0,(char*)SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].name);
-    snprintf ( buffer, sizeof(buffer), "%d", SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].vendorId ); 
+    lv_table_set_cell_value( guider_ui.scrECATnet_tableInfo,1,0,(char*)SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].productName);
+    snprintf ( buffer, sizeof(buffer), "0x%04x", SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].vendorId ); 
 	lv_table_set_cell_value ( guider_ui.scrECATnet_tableInfo,2,1, buffer );
-    snprintf ( buffer, sizeof(buffer), "%d", SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].serialNumber ); 
+    snprintf ( buffer, sizeof(buffer), "0x%04x", SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].serialNumber ); 
 	lv_table_set_cell_value ( guider_ui.scrECATnet_tableInfo,3,1, buffer );
-    snprintf ( buffer, sizeof(buffer), "%d", SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].productCode ); 
+    snprintf ( buffer, sizeof(buffer), "0x%04x", SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].productCode ); 
 	lv_table_set_cell_value ( guider_ui.scrECATnet_tableInfo,4,1, buffer );
-    snprintf ( buffer, sizeof(buffer), "%d", SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].revisionNumber ); 
+    snprintf ( buffer, sizeof(buffer), "0x%04x", SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].revisionNumber ); 
 	lv_table_set_cell_value ( guider_ui.scrECATnet_tableInfo,5,1, buffer );
-    snprintf ( buffer, sizeof(buffer), "%d", SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].dc ); 
+    snprintf ( buffer, sizeof(buffer), "%s", SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].dc ? "supported" : "free run" ); 
 	lv_table_set_cell_value ( guider_ui.scrECATnet_tableInfo,6,1, buffer );
-    snprintf ( buffer, sizeof(buffer), "%d", SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].dcSync0 ); 
+    snprintf ( buffer, sizeof(buffer), "%4d \265S", SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].dcSync0?  SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].dcSync0/1000 : 0 ); 
 	lv_table_set_cell_value ( guider_ui.scrECATnet_tableInfo,7,1, buffer );
-	lv_table_set_cell_value ( guider_ui.scrECATnet_tableInfo,8,1, (char*)SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].EoEaddrString );
-    //lv_table_set_cell_value ( guider_ui.scrECATnet_tableInfo,9,1, (char*)SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].GatewayString );
+	lv_table_set_cell_value ( guider_ui.scrECATnet_tableInfo,8,1, SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].EoE ? (char*)SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].EoEaddrString : "not supported" );
+    //lv_table_set_cell_value ( guider_ui.scrECATnet_tableInfo,9,1, SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].EoE ? (char*)SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].GatewayString : "");
     //------------------------------------------------------------------------------------------------
 	// distribuited clock
 	//------------------------------------------------------------------------------------------------
 	#if 0
     if ( SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].sync0Active )
-		snprintf ( buffer, sizeof(buffer), "manage: sync0   %s", mstCnfg->syncMaster.sync0Synchronized?"hooked ":"      " );
+		snprintf ( buffer, sizeof(buffer), "sync0   %s", mstCnfg->syncMaster.sync0Synchronized?"hooked ":"      " );
 	else
-		strcpy ( buffer, "manage: no sync         " );
+		strcpy ( buffer, "no sync         " );
     lv_table_set_cell_value ( guider_ui.scrECATnet_tableDC,1,1, buffer );    
 	if ( SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].sync0Synchronized )
-		snprintf ( buffer, sizeof(buffer), "jitter: %4d nS (0x%02x)", SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].deriva, SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].sync0Allarm );
+		snprintf ( buffer, sizeof(buffer), "%4d nS (0x%02x)", SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].deriva, SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].sync0Allarm );
 	else
-		snprintf ( buffer, sizeof(buffer), "jitter:not hooked (0x%02x)", SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].sync0Allarm );
+		snprintf ( buffer, sizeof(buffer), "not hooked (0x%02x)", SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].sync0Allarm );
     lv_table_set_cell_value ( guider_ui.scrECATnet_tableDC,2,1, buffer );
-	snprintf ( buffer, sizeof(buffer), "ticks : %3d  (lost:%4d)", SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].ticks,SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].sync0LostNextSync );
+	snprintf ( buffer, sizeof(buffer), "%3d  (lost:%4d)", SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].ticks,SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].sync0LostNextSync );
     lv_table_set_cell_value ( guider_ui.scrECATnet_tableDC,3,1, buffer ); 
-	snprintf ( buffer, sizeof(buffer), "Master: 0x%08x", (mstCnfg->systemTimeLen==4)?(EC_GET32(*mstCnfg->txSystemTime32bitPt)):
+	snprintf ( buffer, sizeof(buffer), "0x%08x", (mstCnfg->systemTimeLen==4)?(EC_GET32(*mstCnfg->txSystemTime32bitPt)):
 										 (mstCnfg->systemTimeLen==8)?(long)(EC_GET64(*mstCnfg->txSystemTime64bitPt)):0);
     lv_table_set_cell_value ( guider_ui.scrECATnet_tableDC,4,1, buffer ); 
-	snprintf ( buffer, sizeof(buffer), "Netwrk: 0x%08x", (mstCnfg->systemTimeLen==4)?(EC_GET32(*mstCnfg->rxSystemTime32bitPt)):
+	snprintf ( buffer, sizeof(buffer), "0x%08x", (mstCnfg->systemTimeLen==4)?(EC_GET32(*mstCnfg->rxSystemTime32bitPt)):
 										 (mstCnfg->systemTimeLen==8)?(long)(EC_GET64(*mstCnfg->rxSystemTime64bitPt)):0);
     lv_table_set_cell_value ( guider_ui.scrECATnet_tableDC,5,1, buffer ); 
     #endif
