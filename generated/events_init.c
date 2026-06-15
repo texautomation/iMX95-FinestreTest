@@ -219,6 +219,7 @@ static void scrECATnet_contBand_event_handler (lv_event_t *e)
     case LV_EVENT_CLICKED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.scrECATband, guider_ui.scrECATband_del, &guider_ui.scrECATnet_del, setup_scr_scrECATband, LV_SCR_LOAD_ANIM_NONE, 200, 200, true, false);
+        scrECATband_init();
         break;
     }
     default:
@@ -412,6 +413,7 @@ static void scrECATmsgs_contBand_event_handler (lv_event_t *e)
     case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.scrECATband, guider_ui.scrECATband_del, &guider_ui.scrECATmsgs_del, setup_scr_scrECATband, LV_SCR_LOAD_ANIM_NONE, 200, 200, true, false);
+        scrECATband_init();
         break;
     }
     default:
@@ -583,6 +585,7 @@ static void scrECATregs_contBand_event_handler (lv_event_t *e)
     case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.scrECATband, guider_ui.scrECATband_del, &guider_ui.scrECATregs_del, setup_scr_scrECATband, LV_SCR_LOAD_ANIM_NONE, 200, 200, true, false);
+        scrECATband_init();
         break;
     }
     default:
@@ -769,6 +772,7 @@ static void scrECATlost_contBand_event_handler (lv_event_t *e)
     case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.scrECATband, guider_ui.scrECATband_del, &guider_ui.scrECATlost_del, setup_scr_scrECATband, LV_SCR_LOAD_ANIM_NONE, 200, 200, true, false);
+        scrECATband_init();
         break;
     }
     default:

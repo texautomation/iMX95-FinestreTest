@@ -15,6 +15,7 @@ extern "C" {
 
 
 void update_scrECATband(void);
+void scrECATband_init(void);
 
 #ifdef __cplusplus
 }

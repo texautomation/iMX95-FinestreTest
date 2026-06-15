@@ -81,7 +81,7 @@ void ECAT_reset_ESC_registers ( void )
  * ============================================================ */
 void update_scrECATregs(void)
 {
-	char buffer[128];
+	char buffer[N_MAX_CHAR_TABLE];
     int SlaveIndex,iReg, rowSel, r, cnt;
     uint32_t n_rows = lv_table_get_row_count(guider_ui.scrECATregs_tableSlave);
     uint32_t n_cols = lv_table_get_column_count(guider_ui.scrECATregs_tableSlave);

@@ -77,7 +77,7 @@ static const char *get_node_status(int state)
  
 void update_scrECATnet(void)
 {
-	char buffer[128];
+	char buffer[N_MAX_CHAR_TABLE];
 	int SlaveIndex, subIndex, row, rowSel;
     uint32_t n_rows, n_cols;
     int n_input, n_output;
@@ -192,7 +192,10 @@ void update_scrECATnet(void)
 	//------------------------------------------------------------------------------------------------   
     n_rows = lv_table_get_row_count(guider_ui.scrECATnet_tableInput);
     n_cols = lv_table_get_column_count(guider_ui.scrECATnet_tableInput);
-	for ( row = 0; row < SLAVE_DATA_shm->sharedMemorySlaveData[rowSel-1].inputVarNum; row++ )
+    n_input = SLAVE_DATA_shm->sharedMemorySlaveData[rowSel-1].inputVarNum;
+    if ( n_input > ECATFK_MAX_INPUT_VAR )
+        n_input = ECATFK_MAX_INPUT_VAR;
+	for ( row = 0; row < n_input; row++ )
 	{
 		ECATFRK_SLAVE_VARIABLE *varIn = &(SLAVE_DATA_shm->sharedMemorySlaveData[rowSel-1].varInput[row]);
     	lv_table_set_cell_value ( guider_ui.scrECATnet_tableInput,row,0,(char *)varIn->name );
@@ -219,7 +222,10 @@ void update_scrECATnet(void)
 	//------------------------------------------------------------------------------------------------
     n_rows = lv_table_get_row_count(guider_ui.scrECATnet_tableOutput);
     n_cols = lv_table_get_column_count(guider_ui.scrECATnet_tableOutput);
-	for ( row = 0; row < SLAVE_DATA_shm->sharedMemorySlaveData[rowSel-1].outputVarNum; row++ )
+    n_output = SLAVE_DATA_shm->sharedMemorySlaveData[rowSel-1].outputVarNum;
+    if ( n_output > ECATFK_MAX_OUTPUT_VAR )
+        n_output = ECATFK_MAX_OUTPUT_VAR;
+	for ( row = 0; row < n_output; row++ )
 	{
 		ECATFRK_SLAVE_VARIABLE *varOut = &(SLAVE_DATA_shm->sharedMemorySlaveData[rowSel-1].varOutput[row]);
     	lv_table_set_cell_value(guider_ui.scrECATnet_tableOutput,row,0,(char*)varOut->name);

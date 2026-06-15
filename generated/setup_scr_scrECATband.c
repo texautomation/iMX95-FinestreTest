@@ -608,728 +608,117 @@ void setup_scr_scrECATband(lv_ui *ui)
     lv_obj_set_style_pad_left(ui->scrECATband_labelMain, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->scrECATband_labelMain, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-    //Write codes scrECATband_contList
-    ui->scrECATband_contList = lv_obj_create(ui->scrECATband);
-    lv_obj_set_pos(ui->scrECATband_contList, 10, 325);
-    lv_obj_set_size(ui->scrECATband_contList, 917, 309);
-    lv_obj_set_scrollbar_mode(ui->scrECATband_contList, LV_SCROLLBAR_MODE_OFF);
-
-    //Write style for scrECATband_contList, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_contList, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_contList, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_contList, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->scrECATband_contList, lv_color_hex(0xe1e6ee), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->scrECATband_contList, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_contList, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_contList, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_contList, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_contList, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_contList, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_listData
-    ui->scrECATband_listData = lv_list_create(ui->scrECATband_contList);
-    lv_obj_set_pos(ui->scrECATband_listData, 0, 22);
-    lv_obj_set_size(ui->scrECATband_listData, 917, 285);
-    lv_obj_set_scrollbar_mode(ui->scrECATband_listData, LV_SCROLLBAR_MODE_OFF);
-    ui->scrECATband_listData_item0 =lv_list_add_text(ui->scrECATband_listData, "frame 1:");
-    ui->scrECATband_listData_item1 =lv_list_add_text(ui->scrECATband_listData, "counter 1:");
-    ui->scrECATband_listData_item2 =lv_list_add_text(ui->scrECATband_listData, "frame 2:");
-    ui->scrECATband_listData_item3 =lv_list_add_text(ui->scrECATband_listData, "counter 2:");
-    ui->scrECATband_listData_item4 =lv_list_add_text(ui->scrECATband_listData, "frame 3:");
-    ui->scrECATband_listData_item5 =lv_list_add_text(ui->scrECATband_listData, "counter 3:");
-    ui->scrECATband_listData_item6 =lv_list_add_text(ui->scrECATband_listData, "frame 4:");
-    ui->scrECATband_listData_item7 =lv_list_add_text(ui->scrECATband_listData, "counter 4:");
-    ui->scrECATband_listData_item8 =lv_list_add_text(ui->scrECATband_listData, "frame 5:");
-    ui->scrECATband_listData_item9 =lv_list_add_text(ui->scrECATband_listData, "counter 5:");
-    ui->scrECATband_listData_item10 =lv_list_add_text(ui->scrECATband_listData, "time slice:");
-    ui->scrECATband_listData_item11 =lv_list_add_text(ui->scrECATband_listData, "sync:");
-    ui->scrECATband_listData_item12 =lv_list_add_text(ui->scrECATband_listData, "ecat cycle:");
-
-    //Write style state: LV_STATE_DEFAULT for &style_scrECATband_listData_main_main_default
-    static lv_style_t style_scrECATband_listData_main_main_default;
-    ui_init_style(&style_scrECATband_listData_main_main_default);
-
-    lv_style_set_pad_top(&style_scrECATband_listData_main_main_default, 1);
-    lv_style_set_pad_left(&style_scrECATband_listData_main_main_default, 0);
-    lv_style_set_pad_right(&style_scrECATband_listData_main_main_default, 0);
-    lv_style_set_pad_bottom(&style_scrECATband_listData_main_main_default, 1);
-    lv_style_set_bg_opa(&style_scrECATband_listData_main_main_default, 255);
-    lv_style_set_bg_color(&style_scrECATband_listData_main_main_default, lv_color_hex(0xe1e6ee));
-    lv_style_set_bg_grad_dir(&style_scrECATband_listData_main_main_default, LV_GRAD_DIR_NONE);
-    lv_style_set_border_width(&style_scrECATband_listData_main_main_default, 0);
-    lv_style_set_radius(&style_scrECATband_listData_main_main_default, 0);
-    lv_style_set_shadow_width(&style_scrECATband_listData_main_main_default, 0);
-    lv_obj_add_style(ui->scrECATband_listData, &style_scrECATband_listData_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write style state: LV_STATE_DEFAULT for &style_scrECATband_listData_main_scrollbar_default
-    static lv_style_t style_scrECATband_listData_main_scrollbar_default;
-    ui_init_style(&style_scrECATband_listData_main_scrollbar_default);
-
-    lv_style_set_radius(&style_scrECATband_listData_main_scrollbar_default, 3);
-    lv_style_set_bg_opa(&style_scrECATband_listData_main_scrollbar_default, 255);
-    lv_style_set_bg_color(&style_scrECATband_listData_main_scrollbar_default, lv_color_hex(0xffffff));
-    lv_style_set_bg_grad_dir(&style_scrECATband_listData_main_scrollbar_default, LV_GRAD_DIR_NONE);
-    lv_obj_add_style(ui->scrECATband_listData, &style_scrECATband_listData_main_scrollbar_default, LV_PART_SCROLLBAR|LV_STATE_DEFAULT);
-
-    //Write style state: LV_STATE_DEFAULT for &style_scrECATband_listData_extra_btns_main_default
-    static lv_style_t style_scrECATband_listData_extra_btns_main_default;
-    ui_init_style(&style_scrECATband_listData_extra_btns_main_default);
-
-    lv_style_set_pad_top(&style_scrECATband_listData_extra_btns_main_default, 5);
-    lv_style_set_pad_left(&style_scrECATband_listData_extra_btns_main_default, 5);
-    lv_style_set_pad_right(&style_scrECATband_listData_extra_btns_main_default, 5);
-    lv_style_set_pad_bottom(&style_scrECATband_listData_extra_btns_main_default, 5);
-    lv_style_set_border_width(&style_scrECATband_listData_extra_btns_main_default, 0);
-    lv_style_set_text_color(&style_scrECATband_listData_extra_btns_main_default, lv_color_hex(0x0D3055));
-    lv_style_set_text_font(&style_scrECATband_listData_extra_btns_main_default, &lv_font_montserratMedium_12);
-    lv_style_set_text_opa(&style_scrECATband_listData_extra_btns_main_default, 255);
-    lv_style_set_radius(&style_scrECATband_listData_extra_btns_main_default, 3);
-    lv_style_set_bg_opa(&style_scrECATband_listData_extra_btns_main_default, 255);
-    lv_style_set_bg_color(&style_scrECATband_listData_extra_btns_main_default, lv_color_hex(0xffffff));
-    lv_style_set_bg_grad_dir(&style_scrECATband_listData_extra_btns_main_default, LV_GRAD_DIR_NONE);
-
-    //Write style state: LV_STATE_DEFAULT for &style_scrECATband_listData_extra_texts_main_default
-    static lv_style_t style_scrECATband_listData_extra_texts_main_default;
-    ui_init_style(&style_scrECATband_listData_extra_texts_main_default);
-
-    lv_style_set_pad_top(&style_scrECATband_listData_extra_texts_main_default, 3);
-    lv_style_set_pad_left(&style_scrECATband_listData_extra_texts_main_default, 3);
-    lv_style_set_pad_right(&style_scrECATband_listData_extra_texts_main_default, 3);
-    lv_style_set_pad_bottom(&style_scrECATband_listData_extra_texts_main_default, 3);
-    lv_style_set_border_width(&style_scrECATband_listData_extra_texts_main_default, 1);
-    lv_style_set_border_opa(&style_scrECATband_listData_extra_texts_main_default, 255);
-    lv_style_set_border_color(&style_scrECATband_listData_extra_texts_main_default, lv_color_hex(0xe1e6ee));
-    lv_style_set_border_side(&style_scrECATband_listData_extra_texts_main_default, LV_BORDER_SIDE_TOP | LV_BORDER_SIDE_BOTTOM);
-    lv_style_set_text_color(&style_scrECATband_listData_extra_texts_main_default, lv_color_hex(0x000000));
-    lv_style_set_text_font(&style_scrECATband_listData_extra_texts_main_default, &lv_font_montserratMedium_14);
-    lv_style_set_text_opa(&style_scrECATband_listData_extra_texts_main_default, 255);
-    lv_style_set_radius(&style_scrECATband_listData_extra_texts_main_default, 0);
-    lv_style_set_transform_width(&style_scrECATband_listData_extra_texts_main_default, 0);
-    lv_style_set_bg_opa(&style_scrECATband_listData_extra_texts_main_default, 255);
-    lv_style_set_bg_color(&style_scrECATband_listData_extra_texts_main_default, lv_color_hex(0xb0b0b0));
-    lv_style_set_bg_grad_dir(&style_scrECATband_listData_extra_texts_main_default, LV_GRAD_DIR_NONE);
-    lv_obj_add_style(ui->scrECATband_listData_item12, &style_scrECATband_listData_extra_texts_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_add_style(ui->scrECATband_listData_item11, &style_scrECATband_listData_extra_texts_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_add_style(ui->scrECATband_listData_item10, &style_scrECATband_listData_extra_texts_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_add_style(ui->scrECATband_listData_item9, &style_scrECATband_listData_extra_texts_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_add_style(ui->scrECATband_listData_item8, &style_scrECATband_listData_extra_texts_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_add_style(ui->scrECATband_listData_item7, &style_scrECATband_listData_extra_texts_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_add_style(ui->scrECATband_listData_item6, &style_scrECATband_listData_extra_texts_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_add_style(ui->scrECATband_listData_item5, &style_scrECATband_listData_extra_texts_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_add_style(ui->scrECATband_listData_item4, &style_scrECATband_listData_extra_texts_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_add_style(ui->scrECATband_listData_item3, &style_scrECATband_listData_extra_texts_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_add_style(ui->scrECATband_listData_item2, &style_scrECATband_listData_extra_texts_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_add_style(ui->scrECATband_listData_item1, &style_scrECATband_listData_extra_texts_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_add_style(ui->scrECATband_listData_item0, &style_scrECATband_listData_extra_texts_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_contListDataValue
-    ui->scrECATband_contListDataValue = lv_obj_create(ui->scrECATband_contList);
-    lv_obj_set_pos(ui->scrECATband_contListDataValue, 0, 22);
-    lv_obj_set_size(ui->scrECATband_contListDataValue, 917, 285);
-    lv_obj_set_scrollbar_mode(ui->scrECATband_contListDataValue, LV_SCROLLBAR_MODE_OFF);
-
-    //Write style for scrECATband_contListDataValue, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_contListDataValue, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_contListDataValue, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_contListDataValue, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_contListDataValue, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_contListDataValue, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_contListDataValue, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_contListDataValue, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_contListDataValue, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelData13Value1
-    ui->scrECATband_labelData13Value1 = lv_label_create(ui->scrECATband_contListDataValue);
-    lv_obj_set_pos(ui->scrECATband_labelData13Value1, 150, 269);
-    lv_obj_set_size(ui->scrECATband_labelData13Value1, 150, 14);
-    lv_label_set_text(ui->scrECATband_labelData13Value1, "0 us");
-    lv_label_set_long_mode(ui->scrECATband_labelData13Value1, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelData13Value1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelData13Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelData13Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelData13Value1, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelData13Value1, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelData13Value1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelData13Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelData13Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelData13Value1, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelData13Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelData13Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelData13Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelData13Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelData13Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelData13Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelData12Value1
-    ui->scrECATband_labelData12Value1 = lv_label_create(ui->scrECATband_contListDataValue);
-    lv_obj_set_pos(ui->scrECATband_labelData12Value1, 150, 247);
-    lv_obj_set_size(ui->scrECATband_labelData12Value1, 150, 14);
-    lv_label_set_text(ui->scrECATband_labelData12Value1, "0 us");
-    lv_label_set_long_mode(ui->scrECATband_labelData12Value1, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelData12Value1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelData12Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelData12Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelData12Value1, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelData12Value1, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelData12Value1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelData12Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelData12Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelData12Value1, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelData12Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelData12Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelData12Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelData12Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelData12Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelData12Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelData11Value1
-    ui->scrECATband_labelData11Value1 = lv_label_create(ui->scrECATband_contListDataValue);
-    lv_obj_set_pos(ui->scrECATband_labelData11Value1, 150, 225);
-    lv_obj_set_size(ui->scrECATband_labelData11Value1, 150, 14);
-    lv_label_set_text(ui->scrECATband_labelData11Value1, "0 us");
-    lv_label_set_long_mode(ui->scrECATband_labelData11Value1, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelData11Value1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelData11Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelData11Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelData11Value1, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelData11Value1, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelData11Value1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelData11Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelData11Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelData11Value1, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelData11Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelData11Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelData11Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelData11Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelData11Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelData11Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelData10Value1
-    ui->scrECATband_labelData10Value1 = lv_label_create(ui->scrECATband_contListDataValue);
-    lv_obj_set_pos(ui->scrECATband_labelData10Value1, 150, 203);
-    lv_obj_set_size(ui->scrECATband_labelData10Value1, 150, 14);
-    lv_label_set_text(ui->scrECATband_labelData10Value1, "0");
-    lv_label_set_long_mode(ui->scrECATband_labelData10Value1, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelData10Value1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelData10Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelData10Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelData10Value1, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelData10Value1, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelData10Value1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelData10Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelData10Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelData10Value1, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelData10Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelData10Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelData10Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelData10Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelData10Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelData10Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelData9Value3
-    ui->scrECATband_labelData9Value3 = lv_label_create(ui->scrECATband_contListDataValue);
-    lv_obj_set_pos(ui->scrECATband_labelData9Value3, 601, 181);
-    lv_obj_set_size(ui->scrECATband_labelData9Value3, 150, 14);
-    lv_label_set_text(ui->scrECATband_labelData9Value3, "0 us");
-    lv_label_set_long_mode(ui->scrECATband_labelData9Value3, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelData9Value3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelData9Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelData9Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelData9Value3, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelData9Value3, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelData9Value3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelData9Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelData9Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelData9Value3, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelData9Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelData9Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelData9Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelData9Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelData9Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelData9Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelData9Value2
-    ui->scrECATband_labelData9Value2 = lv_label_create(ui->scrECATband_contListDataValue);
-    lv_obj_set_pos(ui->scrECATband_labelData9Value2, 400, 181);
-    lv_obj_set_size(ui->scrECATband_labelData9Value2, 150, 14);
-    lv_label_set_text(ui->scrECATband_labelData9Value2, "0 us");
-    lv_label_set_long_mode(ui->scrECATband_labelData9Value2, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelData9Value2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelData9Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelData9Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelData9Value2, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelData9Value2, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelData9Value2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelData9Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelData9Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelData9Value2, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelData9Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelData9Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelData9Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelData9Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelData9Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelData9Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelData9Value1
-    ui->scrECATband_labelData9Value1 = lv_label_create(ui->scrECATband_contListDataValue);
-    lv_obj_set_pos(ui->scrECATband_labelData9Value1, 150, 181);
-    lv_obj_set_size(ui->scrECATband_labelData9Value1, 150, 14);
-    lv_label_set_text(ui->scrECATband_labelData9Value1, "0 us");
-    lv_label_set_long_mode(ui->scrECATband_labelData9Value1, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelData9Value1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelData9Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelData9Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelData9Value1, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelData9Value1, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelData9Value1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelData9Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelData9Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelData9Value1, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelData9Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelData9Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelData9Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelData9Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelData9Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelData9Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelData8Value1
-    ui->scrECATband_labelData8Value1 = lv_label_create(ui->scrECATband_contListDataValue);
-    lv_obj_set_pos(ui->scrECATband_labelData8Value1, 150, 159);
-    lv_obj_set_size(ui->scrECATband_labelData8Value1, 150, 14);
-    lv_label_set_text(ui->scrECATband_labelData8Value1, "0");
-    lv_label_set_long_mode(ui->scrECATband_labelData8Value1, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelData8Value1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelData8Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelData8Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelData8Value1, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelData8Value1, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelData8Value1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelData8Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelData8Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelData8Value1, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelData8Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelData8Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelData8Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelData8Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelData8Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelData8Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelData7Value3
-    ui->scrECATband_labelData7Value3 = lv_label_create(ui->scrECATband_contListDataValue);
-    lv_obj_set_pos(ui->scrECATband_labelData7Value3, 601, 137);
-    lv_obj_set_size(ui->scrECATband_labelData7Value3, 150, 14);
-    lv_label_set_text(ui->scrECATband_labelData7Value3, "0 us");
-    lv_label_set_long_mode(ui->scrECATband_labelData7Value3, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelData7Value3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelData7Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelData7Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelData7Value3, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelData7Value3, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelData7Value3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelData7Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelData7Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelData7Value3, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelData7Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelData7Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelData7Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelData7Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelData7Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelData7Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelData7Value2
-    ui->scrECATband_labelData7Value2 = lv_label_create(ui->scrECATband_contListDataValue);
-    lv_obj_set_pos(ui->scrECATband_labelData7Value2, 400, 137);
-    lv_obj_set_size(ui->scrECATband_labelData7Value2, 150, 14);
-    lv_label_set_text(ui->scrECATband_labelData7Value2, "0 us");
-    lv_label_set_long_mode(ui->scrECATband_labelData7Value2, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelData7Value2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelData7Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelData7Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelData7Value2, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelData7Value2, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelData7Value2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelData7Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelData7Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelData7Value2, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelData7Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelData7Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelData7Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelData7Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelData7Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelData7Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelData7Value1
-    ui->scrECATband_labelData7Value1 = lv_label_create(ui->scrECATband_contListDataValue);
-    lv_obj_set_pos(ui->scrECATband_labelData7Value1, 150, 137);
-    lv_obj_set_size(ui->scrECATband_labelData7Value1, 150, 14);
-    lv_label_set_text(ui->scrECATband_labelData7Value1, "0 us");
-    lv_label_set_long_mode(ui->scrECATband_labelData7Value1, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelData7Value1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelData7Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelData7Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelData7Value1, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelData7Value1, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelData7Value1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelData7Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelData7Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelData7Value1, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelData7Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelData7Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelData7Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelData7Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelData7Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelData7Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelData6Value1
-    ui->scrECATband_labelData6Value1 = lv_label_create(ui->scrECATband_contListDataValue);
-    lv_obj_set_pos(ui->scrECATband_labelData6Value1, 150, 115);
-    lv_obj_set_size(ui->scrECATband_labelData6Value1, 150, 14);
-    lv_label_set_text(ui->scrECATband_labelData6Value1, "0");
-    lv_label_set_long_mode(ui->scrECATband_labelData6Value1, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelData6Value1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelData6Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelData6Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelData6Value1, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelData6Value1, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelData6Value1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelData6Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelData6Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelData6Value1, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelData6Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelData6Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelData6Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelData6Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelData6Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelData6Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelData5Value3
-    ui->scrECATband_labelData5Value3 = lv_label_create(ui->scrECATband_contListDataValue);
-    lv_obj_set_pos(ui->scrECATband_labelData5Value3, 601, 93);
-    lv_obj_set_size(ui->scrECATband_labelData5Value3, 150, 14);
-    lv_label_set_text(ui->scrECATband_labelData5Value3, "0 us");
-    lv_label_set_long_mode(ui->scrECATband_labelData5Value3, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelData5Value3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelData5Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelData5Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelData5Value3, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelData5Value3, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelData5Value3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelData5Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelData5Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelData5Value3, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelData5Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelData5Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelData5Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelData5Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelData5Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelData5Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelData5Value2
-    ui->scrECATband_labelData5Value2 = lv_label_create(ui->scrECATband_contListDataValue);
-    lv_obj_set_pos(ui->scrECATband_labelData5Value2, 400, 93);
-    lv_obj_set_size(ui->scrECATband_labelData5Value2, 150, 14);
-    lv_label_set_text(ui->scrECATband_labelData5Value2, "0 us");
-    lv_label_set_long_mode(ui->scrECATband_labelData5Value2, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelData5Value2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelData5Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelData5Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelData5Value2, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelData5Value2, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelData5Value2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelData5Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelData5Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelData5Value2, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelData5Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelData5Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelData5Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelData5Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelData5Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelData5Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelData5Value1
-    ui->scrECATband_labelData5Value1 = lv_label_create(ui->scrECATband_contListDataValue);
-    lv_obj_set_pos(ui->scrECATband_labelData5Value1, 150, 93);
-    lv_obj_set_size(ui->scrECATband_labelData5Value1, 150, 14);
-    lv_label_set_text(ui->scrECATband_labelData5Value1, "0 us");
-    lv_label_set_long_mode(ui->scrECATband_labelData5Value1, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelData5Value1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelData5Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelData5Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelData5Value1, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelData5Value1, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelData5Value1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelData5Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelData5Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelData5Value1, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelData5Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelData5Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelData5Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelData5Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelData5Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelData5Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelData4Value1
-    ui->scrECATband_labelData4Value1 = lv_label_create(ui->scrECATband_contListDataValue);
-    lv_obj_set_pos(ui->scrECATband_labelData4Value1, 150, 71);
-    lv_obj_set_size(ui->scrECATband_labelData4Value1, 150, 14);
-    lv_label_set_text(ui->scrECATband_labelData4Value1, "0");
-    lv_label_set_long_mode(ui->scrECATband_labelData4Value1, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelData4Value1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelData4Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelData4Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelData4Value1, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelData4Value1, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelData4Value1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelData4Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelData4Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelData4Value1, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelData4Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelData4Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelData4Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelData4Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelData4Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelData4Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelData3Value3
-    ui->scrECATband_labelData3Value3 = lv_label_create(ui->scrECATband_contListDataValue);
-    lv_obj_set_pos(ui->scrECATband_labelData3Value3, 601, 49);
-    lv_obj_set_size(ui->scrECATband_labelData3Value3, 150, 14);
-    lv_label_set_text(ui->scrECATband_labelData3Value3, "0 us");
-    lv_label_set_long_mode(ui->scrECATband_labelData3Value3, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelData3Value3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelData3Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelData3Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelData3Value3, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelData3Value3, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelData3Value3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelData3Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelData3Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelData3Value3, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelData3Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelData3Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelData3Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelData3Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelData3Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelData3Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelData3Value2
-    ui->scrECATband_labelData3Value2 = lv_label_create(ui->scrECATband_contListDataValue);
-    lv_obj_set_pos(ui->scrECATband_labelData3Value2, 400, 49);
-    lv_obj_set_size(ui->scrECATband_labelData3Value2, 150, 14);
-    lv_label_set_text(ui->scrECATband_labelData3Value2, "0 us");
-    lv_label_set_long_mode(ui->scrECATband_labelData3Value2, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelData3Value2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelData3Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelData3Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelData3Value2, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelData3Value2, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelData3Value2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelData3Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelData3Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelData3Value2, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelData3Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelData3Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelData3Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelData3Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelData3Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelData3Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelData3Value1
-    ui->scrECATband_labelData3Value1 = lv_label_create(ui->scrECATband_contListDataValue);
-    lv_obj_set_pos(ui->scrECATband_labelData3Value1, 150, 49);
-    lv_obj_set_size(ui->scrECATband_labelData3Value1, 150, 14);
-    lv_label_set_text(ui->scrECATband_labelData3Value1, "0 us");
-    lv_label_set_long_mode(ui->scrECATband_labelData3Value1, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelData3Value1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelData3Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelData3Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelData3Value1, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelData3Value1, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelData3Value1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelData3Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelData3Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelData3Value1, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelData3Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelData3Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelData3Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelData3Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelData3Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelData3Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelData2Value1
-    ui->scrECATband_labelData2Value1 = lv_label_create(ui->scrECATband_contListDataValue);
-    lv_obj_set_pos(ui->scrECATband_labelData2Value1, 150, 27);
-    lv_obj_set_size(ui->scrECATband_labelData2Value1, 150, 14);
-    lv_label_set_text(ui->scrECATband_labelData2Value1, "0");
-    lv_label_set_long_mode(ui->scrECATband_labelData2Value1, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelData2Value1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelData2Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelData2Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelData2Value1, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelData2Value1, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelData2Value1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelData2Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelData2Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelData2Value1, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelData2Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelData2Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelData2Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelData2Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelData2Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelData2Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelData1Value3
-    ui->scrECATband_labelData1Value3 = lv_label_create(ui->scrECATband_contListDataValue);
-    lv_obj_set_pos(ui->scrECATband_labelData1Value3, 601, 5);
-    lv_obj_set_size(ui->scrECATband_labelData1Value3, 150, 14);
-    lv_label_set_text(ui->scrECATband_labelData1Value3, "0 us");
-    lv_label_set_long_mode(ui->scrECATband_labelData1Value3, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelData1Value3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelData1Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelData1Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelData1Value3, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelData1Value3, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelData1Value3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelData1Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelData1Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelData1Value3, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelData1Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelData1Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelData1Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelData1Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelData1Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelData1Value3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelData1Value2
-    ui->scrECATband_labelData1Value2 = lv_label_create(ui->scrECATband_contListDataValue);
-    lv_obj_set_pos(ui->scrECATband_labelData1Value2, 400, 5);
-    lv_obj_set_size(ui->scrECATband_labelData1Value2, 150, 14);
-    lv_label_set_text(ui->scrECATband_labelData1Value2, "0 us");
-    lv_label_set_long_mode(ui->scrECATband_labelData1Value2, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelData1Value2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelData1Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelData1Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelData1Value2, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelData1Value2, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelData1Value2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelData1Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelData1Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelData1Value2, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelData1Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelData1Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelData1Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelData1Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelData1Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelData1Value2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelData1Value1
-    ui->scrECATband_labelData1Value1 = lv_label_create(ui->scrECATband_contListDataValue);
-    lv_obj_set_pos(ui->scrECATband_labelData1Value1, 150, 5);
-    lv_obj_set_size(ui->scrECATband_labelData1Value1, 150, 14);
-    lv_label_set_text(ui->scrECATband_labelData1Value1, "0 us");
-    lv_label_set_long_mode(ui->scrECATband_labelData1Value1, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelData1Value1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelData1Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelData1Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelData1Value1, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelData1Value1, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelData1Value1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelData1Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelData1Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelData1Value1, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelData1Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelData1Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelData1Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelData1Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelData1Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelData1Value1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_conttListTtle
-    ui->scrECATband_conttListTtle = lv_obj_create(ui->scrECATband_contList);
-    lv_obj_set_pos(ui->scrECATband_conttListTtle, 0, 0);
-    lv_obj_set_size(ui->scrECATband_conttListTtle, 917, 22);
-    lv_obj_set_scrollbar_mode(ui->scrECATband_conttListTtle, LV_SCROLLBAR_MODE_OFF);
-
-    //Write style for scrECATband_conttListTtle, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_conttListTtle, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_conttListTtle, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_conttListTtle, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->scrECATband_conttListTtle, lv_color_hex(0x606060), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->scrECATband_conttListTtle, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_conttListTtle, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_conttListTtle, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_conttListTtle, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_conttListTtle, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_conttListTtle, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelListTtle2
-    ui->scrECATband_labelListTtle2 = lv_label_create(ui->scrECATband_conttListTtle);
-    lv_obj_set_pos(ui->scrECATband_labelListTtle2, 601, 4);
-    lv_obj_set_size(ui->scrECATband_labelListTtle2, 200, 14);
-    lv_label_set_text(ui->scrECATband_labelListTtle2, "Rx");
-    lv_label_set_long_mode(ui->scrECATband_labelListTtle2, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelListTtle2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelListTtle2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelListTtle2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelListTtle2, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelListTtle2, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelListTtle2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelListTtle2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelListTtle2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelListTtle2, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelListTtle2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelListTtle2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelListTtle2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelListTtle2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelListTtle2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelListTtle2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATband_labelListTtle1
-    ui->scrECATband_labelListTtle1 = lv_label_create(ui->scrECATband_conttListTtle);
-    lv_obj_set_pos(ui->scrECATband_labelListTtle1, 400, 4);
-    lv_obj_set_size(ui->scrECATband_labelListTtle1, 200, 14);
-    lv_label_set_text(ui->scrECATband_labelListTtle1, "Tx");
-    lv_label_set_long_mode(ui->scrECATband_labelListTtle1, LV_LABEL_LONG_WRAP);
-
-    //Write style for scrECATband_labelListTtle1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATband_labelListTtle1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATband_labelListTtle1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATband_labelListTtle1, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATband_labelListTtle1, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATband_labelListTtle1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATband_labelListTtle1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATband_labelListTtle1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATband_labelListTtle1, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATband_labelListTtle1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATband_labelListTtle1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATband_labelListTtle1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATband_labelListTtle1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATband_labelListTtle1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATband_labelListTtle1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    //Write codes scrECATband_contTable
+    ui->scrECATband_contTable = lv_obj_create(ui->scrECATband);
+    lv_obj_set_pos(ui->scrECATband_contTable, 10, 325);
+    lv_obj_set_size(ui->scrECATband_contTable, 917, 280);
+    lv_obj_set_scrollbar_mode(ui->scrECATband_contTable, LV_SCROLLBAR_MODE_OFF);
+    lv_obj_remove_flag(ui->scrECATband_contTable, LV_OBJ_FLAG_SCROLLABLE);
+
+    //Write style for scrECATband_contTable, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_border_width(ui->scrECATband_contTable, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->scrECATband_contTable, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->scrECATband_contTable, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui->scrECATband_contTable, lv_color_hex(0xe1e6ee), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_grad_dir(ui->scrECATband_contTable, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui->scrECATband_contTable, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->scrECATband_contTable, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->scrECATband_contTable, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->scrECATband_contTable, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->scrECATband_contTable, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+    //Write codes scrECATband_table
+    ui->scrECATband_table = lv_table_create(ui->scrECATband_contTable);
+    lv_obj_set_pos(ui->scrECATband_table, 0, 0);
+    lv_obj_set_scrollbar_mode(ui->scrECATband_table, LV_SCROLLBAR_MODE_OFF);
+    lv_obj_add_flag(ui->scrECATband_table, LV_OBJ_FLAG_EVENT_BUBBLE);
+    lv_table_set_column_count(ui->scrECATband_table,4);
+    lv_table_set_row_count(ui->scrECATband_table,14);
+    lv_table_set_cell_value(ui->scrECATband_table,0,0,"");
+    lv_table_set_cell_value(ui->scrECATband_table,1,0,"frame 1:");
+    lv_table_set_cell_value(ui->scrECATband_table,2,0,"counter 1:");
+    lv_table_set_cell_value(ui->scrECATband_table,3,0,"frame 2:");
+    lv_table_set_cell_value(ui->scrECATband_table,4,0,"counter 2:");
+    lv_table_set_cell_value(ui->scrECATband_table,5,0,"frame 3:");
+    lv_table_set_cell_value(ui->scrECATband_table,6,0,"counter 3:");
+    lv_table_set_cell_value(ui->scrECATband_table,7,0,"frame 4:");
+    lv_table_set_cell_value(ui->scrECATband_table,8,0,"counter 4:");
+    lv_table_set_cell_value(ui->scrECATband_table,9,0,"frame 5:");
+    lv_table_set_cell_value(ui->scrECATband_table,10,0,"counter 5:");
+    lv_table_set_cell_value(ui->scrECATband_table,11,0,"time slice:");
+    lv_table_set_cell_value(ui->scrECATband_table,12,0,"sync:");
+    lv_table_set_cell_value(ui->scrECATband_table,13,0,"ecat cycle:");
+    lv_table_set_cell_value(ui->scrECATband_table,0,1,"");
+    lv_table_set_cell_value(ui->scrECATband_table,1,1,"");
+    lv_table_set_cell_value(ui->scrECATband_table,2,1,"");
+    lv_table_set_cell_value(ui->scrECATband_table,3,1,"");
+    lv_table_set_cell_value(ui->scrECATband_table,4,1,"");
+    lv_table_set_cell_value(ui->scrECATband_table,5,1,"");
+    lv_table_set_cell_value(ui->scrECATband_table,6,1,"");
+    lv_table_set_cell_value(ui->scrECATband_table,7,1,"");
+    lv_table_set_cell_value(ui->scrECATband_table,8,1,"");
+    lv_table_set_cell_value(ui->scrECATband_table,9,1,"");
+    lv_table_set_cell_value(ui->scrECATband_table,10,1,"");
+    lv_table_set_cell_value(ui->scrECATband_table,11,1,"");
+    lv_table_set_cell_value(ui->scrECATband_table,12,1,"");
+    lv_table_set_cell_value(ui->scrECATband_table,13,1,"");
+    lv_table_set_cell_value(ui->scrECATband_table,0,2,"Tx");
+    lv_table_set_cell_value(ui->scrECATband_table,1,2,"");
+    lv_table_set_cell_value(ui->scrECATband_table,2,2,"");
+    lv_table_set_cell_value(ui->scrECATband_table,3,2,"");
+    lv_table_set_cell_value(ui->scrECATband_table,4,2,"");
+    lv_table_set_cell_value(ui->scrECATband_table,5,2,"");
+    lv_table_set_cell_value(ui->scrECATband_table,6,2,"");
+    lv_table_set_cell_value(ui->scrECATband_table,7,2,"");
+    lv_table_set_cell_value(ui->scrECATband_table,8,2,"");
+    lv_table_set_cell_value(ui->scrECATband_table,9,2,"");
+    lv_table_set_cell_value(ui->scrECATband_table,10,2,"");
+    lv_table_set_cell_value(ui->scrECATband_table,11,2,"");
+    lv_table_set_cell_value(ui->scrECATband_table,12,2,"");
+    lv_table_set_cell_value(ui->scrECATband_table,13,2,"");
+    lv_table_set_cell_value(ui->scrECATband_table,0,3,"Rx");
+    lv_table_set_cell_value(ui->scrECATband_table,1,3,"");
+    lv_table_set_cell_value(ui->scrECATband_table,2,3,"");
+    lv_table_set_cell_value(ui->scrECATband_table,3,3,"");
+    lv_table_set_cell_value(ui->scrECATband_table,4,3,"");
+    lv_table_set_cell_value(ui->scrECATband_table,5,3,"");
+    lv_table_set_cell_value(ui->scrECATband_table,6,3,"");
+    lv_table_set_cell_value(ui->scrECATband_table,7,3,"");
+    lv_table_set_cell_value(ui->scrECATband_table,8,3,"");
+    lv_table_set_cell_value(ui->scrECATband_table,9,3,"");
+    lv_table_set_cell_value(ui->scrECATband_table,10,3,"");
+    lv_table_set_cell_value(ui->scrECATband_table,11,3,"");
+    lv_table_set_cell_value(ui->scrECATband_table,12,3,"");
+    lv_table_set_cell_value(ui->scrECATband_table,13,3,"");
+
+    //Write style for scrECATband_table, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_pad_top(ui->scrECATband_table, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->scrECATband_table, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->scrECATband_table, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->scrECATband_table, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->scrECATband_table, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui->scrECATband_table, lv_color_hex(0xb0b0b0), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_grad_dir(ui->scrECATband_table, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_width(ui->scrECATband_table, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->scrECATband_table, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->scrECATband_table, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+    //Write style for scrECATband_table, Part: LV_PART_ITEMS, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_text_color(ui->scrECATband_table, lv_color_hex(0x000000), LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui->scrECATband_table, &lv_font_montserratMedium_14, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui->scrECATband_table, 255, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui->scrECATband_table, LV_TEXT_ALIGN_LEFT, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->scrECATband_table, 255, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui->scrECATband_table, lv_color_hex(0xb0b0b0), LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_grad_dir(ui->scrECATband_table, LV_GRAD_DIR_NONE, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_width(ui->scrECATband_table, 1, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_opa(ui->scrECATband_table, 255, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_color(ui->scrECATband_table, lv_color_hex(0xd5dee6), LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_side(ui->scrECATband_table, LV_BORDER_SIDE_TOP | LV_BORDER_SIDE_BOTTOM, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui->scrECATband_table, 3, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->scrECATband_table, 3, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->scrECATband_table, 3, LV_PART_ITEMS|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->scrECATband_table, 3, LV_PART_ITEMS|LV_STATE_DEFAULT);
 
     //Write codes scrECATband_lineSeparation
     ui->scrECATband_lineSeparation = lv_line_create(ui->scrECATband);

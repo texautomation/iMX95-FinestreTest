@@ -525,48 +525,8 @@ typedef struct
 	lv_obj_t *scrECATband_labelUndo;
 	lv_obj_t *scrECATband_contMain;
 	lv_obj_t *scrECATband_labelMain;
-	lv_obj_t *scrECATband_contList;
-	lv_obj_t *scrECATband_listData;
-	lv_obj_t *scrECATband_listData_item0;
-	lv_obj_t *scrECATband_listData_item1;
-	lv_obj_t *scrECATband_listData_item2;
-	lv_obj_t *scrECATband_listData_item3;
-	lv_obj_t *scrECATband_listData_item4;
-	lv_obj_t *scrECATband_listData_item5;
-	lv_obj_t *scrECATband_listData_item6;
-	lv_obj_t *scrECATband_listData_item7;
-	lv_obj_t *scrECATband_listData_item8;
-	lv_obj_t *scrECATband_listData_item9;
-	lv_obj_t *scrECATband_listData_item10;
-	lv_obj_t *scrECATband_listData_item11;
-	lv_obj_t *scrECATband_listData_item12;
-	lv_obj_t *scrECATband_contListDataValue;
-	lv_obj_t *scrECATband_labelData13Value1;
-	lv_obj_t *scrECATband_labelData12Value1;
-	lv_obj_t *scrECATband_labelData11Value1;
-	lv_obj_t *scrECATband_labelData10Value1;
-	lv_obj_t *scrECATband_labelData9Value3;
-	lv_obj_t *scrECATband_labelData9Value2;
-	lv_obj_t *scrECATband_labelData9Value1;
-	lv_obj_t *scrECATband_labelData8Value1;
-	lv_obj_t *scrECATband_labelData7Value3;
-	lv_obj_t *scrECATband_labelData7Value2;
-	lv_obj_t *scrECATband_labelData7Value1;
-	lv_obj_t *scrECATband_labelData6Value1;
-	lv_obj_t *scrECATband_labelData5Value3;
-	lv_obj_t *scrECATband_labelData5Value2;
-	lv_obj_t *scrECATband_labelData5Value1;
-	lv_obj_t *scrECATband_labelData4Value1;
-	lv_obj_t *scrECATband_labelData3Value3;
-	lv_obj_t *scrECATband_labelData3Value2;
-	lv_obj_t *scrECATband_labelData3Value1;
-	lv_obj_t *scrECATband_labelData2Value1;
-	lv_obj_t *scrECATband_labelData1Value3;
-	lv_obj_t *scrECATband_labelData1Value2;
-	lv_obj_t *scrECATband_labelData1Value1;
-	lv_obj_t *scrECATband_conttListTtle;
-	lv_obj_t *scrECATband_labelListTtle2;
-	lv_obj_t *scrECATband_labelListTtle1;
+	lv_obj_t *scrECATband_contTable;
+	lv_obj_t *scrECATband_table;
 	lv_obj_t *scrECATband_lineSeparation;
 	lv_obj_t *scrECATband_contBar6;
 	lv_obj_t *scrECATband_bar6;
@@ -641,7 +601,6 @@ LV_FONT_DECLARE(lv_font_montserratMedium_16)
 LV_FONT_DECLARE(lv_font_montserratMedium_13)
 LV_FONT_DECLARE(lv_font_montserratMedium_14)
 LV_FONT_DECLARE(lv_font_montserratMedium_28)
-LV_FONT_DECLARE(lv_font_montserratMedium_12)
 
 
 #ifdef __cplusplus

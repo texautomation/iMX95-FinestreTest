@@ -22,6 +22,8 @@ extern "C" {
 #include "screen_ECATLost.h"
 #include "screen_ECATBandwidth.h"
 
+#define N_MAX_CHAR_TABLE    128
+
 extern int slaveNum;								/*numero slave presenti*/
 
 void custom_init(lv_ui *ui);
