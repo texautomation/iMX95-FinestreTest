@@ -20,7 +20,7 @@
 /*********************
  *      DEFINES
  *********************/
-#define MAX_ERROR_TYPE				4
+
 
 /**********************
  *      TYPEDEFS
@@ -49,18 +49,19 @@
 static void LoggerGetEvent ( int numEvent, char *cBuffer, int event )
 {
 	sem_wait(NETLOG_sem);
+    sprintf(cBuffer, "%d) ", numEvent+1);
     if ( NETLOG_shm->logEventiEtherCAT[event].archivioEventi[numEvent].timeEvent > 0)
     {
         time_t t = (time_t)NETLOG_shm->logEventiEtherCAT[event].archivioEventi[numEvent].timeEvent;
         struct tm *tm_info = localtime(&t);
-        sprintf(cBuffer, "%d) [%2d:%02d:%02d]-%s", numEvent+1,
+        sprintf(cBuffer+strlen(cBuffer), "[%2d:%02d:%02d]-%s",
     					tm_info->tm_hour,
     					tm_info->tm_min,
     					tm_info->tm_sec,
     					NETLOG_shm->logEventiEtherCAT[event].archivioEventi[numEvent].descEvent);
     }
     else
-    	cBuffer[0] = '\0';
+    	cBuffer[strlen(cBuffer)] = '\0';
 	sem_post(NETLOG_sem);
 }
 
@@ -71,19 +72,13 @@ static void update_event_row(lv_obj_t * table, int errorType)
     for ( int iLog = 0; iLog < LEB_MAX_EVENT; iLog++ )
     {
         LoggerGetEvent( iLog, buffer, errorType);
-        if ( buffer[0] != '\0' )
-        {
-            lv_table_set_row_count(table, iLog);
-            lv_table_set_cell_ctrl(table, iLog, 0, LV_TABLE_CELL_CTRL_TEXT_CROP);
-            lv_table_set_cell_value( table,iLog,0, buffer ); 
-		}
-		else
-			break;
+        lv_table_set_cell_value( table,iLog,0, buffer ); 
 	}
 }
 
 void update_scrECATmsgs(void)
 {
+    char buffer[N_MAX_CHAR_TABLE];
 	// 2. Aggiorna i dati della screen
     //------------------------------------------------------------------------------------------------
     // network name      destination       source           type   
@@ -116,24 +111,28 @@ void update_scrECATmsgs(void)
     //------------------------------------------------------------------------------------------------
     //
     //------------------------------------------------------------------------------------------------
-	for ( int i = 0; i < MAX_ERROR_TYPE; i++ )
+	for ( int logType = 0; logType < LOGEVENTIECAT; logType++ )
     {
-        switch ( i )
+        switch ( logType )
         {
             case 0:
-                update_event_row(guider_ui.scrECATmsgs_tableDebug, 0);
+                update_event_row(guider_ui.scrECATmsgs_tableDebug, logType);
                 break;
               
             case 1:
-                update_event_row(guider_ui.scrECATmsgs_tableInfo, 1);
+                update_event_row(guider_ui.scrECATmsgs_tableInfo, logType);
                 break;
                             
             case 2:
-                update_event_row(guider_ui.scrECATmsgs_tableWarning, 2);
+                update_event_row(guider_ui.scrECATmsgs_tableWarning, logType);
                 break;
                
             case 3:
-                update_event_row(guider_ui.scrECATmsgs_tableError, 3);
+                update_event_row(guider_ui.scrECATmsgs_tableError, logType);
+                break;
+
+            case 4:
+
                 break;
 
 			default:
@@ -149,4 +148,15 @@ void scrECATmsgs_init(void)
     lv_table_set_column_width(guider_ui.scrECATmsgs_tableInfo, 0, 917);
     lv_table_set_column_width(guider_ui.scrECATmsgs_tableWarning, 0, 917);
     lv_table_set_column_width(guider_ui.scrECATmsgs_tableError, 0, 917);
+    lv_table_set_row_count(guider_ui.scrECATmsgs_tableDebug, LEB_MAX_EVENT);
+    lv_table_set_row_count(guider_ui.scrECATmsgs_tableInfo, LEB_MAX_EVENT);
+    lv_table_set_row_count(guider_ui.scrECATmsgs_tableWarning, LEB_MAX_EVENT);
+    lv_table_set_row_count(guider_ui.scrECATmsgs_tableError, LEB_MAX_EVENT);
+    for ( int r = 0; r < LEB_MAX_EVENT; r++ )
+    {      
+        lv_table_set_cell_ctrl(guider_ui.scrECATmsgs_tableDebug, r, 0, LV_TABLE_CELL_CTRL_TEXT_CROP);
+        lv_table_set_cell_ctrl(guider_ui.scrECATmsgs_tableInfo, r, 0, LV_TABLE_CELL_CTRL_TEXT_CROP);
+        lv_table_set_cell_ctrl(guider_ui.scrECATmsgs_tableWarning, r, 0, LV_TABLE_CELL_CTRL_TEXT_CROP);
+        lv_table_set_cell_ctrl(guider_ui.scrECATmsgs_tableError, r, 0, LV_TABLE_CELL_CTRL_TEXT_CROP);
+    }
 }

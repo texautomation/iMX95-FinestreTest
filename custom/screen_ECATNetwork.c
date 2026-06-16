@@ -376,6 +376,7 @@ void scrECATnet_init(void)
 {
     int i, r, c, slaveIndex;
     uint32_t n_rows = lv_table_get_row_count(guider_ui.scrECATnet_tableSlave);
+    uint32_t n_cols = lv_table_get_column_count(guider_ui.scrECATnet_tableSlave);
     net_row_sel = 1;
     net_row_sel_prev = 1;
     /* se il numero di righe della tabella non è sufficiente, ne aggiungo altre.
@@ -423,35 +424,44 @@ void scrECATnet_init(void)
     // Applica il CLIP (crop) a tutte le celle
     for(r = 0; r < n_rows; r++) 
     {
-        for(c = 0; c < 4; c++) 
+        for(c = 0; c < n_cols; c++) 
             lv_table_set_cell_ctrl(guider_ui.scrECATnet_tableSlave, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
     }
+    n_cols = lv_table_get_column_count(guider_ui.scrECATnet_tableInput);
     for(r = 0; r < ECATFK_MAX_INPUT_VAR; r++) 
     {
-        for(c = 0; c < 3; c++) 
+        for(c = 0; c < n_cols; c++) 
             lv_table_set_cell_ctrl(guider_ui.scrECATnet_tableInput, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
     }
+    n_cols = lv_table_get_column_count(guider_ui.scrECATnet_tableOutput);
     for(r = 0; r < ECATFK_MAX_OUTPUT_VAR; r++) 
     {
-        for(c = 0; c < 3; c++) 
+        for(c = 0; c < n_cols; c++) 
             lv_table_set_cell_ctrl(guider_ui.scrECATnet_tableOutput, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
     }
-    for(r = 0; r < 3; r++) 
+    n_rows = lv_table_get_row_count(guider_ui.scrECATnet_tableAL);
+    for(r = 0; r < n_rows; r++) 
         lv_table_set_cell_ctrl(guider_ui.scrECATnet_tableAL, r, 0, LV_TABLE_CELL_CTRL_TEXT_CROP);
-    for(r = 0; r < 7; r++) 
+    n_rows = lv_table_get_row_count(guider_ui.scrECATnet_tableEmcy);
+    n_cols = lv_table_get_column_count(guider_ui.scrECATnet_tableEmcy);
+    for(r = 0; r < n_rows; r++) 
     {
-        for(c = 0; c < 8; c++)
+        for(c = 0; c < n_cols; c++)
             lv_table_set_cell_ctrl(guider_ui.scrECATnet_tableEmcy, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
 
     }
-    for(r = 0; r < 10; r++) 
+    n_rows = lv_table_get_row_count(guider_ui.scrECATnet_tableInfo);
+    n_cols = lv_table_get_column_count(guider_ui.scrECATnet_tableInfo);
+    for(r = 0; r < n_rows; r++) 
     {
-        for(c = 0; c < 2; c++) 
+        for(c = 0; c < n_cols; c++) 
             lv_table_set_cell_ctrl(guider_ui.scrECATnet_tableInfo, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
     }
-    for(r = 0; r < 6; r++) 
+    n_rows = lv_table_get_row_count(guider_ui.scrECATnet_tableDC);
+    n_cols = lv_table_get_column_count(guider_ui.scrECATnet_tableDC);
+    for(r = 0; r < n_rows; r++) 
     {
-        for(c = 0; c < 2; c++) 
+        for(c = 0; c < n_cols; c++) 
             lv_table_set_cell_ctrl(guider_ui.scrECATnet_tableDC, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
     }
 }

@@ -612,7 +612,7 @@ void setup_scr_scrECATmsgs(lv_ui *ui)
     //Write codes scrECATmsgs_contWin
     ui->scrECATmsgs_contWin = lv_obj_create(ui->scrECATmsgs);
     lv_obj_set_pos(ui->scrECATmsgs_contWin, 9, 90);
-    lv_obj_set_size(ui->scrECATmsgs_contWin, 917, 592);
+    lv_obj_set_size(ui->scrECATmsgs_contWin, 917, 583);
     lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contWin, LV_SCROLLBAR_MODE_OFF);
 
     //Write style for scrECATmsgs_contWin, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -629,7 +629,7 @@ void setup_scr_scrECATmsgs(lv_ui *ui)
 
     //Write codes scrECATmsgs_contError
     ui->scrECATmsgs_contError = lv_obj_create(ui->scrECATmsgs_contWin);
-    lv_obj_set_pos(ui->scrECATmsgs_contError, 0, 490);
+    lv_obj_set_pos(ui->scrECATmsgs_contError, 0, 482);
     lv_obj_set_size(ui->scrECATmsgs_contError, 917, 100);
     lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contError, LV_SCROLLBAR_MODE_OFF);
 
@@ -645,103 +645,17 @@ void setup_scr_scrECATmsgs(lv_ui *ui)
     lv_obj_set_style_pad_right(ui->scrECATmsgs_contError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->scrECATmsgs_contError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-    //Write codes scrECATmsgs_contError5
-    ui->scrECATmsgs_contError5 = lv_obj_create(ui->scrECATmsgs_contError);
-    lv_obj_set_pos(ui->scrECATmsgs_contError5, 0, 81);
-    lv_obj_set_size(ui->scrECATmsgs_contError5, 917, 18);
-    lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contError5, LV_SCROLLBAR_MODE_OFF);
-
-    //Write style for scrECATmsgs_contError5, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATmsgs_contError5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATmsgs_contError5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATmsgs_contError5, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->scrECATmsgs_contError5, lv_color_hex(0xb0b0b0), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->scrECATmsgs_contError5, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATmsgs_contError5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_contError5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATmsgs_contError5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATmsgs_contError5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATmsgs_contError5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATmsgs_contError4
-    ui->scrECATmsgs_contError4 = lv_obj_create(ui->scrECATmsgs_contError);
-    lv_obj_set_pos(ui->scrECATmsgs_contError4, 0, 61);
-    lv_obj_set_size(ui->scrECATmsgs_contError4, 917, 18);
-    lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contError4, LV_SCROLLBAR_MODE_OFF);
-
-    //Write style for scrECATmsgs_contError4, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATmsgs_contError4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATmsgs_contError4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATmsgs_contError4, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->scrECATmsgs_contError4, lv_color_hex(0xb0b0b0), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->scrECATmsgs_contError4, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATmsgs_contError4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_contError4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATmsgs_contError4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATmsgs_contError4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATmsgs_contError4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATmsgs_contError3
-    ui->scrECATmsgs_contError3 = lv_obj_create(ui->scrECATmsgs_contError);
-    lv_obj_set_pos(ui->scrECATmsgs_contError3, 0, 41);
-    lv_obj_set_size(ui->scrECATmsgs_contError3, 917, 18);
-    lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contError3, LV_SCROLLBAR_MODE_OFF);
-
-    //Write style for scrECATmsgs_contError3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATmsgs_contError3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATmsgs_contError3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATmsgs_contError3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->scrECATmsgs_contError3, lv_color_hex(0xb0b0b0), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->scrECATmsgs_contError3, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATmsgs_contError3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_contError3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATmsgs_contError3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATmsgs_contError3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATmsgs_contError3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATmsgs_contError2
-    ui->scrECATmsgs_contError2 = lv_obj_create(ui->scrECATmsgs_contError);
-    lv_obj_set_pos(ui->scrECATmsgs_contError2, 0, 21);
-    lv_obj_set_size(ui->scrECATmsgs_contError2, 917, 18);
-    lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contError2, LV_SCROLLBAR_MODE_OFF);
-
-    //Write style for scrECATmsgs_contError2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATmsgs_contError2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATmsgs_contError2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATmsgs_contError2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->scrECATmsgs_contError2, lv_color_hex(0xb0b0b0), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->scrECATmsgs_contError2, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATmsgs_contError2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_contError2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATmsgs_contError2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATmsgs_contError2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATmsgs_contError2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATmsgs_contError1
-    ui->scrECATmsgs_contError1 = lv_obj_create(ui->scrECATmsgs_contError);
-    lv_obj_set_pos(ui->scrECATmsgs_contError1, 0, 1);
-    lv_obj_set_size(ui->scrECATmsgs_contError1, 917, 18);
-    lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contError1, LV_SCROLLBAR_MODE_OFF);
-
-    //Write style for scrECATmsgs_contError1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATmsgs_contError1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATmsgs_contError1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATmsgs_contError1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->scrECATmsgs_contError1, lv_color_hex(0xb0b0b0), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->scrECATmsgs_contError1, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATmsgs_contError1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_contError1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATmsgs_contError1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATmsgs_contError1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATmsgs_contError1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
     //Write codes scrECATmsgs_tableError
     ui->scrECATmsgs_tableError = lv_table_create(ui->scrECATmsgs_contError);
     lv_obj_set_pos(ui->scrECATmsgs_tableError, 0, 0);
     lv_obj_set_scrollbar_mode(ui->scrECATmsgs_tableError, LV_SCROLLBAR_MODE_OFF);
     lv_table_set_column_count(ui->scrECATmsgs_tableError,1);
-    lv_table_set_row_count(ui->scrECATmsgs_tableError,1);
+    lv_table_set_row_count(ui->scrECATmsgs_tableError,5);
     lv_table_set_cell_value(ui->scrECATmsgs_tableError,0,0,"");
+    lv_table_set_cell_value(ui->scrECATmsgs_tableError,1,0,"");
+    lv_table_set_cell_value(ui->scrECATmsgs_tableError,2,0,"");
+    lv_table_set_cell_value(ui->scrECATmsgs_tableError,3,0,"");
+    lv_table_set_cell_value(ui->scrECATmsgs_tableError,4,0,"");
 
     //Write style for scrECATmsgs_tableError, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
     lv_obj_set_style_pad_top(ui->scrECATmsgs_tableError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -774,8 +688,8 @@ void setup_scr_scrECATmsgs(lv_ui *ui)
 
     //Write codes scrECATmsgs_contTitleError
     ui->scrECATmsgs_contTitleError = lv_obj_create(ui->scrECATmsgs_contWin);
-    lv_obj_set_pos(ui->scrECATmsgs_contTitleError, 0, 467);
-    lv_obj_set_size(ui->scrECATmsgs_contTitleError, 917, 22);
+    lv_obj_set_pos(ui->scrECATmsgs_contTitleError, 0, 461);
+    lv_obj_set_size(ui->scrECATmsgs_contTitleError, 917, 20);
     lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contTitleError, LV_SCROLLBAR_MODE_OFF);
 
     //Write style for scrECATmsgs_contTitleError, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -790,32 +704,32 @@ void setup_scr_scrECATmsgs(lv_ui *ui)
     lv_obj_set_style_pad_right(ui->scrECATmsgs_contTitleError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->scrECATmsgs_contTitleError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-    //Write codes scrECATmsgs_labelTitleError
-    ui->scrECATmsgs_labelTitleError = lv_label_create(ui->scrECATmsgs_contTitleError);
-    lv_obj_set_pos(ui->scrECATmsgs_labelTitleError, 0, 4);
-    lv_obj_set_size(ui->scrECATmsgs_labelTitleError, 200, 14);
-    lv_label_set_text(ui->scrECATmsgs_labelTitleError, "log event: ERROR");
-    lv_label_set_long_mode(ui->scrECATmsgs_labelTitleError, LV_LABEL_LONG_WRAP);
+    //Write codes scrECATmsgs_labelError
+    ui->scrECATmsgs_labelError = lv_label_create(ui->scrECATmsgs_contTitleError);
+    lv_obj_set_pos(ui->scrECATmsgs_labelError, 3, 3);
+    lv_obj_set_size(ui->scrECATmsgs_labelError, 330, 14);
+    lv_label_set_text(ui->scrECATmsgs_labelError, "log event: ERROR");
+    lv_label_set_long_mode(ui->scrECATmsgs_labelError, LV_LABEL_LONG_WRAP);
 
-    //Write style for scrECATmsgs_labelTitleError, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATmsgs_labelTitleError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATmsgs_labelTitleError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATmsgs_labelTitleError, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATmsgs_labelTitleError, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATmsgs_labelTitleError, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATmsgs_labelTitleError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATmsgs_labelTitleError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATmsgs_labelTitleError, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATmsgs_labelTitleError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATmsgs_labelTitleError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATmsgs_labelTitleError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_labelTitleError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATmsgs_labelTitleError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATmsgs_labelTitleError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    //Write style for scrECATmsgs_labelError, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_border_width(ui->scrECATmsgs_labelError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->scrECATmsgs_labelError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui->scrECATmsgs_labelError, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui->scrECATmsgs_labelError, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui->scrECATmsgs_labelError, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_letter_space(ui->scrECATmsgs_labelError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_line_space(ui->scrECATmsgs_labelError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui->scrECATmsgs_labelError, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->scrECATmsgs_labelError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui->scrECATmsgs_labelError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->scrECATmsgs_labelError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_labelError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->scrECATmsgs_labelError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->scrECATmsgs_labelError, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes scrECATmsgs_contWarning
     ui->scrECATmsgs_contWarning = lv_obj_create(ui->scrECATmsgs_contWin);
-    lv_obj_set_pos(ui->scrECATmsgs_contWarning, 0, 365);
+    lv_obj_set_pos(ui->scrECATmsgs_contWarning, 0, 359);
     lv_obj_set_size(ui->scrECATmsgs_contWarning, 917, 100);
     lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contWarning, LV_SCROLLBAR_MODE_OFF);
 
@@ -831,103 +745,17 @@ void setup_scr_scrECATmsgs(lv_ui *ui)
     lv_obj_set_style_pad_right(ui->scrECATmsgs_contWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->scrECATmsgs_contWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-    //Write codes scrECATmsgs_contWarning5
-    ui->scrECATmsgs_contWarning5 = lv_obj_create(ui->scrECATmsgs_contWarning);
-    lv_obj_set_pos(ui->scrECATmsgs_contWarning5, 0, 81);
-    lv_obj_set_size(ui->scrECATmsgs_contWarning5, 917, 18);
-    lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contWarning5, LV_SCROLLBAR_MODE_OFF);
-
-    //Write style for scrECATmsgs_contWarning5, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATmsgs_contWarning5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATmsgs_contWarning5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATmsgs_contWarning5, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->scrECATmsgs_contWarning5, lv_color_hex(0xb0b0b0), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->scrECATmsgs_contWarning5, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATmsgs_contWarning5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_contWarning5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATmsgs_contWarning5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATmsgs_contWarning5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATmsgs_contWarning5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATmsgs_contWarning4
-    ui->scrECATmsgs_contWarning4 = lv_obj_create(ui->scrECATmsgs_contWarning);
-    lv_obj_set_pos(ui->scrECATmsgs_contWarning4, 0, 61);
-    lv_obj_set_size(ui->scrECATmsgs_contWarning4, 917, 18);
-    lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contWarning4, LV_SCROLLBAR_MODE_OFF);
-
-    //Write style for scrECATmsgs_contWarning4, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATmsgs_contWarning4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATmsgs_contWarning4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATmsgs_contWarning4, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->scrECATmsgs_contWarning4, lv_color_hex(0xb0b0b0), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->scrECATmsgs_contWarning4, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATmsgs_contWarning4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_contWarning4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATmsgs_contWarning4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATmsgs_contWarning4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATmsgs_contWarning4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATmsgs_contWarning3
-    ui->scrECATmsgs_contWarning3 = lv_obj_create(ui->scrECATmsgs_contWarning);
-    lv_obj_set_pos(ui->scrECATmsgs_contWarning3, 0, 41);
-    lv_obj_set_size(ui->scrECATmsgs_contWarning3, 917, 18);
-    lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contWarning3, LV_SCROLLBAR_MODE_OFF);
-
-    //Write style for scrECATmsgs_contWarning3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATmsgs_contWarning3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATmsgs_contWarning3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATmsgs_contWarning3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->scrECATmsgs_contWarning3, lv_color_hex(0xb0b0b0), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->scrECATmsgs_contWarning3, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATmsgs_contWarning3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_contWarning3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATmsgs_contWarning3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATmsgs_contWarning3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATmsgs_contWarning3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATmsgs_contWarning2
-    ui->scrECATmsgs_contWarning2 = lv_obj_create(ui->scrECATmsgs_contWarning);
-    lv_obj_set_pos(ui->scrECATmsgs_contWarning2, 0, 21);
-    lv_obj_set_size(ui->scrECATmsgs_contWarning2, 917, 18);
-    lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contWarning2, LV_SCROLLBAR_MODE_OFF);
-
-    //Write style for scrECATmsgs_contWarning2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATmsgs_contWarning2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATmsgs_contWarning2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATmsgs_contWarning2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->scrECATmsgs_contWarning2, lv_color_hex(0xb0b0b0), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->scrECATmsgs_contWarning2, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATmsgs_contWarning2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_contWarning2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATmsgs_contWarning2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATmsgs_contWarning2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATmsgs_contWarning2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATmsgs_contWarning1
-    ui->scrECATmsgs_contWarning1 = lv_obj_create(ui->scrECATmsgs_contWarning);
-    lv_obj_set_pos(ui->scrECATmsgs_contWarning1, 0, 1);
-    lv_obj_set_size(ui->scrECATmsgs_contWarning1, 917, 18);
-    lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contWarning1, LV_SCROLLBAR_MODE_OFF);
-
-    //Write style for scrECATmsgs_contWarning1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATmsgs_contWarning1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATmsgs_contWarning1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATmsgs_contWarning1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->scrECATmsgs_contWarning1, lv_color_hex(0xb0b0b0), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->scrECATmsgs_contWarning1, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATmsgs_contWarning1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_contWarning1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATmsgs_contWarning1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATmsgs_contWarning1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATmsgs_contWarning1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
     //Write codes scrECATmsgs_tableWarning
     ui->scrECATmsgs_tableWarning = lv_table_create(ui->scrECATmsgs_contWarning);
     lv_obj_set_pos(ui->scrECATmsgs_tableWarning, 0, 0);
     lv_obj_set_scrollbar_mode(ui->scrECATmsgs_tableWarning, LV_SCROLLBAR_MODE_OFF);
     lv_table_set_column_count(ui->scrECATmsgs_tableWarning,1);
-    lv_table_set_row_count(ui->scrECATmsgs_tableWarning,1);
+    lv_table_set_row_count(ui->scrECATmsgs_tableWarning,5);
     lv_table_set_cell_value(ui->scrECATmsgs_tableWarning,0,0,"");
+    lv_table_set_cell_value(ui->scrECATmsgs_tableWarning,1,0,"");
+    lv_table_set_cell_value(ui->scrECATmsgs_tableWarning,2,0,"");
+    lv_table_set_cell_value(ui->scrECATmsgs_tableWarning,3,0,"");
+    lv_table_set_cell_value(ui->scrECATmsgs_tableWarning,4,0,"");
 
     //Write style for scrECATmsgs_tableWarning, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
     lv_obj_set_style_pad_top(ui->scrECATmsgs_tableWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -960,8 +788,8 @@ void setup_scr_scrECATmsgs(lv_ui *ui)
 
     //Write codes scrECATmsgs_contTitleWarning
     ui->scrECATmsgs_contTitleWarning = lv_obj_create(ui->scrECATmsgs_contWin);
-    lv_obj_set_pos(ui->scrECATmsgs_contTitleWarning, 0, 342);
-    lv_obj_set_size(ui->scrECATmsgs_contTitleWarning, 917, 22);
+    lv_obj_set_pos(ui->scrECATmsgs_contTitleWarning, 0, 338);
+    lv_obj_set_size(ui->scrECATmsgs_contTitleWarning, 917, 20);
     lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contTitleWarning, LV_SCROLLBAR_MODE_OFF);
 
     //Write style for scrECATmsgs_contTitleWarning, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -976,32 +804,32 @@ void setup_scr_scrECATmsgs(lv_ui *ui)
     lv_obj_set_style_pad_right(ui->scrECATmsgs_contTitleWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->scrECATmsgs_contTitleWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-    //Write codes scrECATmsgs_labelTitleWarning
-    ui->scrECATmsgs_labelTitleWarning = lv_label_create(ui->scrECATmsgs_contTitleWarning);
-    lv_obj_set_pos(ui->scrECATmsgs_labelTitleWarning, 0, 4);
-    lv_obj_set_size(ui->scrECATmsgs_labelTitleWarning, 200, 14);
-    lv_label_set_text(ui->scrECATmsgs_labelTitleWarning, "log event: WARNING");
-    lv_label_set_long_mode(ui->scrECATmsgs_labelTitleWarning, LV_LABEL_LONG_WRAP);
+    //Write codes scrECATmsgs_labelWarning
+    ui->scrECATmsgs_labelWarning = lv_label_create(ui->scrECATmsgs_contTitleWarning);
+    lv_obj_set_pos(ui->scrECATmsgs_labelWarning, 3, 3);
+    lv_obj_set_size(ui->scrECATmsgs_labelWarning, 330, 14);
+    lv_label_set_text(ui->scrECATmsgs_labelWarning, "log event: WARNING");
+    lv_label_set_long_mode(ui->scrECATmsgs_labelWarning, LV_LABEL_LONG_WRAP);
 
-    //Write style for scrECATmsgs_labelTitleWarning, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATmsgs_labelTitleWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATmsgs_labelTitleWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATmsgs_labelTitleWarning, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATmsgs_labelTitleWarning, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATmsgs_labelTitleWarning, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATmsgs_labelTitleWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATmsgs_labelTitleWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATmsgs_labelTitleWarning, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATmsgs_labelTitleWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATmsgs_labelTitleWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATmsgs_labelTitleWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_labelTitleWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATmsgs_labelTitleWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATmsgs_labelTitleWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    //Write style for scrECATmsgs_labelWarning, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_border_width(ui->scrECATmsgs_labelWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->scrECATmsgs_labelWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui->scrECATmsgs_labelWarning, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui->scrECATmsgs_labelWarning, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui->scrECATmsgs_labelWarning, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_letter_space(ui->scrECATmsgs_labelWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_line_space(ui->scrECATmsgs_labelWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui->scrECATmsgs_labelWarning, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->scrECATmsgs_labelWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui->scrECATmsgs_labelWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->scrECATmsgs_labelWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_labelWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->scrECATmsgs_labelWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->scrECATmsgs_labelWarning, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes scrECATmsgs_contInfo
     ui->scrECATmsgs_contInfo = lv_obj_create(ui->scrECATmsgs_contWin);
-    lv_obj_set_pos(ui->scrECATmsgs_contInfo, 0, 240);
+    lv_obj_set_pos(ui->scrECATmsgs_contInfo, 0, 236);
     lv_obj_set_size(ui->scrECATmsgs_contInfo, 917, 100);
     lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contInfo, LV_SCROLLBAR_MODE_OFF);
 
@@ -1017,103 +845,17 @@ void setup_scr_scrECATmsgs(lv_ui *ui)
     lv_obj_set_style_pad_right(ui->scrECATmsgs_contInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->scrECATmsgs_contInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-    //Write codes scrECATmsgs_contInfo5
-    ui->scrECATmsgs_contInfo5 = lv_obj_create(ui->scrECATmsgs_contInfo);
-    lv_obj_set_pos(ui->scrECATmsgs_contInfo5, 0, 81);
-    lv_obj_set_size(ui->scrECATmsgs_contInfo5, 917, 18);
-    lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contInfo5, LV_SCROLLBAR_MODE_OFF);
-
-    //Write style for scrECATmsgs_contInfo5, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATmsgs_contInfo5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATmsgs_contInfo5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATmsgs_contInfo5, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->scrECATmsgs_contInfo5, lv_color_hex(0xb0b0b0), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->scrECATmsgs_contInfo5, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATmsgs_contInfo5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_contInfo5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATmsgs_contInfo5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATmsgs_contInfo5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATmsgs_contInfo5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATmsgs_contInfo4
-    ui->scrECATmsgs_contInfo4 = lv_obj_create(ui->scrECATmsgs_contInfo);
-    lv_obj_set_pos(ui->scrECATmsgs_contInfo4, 0, 61);
-    lv_obj_set_size(ui->scrECATmsgs_contInfo4, 917, 18);
-    lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contInfo4, LV_SCROLLBAR_MODE_OFF);
-
-    //Write style for scrECATmsgs_contInfo4, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATmsgs_contInfo4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATmsgs_contInfo4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATmsgs_contInfo4, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->scrECATmsgs_contInfo4, lv_color_hex(0xb0b0b0), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->scrECATmsgs_contInfo4, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATmsgs_contInfo4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_contInfo4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATmsgs_contInfo4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATmsgs_contInfo4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATmsgs_contInfo4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATmsgs_contInfo3
-    ui->scrECATmsgs_contInfo3 = lv_obj_create(ui->scrECATmsgs_contInfo);
-    lv_obj_set_pos(ui->scrECATmsgs_contInfo3, 0, 41);
-    lv_obj_set_size(ui->scrECATmsgs_contInfo3, 917, 18);
-    lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contInfo3, LV_SCROLLBAR_MODE_OFF);
-
-    //Write style for scrECATmsgs_contInfo3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATmsgs_contInfo3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATmsgs_contInfo3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATmsgs_contInfo3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->scrECATmsgs_contInfo3, lv_color_hex(0xb0b0b0), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->scrECATmsgs_contInfo3, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATmsgs_contInfo3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_contInfo3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATmsgs_contInfo3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATmsgs_contInfo3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATmsgs_contInfo3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATmsgs_contInfo2
-    ui->scrECATmsgs_contInfo2 = lv_obj_create(ui->scrECATmsgs_contInfo);
-    lv_obj_set_pos(ui->scrECATmsgs_contInfo2, 0, 21);
-    lv_obj_set_size(ui->scrECATmsgs_contInfo2, 917, 18);
-    lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contInfo2, LV_SCROLLBAR_MODE_OFF);
-
-    //Write style for scrECATmsgs_contInfo2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATmsgs_contInfo2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATmsgs_contInfo2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATmsgs_contInfo2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->scrECATmsgs_contInfo2, lv_color_hex(0xb0b0b0), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->scrECATmsgs_contInfo2, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATmsgs_contInfo2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_contInfo2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATmsgs_contInfo2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATmsgs_contInfo2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATmsgs_contInfo2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATmsgs_contInfo1
-    ui->scrECATmsgs_contInfo1 = lv_obj_create(ui->scrECATmsgs_contInfo);
-    lv_obj_set_pos(ui->scrECATmsgs_contInfo1, 0, 1);
-    lv_obj_set_size(ui->scrECATmsgs_contInfo1, 917, 18);
-    lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contInfo1, LV_SCROLLBAR_MODE_OFF);
-
-    //Write style for scrECATmsgs_contInfo1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATmsgs_contInfo1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATmsgs_contInfo1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATmsgs_contInfo1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->scrECATmsgs_contInfo1, lv_color_hex(0xb0b0b0), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->scrECATmsgs_contInfo1, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATmsgs_contInfo1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_contInfo1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATmsgs_contInfo1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATmsgs_contInfo1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATmsgs_contInfo1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
     //Write codes scrECATmsgs_tableInfo
     ui->scrECATmsgs_tableInfo = lv_table_create(ui->scrECATmsgs_contInfo);
     lv_obj_set_pos(ui->scrECATmsgs_tableInfo, 0, 0);
     lv_obj_set_scrollbar_mode(ui->scrECATmsgs_tableInfo, LV_SCROLLBAR_MODE_OFF);
     lv_table_set_column_count(ui->scrECATmsgs_tableInfo,1);
-    lv_table_set_row_count(ui->scrECATmsgs_tableInfo,1);
+    lv_table_set_row_count(ui->scrECATmsgs_tableInfo,5);
     lv_table_set_cell_value(ui->scrECATmsgs_tableInfo,0,0,"");
+    lv_table_set_cell_value(ui->scrECATmsgs_tableInfo,1,0,"");
+    lv_table_set_cell_value(ui->scrECATmsgs_tableInfo,2,0,"");
+    lv_table_set_cell_value(ui->scrECATmsgs_tableInfo,3,0,"");
+    lv_table_set_cell_value(ui->scrECATmsgs_tableInfo,4,0,"");
 
     //Write style for scrECATmsgs_tableInfo, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
     lv_obj_set_style_pad_top(ui->scrECATmsgs_tableInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -1146,8 +888,8 @@ void setup_scr_scrECATmsgs(lv_ui *ui)
 
     //Write codes scrECATmsgs_contTitleInfo
     ui->scrECATmsgs_contTitleInfo = lv_obj_create(ui->scrECATmsgs_contWin);
-    lv_obj_set_pos(ui->scrECATmsgs_contTitleInfo, 0, 217);
-    lv_obj_set_size(ui->scrECATmsgs_contTitleInfo, 917, 22);
+    lv_obj_set_pos(ui->scrECATmsgs_contTitleInfo, 0, 215);
+    lv_obj_set_size(ui->scrECATmsgs_contTitleInfo, 917, 20);
     lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contTitleInfo, LV_SCROLLBAR_MODE_OFF);
 
     //Write style for scrECATmsgs_contTitleInfo, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -1162,32 +904,32 @@ void setup_scr_scrECATmsgs(lv_ui *ui)
     lv_obj_set_style_pad_right(ui->scrECATmsgs_contTitleInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->scrECATmsgs_contTitleInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-    //Write codes scrECATmsgs_labelTitleInfo
-    ui->scrECATmsgs_labelTitleInfo = lv_label_create(ui->scrECATmsgs_contTitleInfo);
-    lv_obj_set_pos(ui->scrECATmsgs_labelTitleInfo, 0, 4);
-    lv_obj_set_size(ui->scrECATmsgs_labelTitleInfo, 200, 14);
-    lv_label_set_text(ui->scrECATmsgs_labelTitleInfo, "log event: INFORMATION");
-    lv_label_set_long_mode(ui->scrECATmsgs_labelTitleInfo, LV_LABEL_LONG_WRAP);
+    //Write codes scrECATmsgs_labelInfo
+    ui->scrECATmsgs_labelInfo = lv_label_create(ui->scrECATmsgs_contTitleInfo);
+    lv_obj_set_pos(ui->scrECATmsgs_labelInfo, 3, 3);
+    lv_obj_set_size(ui->scrECATmsgs_labelInfo, 330, 14);
+    lv_label_set_text(ui->scrECATmsgs_labelInfo, "log event: INFO");
+    lv_label_set_long_mode(ui->scrECATmsgs_labelInfo, LV_LABEL_LONG_WRAP);
 
-    //Write style for scrECATmsgs_labelTitleInfo, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATmsgs_labelTitleInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATmsgs_labelTitleInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATmsgs_labelTitleInfo, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATmsgs_labelTitleInfo, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATmsgs_labelTitleInfo, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATmsgs_labelTitleInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATmsgs_labelTitleInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATmsgs_labelTitleInfo, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATmsgs_labelTitleInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATmsgs_labelTitleInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATmsgs_labelTitleInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_labelTitleInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATmsgs_labelTitleInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATmsgs_labelTitleInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    //Write style for scrECATmsgs_labelInfo, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_border_width(ui->scrECATmsgs_labelInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->scrECATmsgs_labelInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui->scrECATmsgs_labelInfo, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui->scrECATmsgs_labelInfo, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui->scrECATmsgs_labelInfo, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_letter_space(ui->scrECATmsgs_labelInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_line_space(ui->scrECATmsgs_labelInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui->scrECATmsgs_labelInfo, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->scrECATmsgs_labelInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui->scrECATmsgs_labelInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->scrECATmsgs_labelInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_labelInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->scrECATmsgs_labelInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->scrECATmsgs_labelInfo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes scrECATmsgs_contDebug
     ui->scrECATmsgs_contDebug = lv_obj_create(ui->scrECATmsgs_contWin);
-    lv_obj_set_pos(ui->scrECATmsgs_contDebug, 0, 115);
+    lv_obj_set_pos(ui->scrECATmsgs_contDebug, 0, 113);
     lv_obj_set_size(ui->scrECATmsgs_contDebug, 917, 100);
     lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contDebug, LV_SCROLLBAR_MODE_OFF);
 
@@ -1203,103 +945,17 @@ void setup_scr_scrECATmsgs(lv_ui *ui)
     lv_obj_set_style_pad_right(ui->scrECATmsgs_contDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->scrECATmsgs_contDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-    //Write codes scrECATmsgs_contDebug5
-    ui->scrECATmsgs_contDebug5 = lv_obj_create(ui->scrECATmsgs_contDebug);
-    lv_obj_set_pos(ui->scrECATmsgs_contDebug5, 0, 81);
-    lv_obj_set_size(ui->scrECATmsgs_contDebug5, 917, 18);
-    lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contDebug5, LV_SCROLLBAR_MODE_OFF);
-
-    //Write style for scrECATmsgs_contDebug5, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATmsgs_contDebug5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATmsgs_contDebug5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATmsgs_contDebug5, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->scrECATmsgs_contDebug5, lv_color_hex(0xb0b0b0), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->scrECATmsgs_contDebug5, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATmsgs_contDebug5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_contDebug5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATmsgs_contDebug5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATmsgs_contDebug5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATmsgs_contDebug5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATmsgs_contDebug4
-    ui->scrECATmsgs_contDebug4 = lv_obj_create(ui->scrECATmsgs_contDebug);
-    lv_obj_set_pos(ui->scrECATmsgs_contDebug4, 0, 61);
-    lv_obj_set_size(ui->scrECATmsgs_contDebug4, 917, 18);
-    lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contDebug4, LV_SCROLLBAR_MODE_OFF);
-
-    //Write style for scrECATmsgs_contDebug4, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATmsgs_contDebug4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATmsgs_contDebug4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATmsgs_contDebug4, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->scrECATmsgs_contDebug4, lv_color_hex(0xb0b0b0), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->scrECATmsgs_contDebug4, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATmsgs_contDebug4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_contDebug4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATmsgs_contDebug4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATmsgs_contDebug4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATmsgs_contDebug4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATmsgs_contDebug3
-    ui->scrECATmsgs_contDebug3 = lv_obj_create(ui->scrECATmsgs_contDebug);
-    lv_obj_set_pos(ui->scrECATmsgs_contDebug3, 0, 41);
-    lv_obj_set_size(ui->scrECATmsgs_contDebug3, 917, 18);
-    lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contDebug3, LV_SCROLLBAR_MODE_OFF);
-
-    //Write style for scrECATmsgs_contDebug3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATmsgs_contDebug3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATmsgs_contDebug3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATmsgs_contDebug3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->scrECATmsgs_contDebug3, lv_color_hex(0xb0b0b0), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->scrECATmsgs_contDebug3, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATmsgs_contDebug3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_contDebug3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATmsgs_contDebug3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATmsgs_contDebug3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATmsgs_contDebug3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATmsgs_contDebug2
-    ui->scrECATmsgs_contDebug2 = lv_obj_create(ui->scrECATmsgs_contDebug);
-    lv_obj_set_pos(ui->scrECATmsgs_contDebug2, 0, 21);
-    lv_obj_set_size(ui->scrECATmsgs_contDebug2, 917, 18);
-    lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contDebug2, LV_SCROLLBAR_MODE_OFF);
-
-    //Write style for scrECATmsgs_contDebug2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATmsgs_contDebug2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATmsgs_contDebug2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATmsgs_contDebug2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->scrECATmsgs_contDebug2, lv_color_hex(0xb0b0b0), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->scrECATmsgs_contDebug2, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATmsgs_contDebug2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_contDebug2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATmsgs_contDebug2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATmsgs_contDebug2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATmsgs_contDebug2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes scrECATmsgs_contDebug1
-    ui->scrECATmsgs_contDebug1 = lv_obj_create(ui->scrECATmsgs_contDebug);
-    lv_obj_set_pos(ui->scrECATmsgs_contDebug1, 0, 1);
-    lv_obj_set_size(ui->scrECATmsgs_contDebug1, 917, 18);
-    lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contDebug1, LV_SCROLLBAR_MODE_OFF);
-
-    //Write style for scrECATmsgs_contDebug1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATmsgs_contDebug1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATmsgs_contDebug1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATmsgs_contDebug1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->scrECATmsgs_contDebug1, lv_color_hex(0xb0b0b0), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->scrECATmsgs_contDebug1, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATmsgs_contDebug1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_contDebug1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATmsgs_contDebug1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATmsgs_contDebug1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATmsgs_contDebug1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
     //Write codes scrECATmsgs_tableDebug
     ui->scrECATmsgs_tableDebug = lv_table_create(ui->scrECATmsgs_contDebug);
     lv_obj_set_pos(ui->scrECATmsgs_tableDebug, 0, 0);
     lv_obj_set_scrollbar_mode(ui->scrECATmsgs_tableDebug, LV_SCROLLBAR_MODE_OFF);
     lv_table_set_column_count(ui->scrECATmsgs_tableDebug,1);
-    lv_table_set_row_count(ui->scrECATmsgs_tableDebug,1);
+    lv_table_set_row_count(ui->scrECATmsgs_tableDebug,5);
     lv_table_set_cell_value(ui->scrECATmsgs_tableDebug,0,0,"");
+    lv_table_set_cell_value(ui->scrECATmsgs_tableDebug,1,0,"");
+    lv_table_set_cell_value(ui->scrECATmsgs_tableDebug,2,0,"");
+    lv_table_set_cell_value(ui->scrECATmsgs_tableDebug,3,0,"");
+    lv_table_set_cell_value(ui->scrECATmsgs_tableDebug,4,0,"");
 
     //Write style for scrECATmsgs_tableDebug, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
     lv_obj_set_style_pad_top(ui->scrECATmsgs_tableDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -1333,7 +989,7 @@ void setup_scr_scrECATmsgs(lv_ui *ui)
     //Write codes scrECATmsgs_contTitleDebug
     ui->scrECATmsgs_contTitleDebug = lv_obj_create(ui->scrECATmsgs_contWin);
     lv_obj_set_pos(ui->scrECATmsgs_contTitleDebug, 0, 92);
-    lv_obj_set_size(ui->scrECATmsgs_contTitleDebug, 917, 22);
+    lv_obj_set_size(ui->scrECATmsgs_contTitleDebug, 917, 20);
     lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contTitleDebug, LV_SCROLLBAR_MODE_OFF);
 
     //Write style for scrECATmsgs_contTitleDebug, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -1348,28 +1004,28 @@ void setup_scr_scrECATmsgs(lv_ui *ui)
     lv_obj_set_style_pad_right(ui->scrECATmsgs_contTitleDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->scrECATmsgs_contTitleDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-    //Write codes scrECATmsgs_labelTitleDebug
-    ui->scrECATmsgs_labelTitleDebug = lv_label_create(ui->scrECATmsgs_contTitleDebug);
-    lv_obj_set_pos(ui->scrECATmsgs_labelTitleDebug, 0, 4);
-    lv_obj_set_size(ui->scrECATmsgs_labelTitleDebug, 917, 14);
-    lv_label_set_text(ui->scrECATmsgs_labelTitleDebug, "log event: DEBUG");
-    lv_label_set_long_mode(ui->scrECATmsgs_labelTitleDebug, LV_LABEL_LONG_WRAP);
+    //Write codes scrECATmsgs_labelDebug
+    ui->scrECATmsgs_labelDebug = lv_label_create(ui->scrECATmsgs_contTitleDebug);
+    lv_obj_set_pos(ui->scrECATmsgs_labelDebug, 3, 3);
+    lv_obj_set_size(ui->scrECATmsgs_labelDebug, 330, 14);
+    lv_label_set_text(ui->scrECATmsgs_labelDebug, "log event: DEBUG");
+    lv_label_set_long_mode(ui->scrECATmsgs_labelDebug, LV_LABEL_LONG_WRAP);
 
-    //Write style for scrECATmsgs_labelTitleDebug, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrECATmsgs_labelTitleDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrECATmsgs_labelTitleDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrECATmsgs_labelTitleDebug, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrECATmsgs_labelTitleDebug, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrECATmsgs_labelTitleDebug, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrECATmsgs_labelTitleDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrECATmsgs_labelTitleDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrECATmsgs_labelTitleDebug, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrECATmsgs_labelTitleDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrECATmsgs_labelTitleDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrECATmsgs_labelTitleDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_labelTitleDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrECATmsgs_labelTitleDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrECATmsgs_labelTitleDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    //Write style for scrECATmsgs_labelDebug, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_border_width(ui->scrECATmsgs_labelDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->scrECATmsgs_labelDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui->scrECATmsgs_labelDebug, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui->scrECATmsgs_labelDebug, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui->scrECATmsgs_labelDebug, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_letter_space(ui->scrECATmsgs_labelDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_line_space(ui->scrECATmsgs_labelDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui->scrECATmsgs_labelDebug, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->scrECATmsgs_labelDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui->scrECATmsgs_labelDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->scrECATmsgs_labelDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->scrECATmsgs_labelDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->scrECATmsgs_labelDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->scrECATmsgs_labelDebug, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes scrECATmsgs_contConfig
     ui->scrECATmsgs_contConfig = lv_obj_create(ui->scrECATmsgs_contWin);
@@ -1760,8 +1416,8 @@ void setup_scr_scrECATmsgs(lv_ui *ui)
 
     //Write codes scrECATmsgs_contConfigTitle1
     ui->scrECATmsgs_contConfigTitle1 = lv_obj_create(ui->scrECATmsgs_contConfig);
-    lv_obj_set_pos(ui->scrECATmsgs_contConfigTitle1, 0, 0);
-    lv_obj_set_size(ui->scrECATmsgs_contConfigTitle1, 150, 22);
+    lv_obj_set_pos(ui->scrECATmsgs_contConfigTitle1, 3, 0);
+    lv_obj_set_size(ui->scrECATmsgs_contConfigTitle1, 147, 22);
     lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contConfigTitle1, LV_SCROLLBAR_MODE_OFF);
 
     //Write style for scrECATmsgs_contConfigTitle1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -2106,8 +1762,8 @@ void setup_scr_scrECATmsgs(lv_ui *ui)
 
     //Write codes scrECATmsgs_contNetworkTitle1
     ui->scrECATmsgs_contNetworkTitle1 = lv_obj_create(ui->scrECATmsgs_contNetwork);
-    lv_obj_set_pos(ui->scrECATmsgs_contNetworkTitle1, 0, 0);
-    lv_obj_set_size(ui->scrECATmsgs_contNetworkTitle1, 300, 22);
+    lv_obj_set_pos(ui->scrECATmsgs_contNetworkTitle1, 3, 0);
+    lv_obj_set_size(ui->scrECATmsgs_contNetworkTitle1, 297, 22);
     lv_obj_set_scrollbar_mode(ui->scrECATmsgs_contNetworkTitle1, LV_SCROLLBAR_MODE_OFF);
 
     //Write style for scrECATmsgs_contNetworkTitle1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.

@@ -162,6 +162,7 @@ void scrECATregs_init(void)
 {
     int i, r, c;
     uint32_t n_rows = lv_table_get_row_count(guider_ui.scrECATregs_tableSlave); //inclusa l'intestazione
+    uint32_t n_cols = lv_table_get_column_count(guider_ui.scrECATregs_tableSlave);
     regs_row_sel = 1;
     /* se il numero di righe della tabella non è sufficiente, ne aggiungo altre.
      * ATTENZIONE!!! Occorre essere sicuri che nella memoria condivisa i dati siano quelli validi.  
@@ -230,43 +231,53 @@ void scrECATregs_init(void)
     // Applica il CLIP (crop) a tutte le celle
     for(r = 0; r < n_rows; r++) 
     {
-        for(c = 0; c < 23; c++) 
+        for(c = 0; c < n_cols; c++) 
         {
             lv_table_set_cell_ctrl(guider_ui.scrECATregs_tableSlave, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
         }
     }
-	for(r = 0; r < 3; r++) 
+    n_rows = lv_table_get_row_count(guider_ui.scrECATregs_tableEscDLStatus);
+    n_cols = lv_table_get_column_count(guider_ui.scrECATregs_tableEscDLStatus);
+	for(r = 0; r < n_rows; r++) 
     {
-        for(c = 0; c < 2; c++) 
+        for(c = 0; c < n_cols; c++) 
         {
             lv_table_set_cell_ctrl(guider_ui.scrECATregs_tableEscDLStatus, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
         }
     }
-    for(r = 0; r < 9; r++) 
+    n_rows = lv_table_get_row_count(guider_ui.scrECATregs_tableRxError);
+    n_cols = lv_table_get_column_count(guider_ui.scrECATregs_tableRxError);
+    for(r = 0; r < n_rows; r++) 
     {
-        for(c = 0; c < 2; c++) 
+        for(c = 0; c < n_cols; c++) 
         {
             lv_table_set_cell_ctrl(guider_ui.scrECATregs_tableRxError, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
         }
     }
-    for(r = 0; r < 5; r++) 
+    n_rows = lv_table_get_row_count(guider_ui.scrECATregs_tableFwRxError);
+    n_cols = lv_table_get_column_count(guider_ui.scrECATregs_tableFwRxError);
+    for(r = 0; r < n_rows; r++) 
     {
-        for(c = 0; c < 2; c++) 
+        for(c = 0; c < n_cols; c++) 
         {
             lv_table_set_cell_ctrl(guider_ui.scrECATregs_tableFwRxError, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
         }
     }
-    for(r = 0; r < 2; r++) 
+    n_rows = lv_table_get_row_count(guider_ui.scrECATregs_tablePDI);
+    n_cols = lv_table_get_column_count(guider_ui.scrECATregs_tablePDI);
+    for(r = 0; r < n_rows; r++) 
     {
-        for(c = 0; c < 2; c++) 
+        for(c = 0; c < n_cols; c++) 
         {
             lv_table_set_cell_ctrl(guider_ui.scrECATregs_tablePDI, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
             lv_table_set_cell_ctrl(guider_ui.scrECATregs_tablePU, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
         }
     }
-    for(r = 0; r < 5; r++) 
+    n_rows = lv_table_get_row_count(guider_ui.scrECATregs_tableLL);
+    n_cols = lv_table_get_column_count(guider_ui.scrECATregs_tableLL);
+    for(r = 0; r < n_rows; r++) 
     {
-        for(c = 0; c < 2; c++) 
+        for(c = 0; c < n_cols; c++) 
         {
             lv_table_set_cell_ctrl(guider_ui.scrECATregs_tableLL, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
         }

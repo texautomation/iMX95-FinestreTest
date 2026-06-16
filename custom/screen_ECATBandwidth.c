@@ -196,9 +196,10 @@ void scrECATband_init( void )
     set_style_title_table(guider_ui.scrECATband_table);
     // Applica il CLIP (crop) a tutte le celle
     uint32_t n_rows = lv_table_get_row_count(guider_ui.scrECATband_table);
+    uint32_t n_cols = lv_table_get_column_count(guider_ui.scrECATband_table);
     for(int r = 0; r < n_rows; r++) 
     {
-        for(int c = 0; c < 4; c++) 
+        for(int c = 0; c < n_cols; c++) 
             lv_table_set_cell_ctrl(guider_ui.scrECATband_table, r, c, LV_TABLE_CELL_CTRL_TEXT_CROP);
     }
 }
