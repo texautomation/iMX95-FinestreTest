@@ -229,6 +229,7 @@ void select_row_table_draw_event_cb(lv_event_t * e)
 {
     lv_draw_task_t * draw_task = lv_event_get_draw_task(e);
     lv_draw_dsc_base_t * base_dsc = draw_task->draw_dsc;
+    lv_obj_t * table = lv_event_get_target(e);
 
 	if (!draw_task || !draw_task->draw_dsc)
 		return;
@@ -239,7 +240,7 @@ void select_row_table_draw_event_cb(lv_event_t * e)
 	
 	/* In v9: id1 = riga, id2 = colonna */
 	uint32_t row = base_dsc->id1; 
-	uint32_t row_sel = -1;
+    uint32_t row_sel = -1;
 	
 	lv_obj_t * active_screen = lv_scr_act();
 	if(active_screen == guider_ui.scrECATnet) 
@@ -255,6 +256,35 @@ void select_row_table_draw_event_cb(lv_event_t * e)
 	{
 		((lv_draw_label_dsc_t *)draw_task->draw_dsc)->color = lv_palette_main(LV_PALETTE_BLUE);
 	}
+
+    if(active_screen == guider_ui.scrECATregs)
+    {
+        uint32_t col = base_dsc->id2;
+        /* Recupera informazioni sulla cella attualmente disegnata */
+        const char * txt = lv_table_get_cell_value(table, row, col);
+        if ( txt[0] != '\0' )
+        {
+            int value = atoi(txt);
+
+            /* Se è la colonna 1 e il task è di tipo testo (label) */
+            if(col > 2 &&  row != 0 && draw_task->type == LV_DRAW_TASK_TYPE_LABEL) 
+            {
+                lv_draw_label_dsc_t * label_dsc = draw_task->draw_dsc;
+                if(value != 0) 
+                    label_dsc->color = lv_color_hex(0xFFFFFF);
+                else
+                    label_dsc->color = lv_color_hex(0x000000);
+            }
+            else if(col > 2 && row != 0 && draw_task->type == LV_DRAW_TASK_TYPE_FILL)
+            { 
+                lv_draw_fill_dsc_t * fill_dsc = draw_task->draw_dsc;
+                if(value != 0) 
+                    fill_dsc->color = lv_palette_main(LV_PALETTE_RED);
+                else
+                    fill_dsc->color = lv_color_hex(0xb0b0b0);
+            }
+        }
+    }
 }
 
 static void table_draw_event_cb(lv_event_t * e)

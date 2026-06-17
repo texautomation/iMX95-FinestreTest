@@ -1897,8 +1897,7 @@
 					"bg_img_recolor": "#000000",
 					"bg_img_recolor_opa": 255
 				}
-			],
-			"layerName": "scrMain"
+			]
 		},
 		{
 			"name": "scrSelect",
@@ -3455,8 +3454,7 @@
 					"bg_img_recolor": "#000000",
 					"bg_img_recolor_opa": 255
 				}
-			],
-			"layerName": "scrSelect"
+			]
 		},
 		{
 			"name": "scrECATnet",
@@ -8905,8 +8903,7 @@
 					"bg_img_recolor": "#000000",
 					"bg_img_recolor_opa": 255
 				}
-			],
-			"layerName": "scrECATnet"
+			]
 		},
 		{
 			"name": "scrECATmsgs",
@@ -15981,8 +15978,7 @@
 					"bg_img_recolor": "#000000",
 					"bg_img_recolor_opa": 255
 				}
-			],
-			"layerName": "scrECATmsgs"
+			]
 		},
 		{
 			"name": "scrECATregs",
@@ -20449,8 +20445,7 @@
 					"bg_img_recolor": "#000000",
 					"bg_img_recolor_opa": 255
 				}
-			],
-			"layerName": "scrECATregs"
+			]
 		},
 		{
 			"name": "scrECATlost",
@@ -40282,8 +40277,7 @@
 					"bg_img_recolor": "#000000",
 					"bg_img_recolor_opa": 255
 				}
-			],
-			"layerName": "scrECATlost"
+			]
 		},
 		{
 			"name": "scrECATband",
@@ -44254,8 +44248,7 @@
 					"bg_img_recolor": "#000000",
 					"bg_img_recolor_opa": 255
 				}
-			],
-			"layerName": "scrECATband"
+			]
 		}
 	],
 	"Application": {

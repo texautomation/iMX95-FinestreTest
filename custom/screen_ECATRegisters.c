@@ -12,6 +12,7 @@
  *      INCLUDES
  *********************/
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "lvgl.h"
 #include "custom.h"
@@ -33,7 +34,7 @@
 /**********************
  *  STATIC PROTOTYPES
  **********************/
-static void align_col_table_draw_event_cb(lv_event_t * e);
+static void set_style_col_table_draw_event_cb(lv_event_t * e);
 
 /**********************
  *  STATIC VARIABLES
@@ -176,22 +177,22 @@ void scrECATregs_init(void)
     }
     for(i = 0; i < sizeof(regs_tableSlave_col_w)/sizeof(regs_tableSlave_col_w[0]); i++) 
         lv_table_set_column_width(guider_ui.scrECATregs_tableSlave, i, regs_tableSlave_col_w[i]);
-    lv_table_set_column_width(guider_ui.scrECATregs_tableEscDLStatus, 0, 817);
-    lv_table_set_column_width(guider_ui.scrECATregs_tableEscDLStatus, 1, 100);
-    lv_table_set_column_width(guider_ui.scrECATregs_tableRxError, 0, 350);
-    lv_table_set_column_width(guider_ui.scrECATregs_tableRxError, 1, 100);
+    lv_table_set_column_width(guider_ui.scrECATregs_tableEscDLStatus, 0, 867);
+    lv_table_set_column_width(guider_ui.scrECATregs_tableEscDLStatus, 1, 50);
+    lv_table_set_column_width(guider_ui.scrECATregs_tableRxError, 0, 400);
+    lv_table_set_column_width(guider_ui.scrECATregs_tableRxError, 1, 50);
 
-    lv_table_set_column_width(guider_ui.scrECATregs_tableFwRxError, 0, 365);
-    lv_table_set_column_width(guider_ui.scrECATregs_tableFwRxError, 1, 100);
+    lv_table_set_column_width(guider_ui.scrECATregs_tableFwRxError, 0, 415);
+    lv_table_set_column_width(guider_ui.scrECATregs_tableFwRxError, 1, 50);
 
-    lv_table_set_column_width(guider_ui.scrECATregs_tablePDI, 0, 365);
-    lv_table_set_column_width(guider_ui.scrECATregs_tablePDI, 1, 100);
+    lv_table_set_column_width(guider_ui.scrECATregs_tablePDI, 0, 415);
+    lv_table_set_column_width(guider_ui.scrECATregs_tablePDI, 1, 50);
 
-    lv_table_set_column_width(guider_ui.scrECATregs_tablePU, 0, 365);
-    lv_table_set_column_width(guider_ui.scrECATregs_tablePU, 1, 100);
+    lv_table_set_column_width(guider_ui.scrECATregs_tablePU, 0, 415);
+    lv_table_set_column_width(guider_ui.scrECATregs_tablePU, 1, 50);
 
-    lv_table_set_column_width(guider_ui.scrECATregs_tableLL, 0, 817);
-    lv_table_set_column_width(guider_ui.scrECATregs_tableLL, 1, 100);
+    lv_table_set_column_width(guider_ui.scrECATregs_tableLL, 0, 867);
+    lv_table_set_column_width(guider_ui.scrECATregs_tableLL, 1, 50);
     //modifico lo stile dell' header delle tabelle
     set_style_title_table(guider_ui.scrECATregs_tableSlave);
     set_style_title_table(guider_ui.scrECATregs_tableEscDLStatus);
@@ -207,26 +208,26 @@ void scrECATregs_init(void)
                         LV_EVENT_DRAW_TASK_ADDED, NULL);
     // testo item allineato a destra nella colonna 1
     lv_obj_add_flag(guider_ui.scrECATregs_tableEscDLStatus, LV_OBJ_FLAG_SEND_DRAW_TASK_EVENTS);
-    lv_obj_add_event_cb(guider_ui.scrECATregs_tableEscDLStatus, align_col_table_draw_event_cb,
+    lv_obj_add_event_cb(guider_ui.scrECATregs_tableEscDLStatus, set_style_col_table_draw_event_cb,
                         LV_EVENT_DRAW_TASK_ADDED, NULL);
     lv_obj_add_flag(guider_ui.scrECATregs_tableRxError, LV_OBJ_FLAG_SEND_DRAW_TASK_EVENTS);
-    lv_obj_add_event_cb(guider_ui.scrECATregs_tableRxError, align_col_table_draw_event_cb,
+    lv_obj_add_event_cb(guider_ui.scrECATregs_tableRxError, set_style_col_table_draw_event_cb,
                         LV_EVENT_DRAW_TASK_ADDED, NULL);
 
     lv_obj_add_flag(guider_ui.scrECATregs_tableFwRxError, LV_OBJ_FLAG_SEND_DRAW_TASK_EVENTS);
-    lv_obj_add_event_cb(guider_ui.scrECATregs_tableFwRxError, align_col_table_draw_event_cb,
+    lv_obj_add_event_cb(guider_ui.scrECATregs_tableFwRxError, set_style_col_table_draw_event_cb,
                         LV_EVENT_DRAW_TASK_ADDED, NULL);
 
     lv_obj_add_flag(guider_ui.scrECATregs_tablePU, LV_OBJ_FLAG_SEND_DRAW_TASK_EVENTS);
-    lv_obj_add_event_cb(guider_ui.scrECATregs_tablePU, align_col_table_draw_event_cb,
+    lv_obj_add_event_cb(guider_ui.scrECATregs_tablePU, set_style_col_table_draw_event_cb,
                         LV_EVENT_DRAW_TASK_ADDED, NULL);
 
     lv_obj_add_flag(guider_ui.scrECATregs_tablePDI, LV_OBJ_FLAG_SEND_DRAW_TASK_EVENTS);
-    lv_obj_add_event_cb(guider_ui.scrECATregs_tablePDI, align_col_table_draw_event_cb,
+    lv_obj_add_event_cb(guider_ui.scrECATregs_tablePDI, set_style_col_table_draw_event_cb,
                         LV_EVENT_DRAW_TASK_ADDED, NULL);
 
     lv_obj_add_flag(guider_ui.scrECATregs_tableLL, LV_OBJ_FLAG_SEND_DRAW_TASK_EVENTS);
-    lv_obj_add_event_cb(guider_ui.scrECATregs_tableLL, align_col_table_draw_event_cb,
+    lv_obj_add_event_cb(guider_ui.scrECATregs_tableLL, set_style_col_table_draw_event_cb,
                         LV_EVENT_DRAW_TASK_ADDED, NULL);
     // Applica il CLIP (crop) a tutte le celle
     for(r = 0; r < n_rows; r++) 
@@ -287,10 +288,11 @@ void scrECATregs_init(void)
  *  Callback per gestire lo stile della cella dei registri ( testo
  *  allineato a sx e valore allineato a dx )
  * ============================================================ */
-static void align_col_table_draw_event_cb(lv_event_t * e)
+static void set_style_col_table_draw_event_cb(lv_event_t * e)
 {
     lv_draw_task_t * draw_task = lv_event_get_draw_task(e);
     lv_draw_dsc_base_t * base_dsc = draw_task->draw_dsc;
+    lv_obj_t * table = lv_event_get_target(e);
 
     /* Verifica se stiamo disegnando le celle */
     if(base_dsc->part == LV_PART_ITEMS)
@@ -298,12 +300,29 @@ static void align_col_table_draw_event_cb(lv_event_t * e)
         
         /* In v9: id1 = riga, id2 = colonna */
         uint32_t col = base_dsc->id2;
+        uint32_t row = base_dsc->id1;
 
-        /* Se è la riga 0 e il task è di tipo testo (label) */
-        if(col == 1 && draw_task->type == LV_DRAW_TASK_TYPE_LABEL) 
+        /* Recupera informazioni sulla cella attualmente disegnata */
+        const char * txt = lv_table_get_cell_value(table, row, col);
+        int value = atoi(txt);
+
+        /* Se è la colonna 1 e il task è di tipo testo (label) */
+        if(col == 1 &&  row != 0 && draw_task->type == LV_DRAW_TASK_TYPE_LABEL) 
         {
             lv_draw_label_dsc_t * label_dsc = draw_task->draw_dsc;
-            label_dsc->align = LV_TEXT_ALIGN_RIGHT;
+            label_dsc->align = LV_TEXT_ALIGN_CENTER;
+            if(value != 0) 
+                label_dsc->color = lv_color_hex(0xFFFFFF);
+            else
+                label_dsc->color = lv_color_hex(0x000000);
+        }
+        else if(col == 1 && row != 0 && draw_task->type == LV_DRAW_TASK_TYPE_FILL)
+        { 
+            lv_draw_fill_dsc_t * fill_dsc = draw_task->draw_dsc;
+            if(value != 0) 
+                fill_dsc->color = lv_palette_main(LV_PALETTE_RED);
+            else
+                fill_dsc->color = lv_color_hex(0xb0b0b0);
         }
     }
 }
