@@ -16,11 +16,6 @@ extern "C" {
 #include "gui_guider.h"
 #include "ecat_usr.h"
 #include "ecatSharedMemory.h"
-#include "screen_ECATNetwork.h"
-#include "screen_ECATMessages.h"
-#include "screen_ECATRegisters.h"
-#include "screen_ECATLost.h"
-#include "screen_ECATBandwidth.h"
 
 #define N_MAX_CHAR_TABLE    128
 

@@ -307,7 +307,7 @@ void setup_scr_scrECATnet(lv_ui *ui)
     //Write codes scrECATnet_labelExport
     ui->scrECATnet_labelExport = lv_label_create(ui->scrECATnet_contExport);
     lv_obj_set_pos(ui->scrECATnet_labelExport, 30, 130);
-    lv_obj_set_size(ui->scrECATnet_labelExport, 100, 30);
+    lv_obj_set_size(ui->scrECATnet_labelExport, 100, 20);
     lv_obj_add_flag(ui->scrECATnet_labelExport, LV_OBJ_FLAG_EVENT_BUBBLE);
     lv_label_set_text(ui->scrECATnet_labelExport, "EXPORT");
     lv_label_set_long_mode(ui->scrECATnet_labelExport, LV_LABEL_LONG_WRAP);
@@ -540,7 +540,7 @@ void setup_scr_scrECATnet(lv_ui *ui)
     //Write codes scrECATnet_labelUndo
     ui->scrECATnet_labelUndo = lv_label_create(ui->scrECATnet_contUndo);
     lv_obj_set_pos(ui->scrECATnet_labelUndo, 30, 130);
-    lv_obj_set_size(ui->scrECATnet_labelUndo, 100, 30);
+    lv_obj_set_size(ui->scrECATnet_labelUndo, 100, 20);
     lv_obj_add_flag(ui->scrECATnet_labelUndo, LV_OBJ_FLAG_EVENT_BUBBLE);
     lv_label_set_text(ui->scrECATnet_labelUndo, "UNDO");
     lv_label_set_long_mode(ui->scrECATnet_labelUndo, LV_LABEL_LONG_WRAP);
@@ -585,7 +585,7 @@ void setup_scr_scrECATnet(lv_ui *ui)
     //Write codes scrECATnet_labelMain
     ui->scrECATnet_labelMain = lv_label_create(ui->scrECATnet_contMain);
     lv_obj_set_pos(ui->scrECATnet_labelMain, 30, 130);
-    lv_obj_set_size(ui->scrECATnet_labelMain, 100, 30);
+    lv_obj_set_size(ui->scrECATnet_labelMain, 100, 20);
     lv_obj_add_flag(ui->scrECATnet_labelMain, LV_OBJ_FLAG_EVENT_BUBBLE);
     lv_label_set_text(ui->scrECATnet_labelMain, "MAIN");
     lv_label_set_long_mode(ui->scrECATnet_labelMain, LV_LABEL_LONG_WRAP);

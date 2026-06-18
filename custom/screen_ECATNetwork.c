@@ -16,6 +16,7 @@
 #include <time.h>
 #include "lvgl.h"
 #include "custom.h"
+#include "screen_ECATNetwork.h"
 
 /*********************
  *      DEFINES

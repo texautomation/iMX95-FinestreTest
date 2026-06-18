@@ -310,7 +310,7 @@ void setup_scr_scrECATmsgs(lv_ui *ui)
     //Write codes scrECATmsgs_labelExport
     ui->scrECATmsgs_labelExport = lv_label_create(ui->scrECATmsgs_contExport);
     lv_obj_set_pos(ui->scrECATmsgs_labelExport, 30, 130);
-    lv_obj_set_size(ui->scrECATmsgs_labelExport, 100, 30);
+    lv_obj_set_size(ui->scrECATmsgs_labelExport, 100, 20);
     lv_obj_add_flag(ui->scrECATmsgs_labelExport, LV_OBJ_FLAG_EVENT_BUBBLE);
     lv_label_set_text(ui->scrECATmsgs_labelExport, "EXPORT");
     lv_label_set_long_mode(ui->scrECATmsgs_labelExport, LV_LABEL_LONG_WRAP);
@@ -543,7 +543,7 @@ void setup_scr_scrECATmsgs(lv_ui *ui)
     //Write codes scrECATmsgs_labelUndo
     ui->scrECATmsgs_labelUndo = lv_label_create(ui->scrECATmsgs_contUndo);
     lv_obj_set_pos(ui->scrECATmsgs_labelUndo, 30, 130);
-    lv_obj_set_size(ui->scrECATmsgs_labelUndo, 100, 30);
+    lv_obj_set_size(ui->scrECATmsgs_labelUndo, 100, 20);
     lv_obj_add_flag(ui->scrECATmsgs_labelUndo, LV_OBJ_FLAG_EVENT_BUBBLE);
     lv_label_set_text(ui->scrECATmsgs_labelUndo, "UNDO");
     lv_label_set_long_mode(ui->scrECATmsgs_labelUndo, LV_LABEL_LONG_WRAP);
@@ -588,7 +588,7 @@ void setup_scr_scrECATmsgs(lv_ui *ui)
     //Write codes scrECATmsgs_labelMain
     ui->scrECATmsgs_labelMain = lv_label_create(ui->scrECATmsgs_contMain);
     lv_obj_set_pos(ui->scrECATmsgs_labelMain, 30, 130);
-    lv_obj_set_size(ui->scrECATmsgs_labelMain, 100, 30);
+    lv_obj_set_size(ui->scrECATmsgs_labelMain, 100, 20);
     lv_obj_add_flag(ui->scrECATmsgs_labelMain, LV_OBJ_FLAG_EVENT_BUBBLE);
     lv_label_set_text(ui->scrECATmsgs_labelMain, "MAIN");
     lv_label_set_long_mode(ui->scrECATmsgs_labelMain, LV_LABEL_LONG_WRAP);

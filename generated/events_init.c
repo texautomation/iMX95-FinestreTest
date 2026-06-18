@@ -16,6 +16,11 @@
 #endif
 
 #include "custom.h"
+#include "screen_ECATNetwork.h"
+#include "screen_ECATBandwidth.h"
+#include "screen_ECATLost.h"
+#include "screen_ECATRegisters.h"
+#include "screen_ECATMessages.h"
 
 static void scrMain_contDiag_event_handler (lv_event_t *e)
 {
@@ -234,6 +239,7 @@ static void scrECATnet_contLost_event_handler (lv_event_t *e)
     case LV_EVENT_CLICKED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.scrECATlost, guider_ui.scrECATlost_del, &guider_ui.scrECATnet_del, setup_scr_scrECATlost, LV_SCR_LOAD_ANIM_NONE, 200, 200, true, false);
+        scrECATlost_init();
         break;
     }
     default:
@@ -428,6 +434,7 @@ static void scrECATmsgs_contLost_event_handler (lv_event_t *e)
     case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.scrECATlost, guider_ui.scrECATlost_del, &guider_ui.scrECATmsgs_del, setup_scr_scrECATlost, LV_SCR_LOAD_ANIM_NONE, 200, 200, true, false);
+        scrECATlost_init();
         break;
     }
     default:
@@ -600,6 +607,7 @@ static void scrECATregs_contLost_event_handler (lv_event_t *e)
     case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.scrECATlost, guider_ui.scrECATlost_del, &guider_ui.scrECATregs_del, setup_scr_scrECATlost, LV_SCR_LOAD_ANIM_NONE, 200, 200, true, false);
+        scrECATlost_init();
         break;
     }
     default:
@@ -701,7 +709,7 @@ static void scrECATlost_contRestart_event_handler (lv_event_t *e)
     switch (code) {
     case LV_EVENT_RELEASED:
     {
-
+        slaveVerificaPerditaNodi = 0;
         break;
     }
     default:
@@ -876,6 +884,7 @@ static void scrECATband_contLost_event_handler (lv_event_t *e)
     case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.scrECATlost, guider_ui.scrECATlost_del, &guider_ui.scrECATband_del, setup_scr_scrECATlost, LV_SCR_LOAD_ANIM_NONE, 200, 200, true, false);
+        scrECATlost_init();
         break;
     }
     default:

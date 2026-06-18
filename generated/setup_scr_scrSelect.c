@@ -316,7 +316,7 @@ void setup_scr_scrSelect(lv_ui *ui)
     //Write codes scrSelect_labelECATWin
     ui->scrSelect_labelECATWin = lv_label_create(ui->scrSelect_contECATWin);
     lv_obj_set_pos(ui->scrSelect_labelECATWin, 30, 130);
-    lv_obj_set_size(ui->scrSelect_labelECATWin, 100, 30);
+    lv_obj_set_size(ui->scrSelect_labelECATWin, 100, 20);
     lv_obj_add_flag(ui->scrSelect_labelECATWin, LV_OBJ_FLAG_EVENT_BUBBLE);
     lv_label_set_text(ui->scrSelect_labelECATWin, "ETHERCAT");
     lv_label_set_long_mode(ui->scrSelect_labelECATWin, LV_LABEL_LONG_WRAP);
@@ -364,7 +364,7 @@ void setup_scr_scrSelect(lv_ui *ui)
     //Write codes scrSelect_labelMain
     ui->scrSelect_labelMain = lv_label_create(ui->scrSelect_contMain);
     lv_obj_set_pos(ui->scrSelect_labelMain, 30, 130);
-    lv_obj_set_size(ui->scrSelect_labelMain, 100, 30);
+    lv_obj_set_size(ui->scrSelect_labelMain, 100, 20);
     lv_obj_add_flag(ui->scrSelect_labelMain, LV_OBJ_FLAG_EVENT_BUBBLE);
     lv_label_set_text(ui->scrSelect_labelMain, "MAIN");
     lv_label_set_long_mode(ui->scrSelect_labelMain, LV_LABEL_LONG_WRAP);

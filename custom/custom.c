@@ -21,6 +21,11 @@
 #include <unistd.h>
 #include <assert.h>
 #include <signal.h>
+#include "screen_ECATNetwork.h"
+#include "screen_ECATMessages.h"
+#include "screen_ECATRegisters.h"
+#include "screen_ECATLost.h"
+#include "screen_ECATBandwidth.h"
 
 /*********************
  *      DEFINES
@@ -310,7 +315,7 @@ static void table_draw_event_cb(lv_event_t * e)
             fill->color = lv_palette_main(LV_PALETTE_BLUE);
         }
         /* testo */
-        if(task->type == LV_DRAW_TASK_TYPE_LABEL)
+        else if(task->type == LV_DRAW_TASK_TYPE_LABEL)
         {
             lv_draw_label_dsc_t * label = (lv_draw_label_dsc_t *)task->draw_dsc;
             label->color = lv_color_white();
@@ -322,7 +327,7 @@ static void table_draw_event_cb(lv_event_t * e)
         {
             case LV_DRAW_TASK_TYPE_FILL:
                 fill = (lv_draw_fill_dsc_t *)task->draw_dsc;
-                fill->color = lv_color_hex(0x606060);//lv_palette_main(LV_PALETTE_BLUE);
+                fill->color = lv_color_hex(0x606060);
                 break;
 
             case LV_DRAW_TASK_TYPE_LABEL:
@@ -344,10 +349,10 @@ static void table_draw_event_cb(lv_event_t * e)
         if(task->type == LV_DRAW_TASK_TYPE_FILL)
         {
             lv_draw_fill_dsc_t * fill = (lv_draw_fill_dsc_t *)task->draw_dsc;
-            fill->color = lv_color_hex(0xb0b0b0);//lv_palette_main(LV_PALETTE_BLUE);
+            fill->color = lv_color_hex(0xd0d0d0);//lv_color_hex(0xb0b0b0);
         }
         /* testo */
-        if(task->type == LV_DRAW_TASK_TYPE_LABEL)
+        else if(task->type == LV_DRAW_TASK_TYPE_LABEL)
         {
             lv_draw_label_dsc_t * label = (lv_draw_label_dsc_t *)task->draw_dsc;
             label->color = lv_palette_main(LV_PALETTE_BLUE);
@@ -359,10 +364,10 @@ static void table_draw_event_cb(lv_event_t * e)
         if(task->type == LV_DRAW_TASK_TYPE_FILL)
         {
             lv_draw_fill_dsc_t * fill = (lv_draw_fill_dsc_t *)task->draw_dsc;
-            fill->color = lv_color_hex(0xb0b0b0);
+            fill->color = lv_color_hex(0xd0d0d0);//lv_color_hex(0xb0b0b0);
         }
         /* testo */
-        if(task->type == LV_DRAW_TASK_TYPE_LABEL)
+        else if(task->type == LV_DRAW_TASK_TYPE_LABEL)
         {
             lv_draw_label_dsc_t * label = (lv_draw_label_dsc_t *)task->draw_dsc;
             label->color = lv_color_hex(0x000000);

@@ -542,7 +542,7 @@ void setup_scr_scrECATband(lv_ui *ui)
     //Write codes scrECATband_labelUndo
     ui->scrECATband_labelUndo = lv_label_create(ui->scrECATband_contUndo);
     lv_obj_set_pos(ui->scrECATband_labelUndo, 30, 130);
-    lv_obj_set_size(ui->scrECATband_labelUndo, 100, 30);
+    lv_obj_set_size(ui->scrECATband_labelUndo, 100, 20);
     lv_obj_add_flag(ui->scrECATband_labelUndo, LV_OBJ_FLAG_EVENT_BUBBLE);
     lv_label_set_text(ui->scrECATband_labelUndo, "UNDO");
     lv_label_set_long_mode(ui->scrECATband_labelUndo, LV_LABEL_LONG_WRAP);
@@ -587,7 +587,7 @@ void setup_scr_scrECATband(lv_ui *ui)
     //Write codes scrECATband_labelMain
     ui->scrECATband_labelMain = lv_label_create(ui->scrECATband_contMain);
     lv_obj_set_pos(ui->scrECATband_labelMain, 30, 130);
-    lv_obj_set_size(ui->scrECATband_labelMain, 100, 30);
+    lv_obj_set_size(ui->scrECATband_labelMain, 100, 20);
     lv_obj_add_flag(ui->scrECATband_labelMain, LV_OBJ_FLAG_EVENT_BUBBLE);
     lv_label_set_text(ui->scrECATband_labelMain, "MAIN");
     lv_label_set_long_mode(ui->scrECATband_labelMain, LV_LABEL_LONG_WRAP);

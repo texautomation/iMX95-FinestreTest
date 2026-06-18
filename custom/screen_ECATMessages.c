@@ -16,6 +16,7 @@
 #include "lvgl.h"
 #include "custom.h"
 #include <time.h>
+#include "screen_ECATMessages.h"
 
 /*********************
  *      DEFINES

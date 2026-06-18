@@ -13,8 +13,12 @@
 extern "C" {
 #endif
 
+extern smSlaveInformation * SLAVE_INFO_shm;
+extern sem_t* SLAVE_INFO_sem;
+extern short slaveVerificaPerditaNodi;
 
 void update_scrECATlost(void);
+void scrECATlost_init(void);
 
 #ifdef __cplusplus
 }

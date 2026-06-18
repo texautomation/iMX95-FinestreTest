@@ -267,7 +267,7 @@ void setup_scr_scrMain(lv_ui *ui)
     //Write codes scrMain_labelDiag
     ui->scrMain_labelDiag = lv_label_create(ui->scrMain_contDiag);
     lv_obj_set_pos(ui->scrMain_labelDiag, 30, 130);
-    lv_obj_set_size(ui->scrMain_labelDiag, 100, 30);
+    lv_obj_set_size(ui->scrMain_labelDiag, 100, 20);
     lv_obj_add_flag(ui->scrMain_labelDiag, LV_OBJ_FLAG_EVENT_BUBBLE);
     lv_label_set_text(ui->scrMain_labelDiag, "DIAG");
     lv_label_set_long_mode(ui->scrMain_labelDiag, LV_LABEL_LONG_WRAP);
@@ -312,8 +312,7 @@ void setup_scr_scrMain(lv_ui *ui)
     //Write codes scrMain_labelDisco
     ui->scrMain_labelDisco = lv_label_create(ui->scrMain_contDisco);
     lv_obj_set_pos(ui->scrMain_labelDisco, 30, 130);
-    lv_obj_set_size(ui->scrMain_labelDisco, 100, 30);
-    lv_obj_add_flag(ui->scrMain_labelDisco, LV_OBJ_FLAG_EVENT_BUBBLE);
+    lv_obj_set_size(ui->scrMain_labelDisco, 100, 20);
     lv_label_set_text(ui->scrMain_labelDisco, "USB");
     lv_label_set_long_mode(ui->scrMain_labelDisco, LV_LABEL_LONG_WRAP);
 
@@ -357,8 +356,7 @@ void setup_scr_scrMain(lv_ui *ui)
     //Write codes scrMain_labelEditor
     ui->scrMain_labelEditor = lv_label_create(ui->scrMain_contEditor);
     lv_obj_set_pos(ui->scrMain_labelEditor, 30, 130);
-    lv_obj_set_size(ui->scrMain_labelEditor, 100, 30);
-    lv_obj_add_flag(ui->scrMain_labelEditor, LV_OBJ_FLAG_EVENT_BUBBLE);
+    lv_obj_set_size(ui->scrMain_labelEditor, 100, 20);
     lv_label_set_text(ui->scrMain_labelEditor, "EDITOR");
     lv_label_set_long_mode(ui->scrMain_labelEditor, LV_LABEL_LONG_WRAP);
 
@@ -402,8 +400,7 @@ void setup_scr_scrMain(lv_ui *ui)
     //Write codes scrMain_labelManual
     ui->scrMain_labelManual = lv_label_create(ui->scrMain_contManual);
     lv_obj_set_pos(ui->scrMain_labelManual, 30, 130);
-    lv_obj_set_size(ui->scrMain_labelManual, 100, 30);
-    lv_obj_add_flag(ui->scrMain_labelManual, LV_OBJ_FLAG_EVENT_BUBBLE);
+    lv_obj_set_size(ui->scrMain_labelManual, 100, 20);
     lv_label_set_text(ui->scrMain_labelManual, "MANUAL");
     lv_label_set_long_mode(ui->scrMain_labelManual, LV_LABEL_LONG_WRAP);
 

@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include "lvgl.h"
 #include "custom.h"
+#include "screen_ECATBandwidth.h"
 
 /*********************
  *      DEFINES

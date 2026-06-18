@@ -16,15 +16,17 @@
 #include <string.h>
 #include "lvgl.h"
 #include "custom.h"
+#include "screen_ECATRegisters.h"
 
 /*********************
  *      DEFINES
  *********************/
 #define ESC_REG_300_COUNT           20
-#define MAX_ROW_TAB_ESC_DL          3
-#define MAX_ROW_TAB_RX              9
-#define MAX_ROW_TAB_FW_RX           5
-#define MAX_ROW_TAB_LL              5
+#define N_COL_TABLE_SLAVE           23
+#define N_ROW_TABLE_ESC_DL          3
+#define N_ROW_TABLE_RX              9
+#define N_ROW_TABLE_FW_RX           5
+#define N_ROW_TABLE_LL              5
 
 /**********************
  *      TYPEDEFS
@@ -40,13 +42,15 @@ static void set_style_col_table_draw_event_cb(lv_event_t * e);
  *  STATIC VARIABLES
  **********************/
 static const lv_coord_t regs_tableSlave_col_w[] = {
-    50,120,145,31,31,
+    50,120,144,32,31,
     30,30,30,30,30,
     30,30,30,30,30,
     30,30,30,30,30,
     30,30,30
 };
-
+static const char *regs_tableSlaveTitle[] = { "slave", "vendor", "product", "  10 ", "11  ", "00", "01",
+                                                "02", "03", "04", "05", "06", "07", "08", "09", "0A", 
+                                                "0B", "0C", "0D", "10", "11", "12", "13" };
 /**********************
  *  GLOBAL VARIABLES
  **********************/
@@ -104,9 +108,9 @@ void update_scrECATregs(void)
         lv_table_set_cell_value(guider_ui.scrECATregs_tableSlave,SlaveIndex+1,cnt++,buffer); 
         lv_table_set_cell_value(guider_ui.scrECATregs_tableSlave,SlaveIndex+1,cnt++,(char*)SLAVE_INFO_shm->sharedMemorySlaveInformation[SlaveIndex].vendorName); 
         lv_table_set_cell_value(guider_ui.scrECATregs_tableSlave,SlaveIndex+1,cnt++,(char*)SLAVE_INFO_shm->sharedMemorySlaveInformation[SlaveIndex].productName);               
-        snprintf(buffer, sizeof(buffer), "%02x", ESC_shm->sharedMemoryRegister_0x110_to_0x111[SlaveIndex][0]);
+        snprintf(buffer, sizeof(buffer), "| %02x ", ESC_shm->sharedMemoryRegister_0x110_to_0x111[SlaveIndex][0]);
         lv_table_set_cell_value(guider_ui.scrECATregs_tableSlave,SlaveIndex+1,cnt++,buffer); 
-        snprintf(buffer, sizeof(buffer), "%02x", ESC_shm->sharedMemoryRegister_0x110_to_0x111[SlaveIndex][1]);
+        snprintf(buffer, sizeof(buffer), "%02x |", ESC_shm->sharedMemoryRegister_0x110_to_0x111[SlaveIndex][1]);
         lv_table_set_cell_value(guider_ui.scrECATregs_tableSlave,SlaveIndex+1,cnt++,buffer);
         for ( iReg = 0; iReg < ESC_REG_300_COUNT; iReg++ )
         {
@@ -125,20 +129,20 @@ void update_scrECATregs(void)
 	}	
     cnt = 0;
     // ESC DL Status
-    for(r = 1; r < MAX_ROW_TAB_ESC_DL; r++) 
+    for(r = 1; r < N_ROW_TABLE_ESC_DL; r++) 
     {
         snprintf(buffer, sizeof(buffer), "0x%02x", ESC_shm->sharedMemoryRegister_0x110_to_0x111[rowSel-1][cnt++]);
         lv_table_set_cell_value(guider_ui.scrECATregs_tableEscDLStatus, r, 1, buffer);
     }
     cnt = 0;
     // Rx Error counter
-    for(r = 1; r < MAX_ROW_TAB_RX; r++) 
+    for(r = 1; r < N_ROW_TABLE_RX; r++) 
     {
         snprintf(buffer, sizeof(buffer), "0x%02x", ESC_shm->sharedMemoryRegister_0x300_to_0x313[rowSel-1][cnt++]);
         lv_table_set_cell_value(guider_ui.scrECATregs_tableRxError, r, 1, buffer);
     }
     // Fw Rx Error counter
-    for(r = 1; r < MAX_ROW_TAB_FW_RX; r++) 
+    for(r = 1; r < N_ROW_TABLE_FW_RX; r++) 
     {
         snprintf(buffer, sizeof(buffer), "0x%02x", ESC_shm->sharedMemoryRegister_0x300_to_0x313[rowSel-1][cnt++]);
         lv_table_set_cell_value(guider_ui.scrECATregs_tableFwRxError, r, 1, buffer);
@@ -148,7 +152,7 @@ void update_scrECATregs(void)
 	snprintf(buffer, sizeof(buffer), "0x%02x", ESC_shm->sharedMemoryRegister_0x300_to_0x313[rowSel-1][cnt++]);
 	lv_table_set_cell_value(guider_ui.scrECATregs_tablePDI, 1, 1, buffer);
     cnt += 2;
-    for(r = 1; r < MAX_ROW_TAB_LL; r++) 
+    for(r = 1; r < N_ROW_TABLE_LL; r++) 
     {
         snprintf(buffer, sizeof(buffer), "0x%02x", ESC_shm->sharedMemoryRegister_0x300_to_0x313[rowSel-1][cnt++]);
         lv_table_set_cell_value(guider_ui.scrECATregs_tableLL, r, 1, buffer);
@@ -163,7 +167,6 @@ void scrECATregs_init(void)
 {
     int i, r, c;
     uint32_t n_rows = lv_table_get_row_count(guider_ui.scrECATregs_tableSlave); //inclusa l'intestazione
-    uint32_t n_cols = lv_table_get_column_count(guider_ui.scrECATregs_tableSlave);
     regs_row_sel = 1;
     /* se il numero di righe della tabella non è sufficiente, ne aggiungo altre.
      * ATTENZIONE!!! Occorre essere sicuri che nella memoria condivisa i dati siano quelli validi.  
@@ -175,8 +178,12 @@ void scrECATregs_init(void)
         n_rows = slaveNum + 1;
         lv_table_set_row_count ( guider_ui.scrECATregs_tableSlave, n_rows );
     }
+    lv_table_set_column_count ( guider_ui.scrECATregs_tableSlave, N_COL_TABLE_SLAVE );
     for(i = 0; i < sizeof(regs_tableSlave_col_w)/sizeof(regs_tableSlave_col_w[0]); i++) 
+    {
         lv_table_set_column_width(guider_ui.scrECATregs_tableSlave, i, regs_tableSlave_col_w[i]);
+        lv_table_set_cell_value(guider_ui.scrECATregs_tableSlave, 0, i, regs_tableSlaveTitle[i]);
+    }
     lv_table_set_column_width(guider_ui.scrECATregs_tableEscDLStatus, 0, 867);
     lv_table_set_column_width(guider_ui.scrECATregs_tableEscDLStatus, 1, 50);
     lv_table_set_column_width(guider_ui.scrECATregs_tableRxError, 0, 400);
@@ -230,6 +237,7 @@ void scrECATregs_init(void)
     lv_obj_add_event_cb(guider_ui.scrECATregs_tableLL, set_style_col_table_draw_event_cb,
                         LV_EVENT_DRAW_TASK_ADDED, NULL);
     // Applica il CLIP (crop) a tutte le celle
+    uint32_t n_cols = lv_table_get_column_count(guider_ui.scrECATregs_tableSlave);
     for(r = 0; r < n_rows; r++) 
     {
         for(c = 0; c < n_cols; c++) 
