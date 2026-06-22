@@ -66,13 +66,13 @@ static void LoggerGetEvent ( int numEvent, char *cBuffer, int event )
 	sem_post(NETLOG_sem);
 }
 
-static void update_event_row(lv_obj_t * table, int errorType)
+static void update_event_row(lv_obj_t * table, int logType)
 {
     char buffer[LEB_MAX_SIZE_EVENT];
 
     for ( int iLog = 0; iLog < LEB_MAX_EVENT; iLog++ )
     {
-        LoggerGetEvent( iLog, buffer, errorType);
+        LoggerGetEvent( iLog, buffer, logType);
         lv_table_set_cell_value( table,iLog,0, buffer ); 
 	}
 }

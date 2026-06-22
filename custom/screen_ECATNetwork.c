@@ -64,6 +64,7 @@ int net_row_sel = 1;
 int net_row_sel_prev = 1;
 
 
+
 /**
  * Create a application
  */
@@ -82,17 +83,15 @@ void update_scrECATnet(void)
 	int SlaveIndex, subIndex, row, rowSel;
     uint32_t n_rows, n_cols;
     int n_input, n_output;
-
     // Aggiorna i dati della screen
 	sem_wait(SLAVE_INFO_sem);
     sem_wait(SLAVE_DATA_sem);
-    //int link = os_cableConnected();
     sprintf ( buffer, "%3d", slaveNum ); 
     lv_table_set_cell_value ( guider_ui.scrECATnet_tableConfig, 1, 0, buffer );
-    #if 0
-    /------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------
     // network name      destination       source           type   
     //------------------------------------------------------------------------------------------------
+    #if 0
     sprintf ( buffer, "%-31s", mstCnfg->xml.master.name ); 
     lv_table_set_cell_value ( guider_ui.scrECATnet_tableNetwork, 1, 0, buffer );
     sprintf ( buffer, "%02x-%02x-%02x-%02x-%02x-%02x", mstCnfg->xml.master.destination[0], mstCnfg->xml.master.destination[1],
@@ -103,9 +102,10 @@ void update_scrECATnet(void)
     lv_table_set_cell_value ( guider_ui.scrECATnet_tableNetwork, 1, 2, buffer );
     sprintf ( buffer, "0x%04x",  mstCnfg->xml.master.etherType ); 
     lv_table_set_cell_value ( guider_ui.scrECATnet_tableNetwork, 1, 3, buffer );
-    /------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------
 	// config   active      frame wrong     noECAT      lost        cable       sync        ecat cycle
 	//------------------------------------------------------------------------------------------------
+    int link = os_cableConnected();
     sprintf ( buffer, "%3d", mstCnfg->slaveNum ); 
     lv_table_set_cell_value ( guider_ui.scrECATnet_tableConfig, 1, 0, buffer );
     sprintf ( buffer, "%3d", *mstCnfg->activeSlaveNumPt ); 
@@ -116,11 +116,11 @@ void update_scrECATnet(void)
     lv_table_set_cell_value ( guider_ui.scrECATnet_tableConfig, 1, 3, buffer );
     sprintf ( buffer, "%5d", mstCnfg->xml.cyclicFrameDontReceive ); 
     lv_table_set_cell_value ( guider_ui.scrECATnet_tableConfig, 1, 4, buffer );
-    sprintf ( buffer, "%13s", link==1?"connected    ":(link==-1?"non init     ":link==-2?"not ready    ":"not connected" ); 
+    sprintf ( buffer, "%13s", link==1?"connected    ":(link==-1?"non init     ":link==-2?"not ready    ":"not connected" )); 
     lv_table_set_cell_value ( guider_ui.scrECATnet_tableConfig, 1, 5, buffer );
     sprintf ( buffer, "%4ld \265S", maxTempoSwapEtherCAT ); 
     lv_table_set_cell_value ( guider_ui.scrECATnet_tableConfig, 1, 6, buffer );
-    sprintf ( buffer, "%3d \265S", maxTempoDurataEtherCAT ); 
+    sprintf ( buffer, "%3ld \265S", maxTempoDurataEtherCAT ); 
     lv_table_set_cell_value ( guider_ui.scrECATnet_tableConfig, 1, 7, buffer );
     #endif
     // slave selezionato di default: slave 1
@@ -166,7 +166,7 @@ void update_scrECATnet(void)
             //----------------------------------------------------------------------------------------------
             snprintf(buffer,
                     sizeof(buffer),
-                    "%s",       //"%12s",
+                    "%12s",       
                     (slave->stm >= 0) ? 
                         (slave->stm < (sizeof(NodeSTM) / sizeof(NodeSTM[0])) ? NodeSTM[slave->stm] : undefStatus) : "");
 
@@ -261,17 +261,17 @@ void update_scrECATnet(void)
             // AL status code
             //------------------------------------------------------------------------------------------
 			case 1:
-				snprintf ( buffer, sizeof(buffer), "cd.err: 0x%04x   %8s", SLAVE_DATA_shm->sharedMemorySlaveData[rowSel-1].statusCode,
-				        SLAVE_DATA_shm->sharedMemorySlaveData[rowSel-1].statusCode?SLAVE_DATA_shm->sharedMemorySlave[rowSel-1].statusCodeTimeEvent:"        " );
+				snprintf ( buffer, sizeof(buffer), "cd.err: 0x%04x   %8s", mstCnfg->slaveList[rowSel-1]->statusCode,
+				         mstCnfg->slaveList[rowSel-1]->statusCode? mstCnfg->slaveList[rowSel-1]->statusCodeTimeEvent:"        " );
 				lv_table_set_cell_value( guider_ui.scrECATnet_tableAL,row,0, buffer );
                 break;
             //------------------------------------------------------------------------------------------
             // AL description
             //------------------------------------------------------------------------------------------
 			case 2:
-				if ( SLAVE_DATA_shm->sharedMemorySlaveData[rowSel-1].statusCode )
+				if ( mstCnfg->slaveList[rowSel-1]->statusCode )
 				{
-					const char *pntStatusCode=ECATMNfindStatusCode(SLAVE_DATA_shm->sharedMemorySlaveData[rowSel-1].statusCode);
+					const char *pntStatusCode=ECATMNfindStatusCode(mstCnfg->slaveList[rowSel-1]->statusCode);
 					if ( pntStatusCode != NULL )
 						strcpy ( buffer, pntStatusCode );
 					else
@@ -349,23 +349,23 @@ void update_scrECATnet(void)
     //------------------------------------------------------------------------------------------------
 	// distribuited clock
 	//------------------------------------------------------------------------------------------------
-	#if 0
-    if ( SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].sync0Active )
+    #if 0
+    if ( mstCnfg->syncMaster.sync0Active )         
 		snprintf ( buffer, sizeof(buffer), "sync0   %s", mstCnfg->syncMaster.sync0Synchronized?"hooked ":"      " );
 	else
 		strcpy ( buffer, "no sync         " );
     lv_table_set_cell_value ( guider_ui.scrECATnet_tableDC,1,1, buffer );    
-	if ( SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].sync0Synchronized )
-		snprintf ( buffer, sizeof(buffer), "%4d nS (0x%02x)", SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].deriva, SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].sync0Allarm );
+	if ( mstCnfg->syncMaster.sync0Synchronized )    
+		snprintf ( buffer, sizeof(buffer), "%4ld nS (0x%02x)", sincronizzazioneClock.deriva, mstCnfg->syncMaster.sync0Allarm );
 	else
-		snprintf ( buffer, sizeof(buffer), "not hooked (0x%02x)", SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].sync0Allarm );
+		snprintf ( buffer, sizeof(buffer), "not hooked (0x%02x)", mstCnfg->syncMaster.sync0Allarm );
     lv_table_set_cell_value ( guider_ui.scrECATnet_tableDC,2,1, buffer );
-	snprintf ( buffer, sizeof(buffer), "%3d  (lost:%4d)", SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].ticks,SLAVE_INFO_shm->sharedMemorySlaveInformation[rowSel-1].sync0LostNextSync );
+	snprintf ( buffer, sizeof(buffer), "%3f  (lost:%4d)", sincronizzazioneClock.ticks, mstCnfg->syncMaster.sync0LostNextSync );
     lv_table_set_cell_value ( guider_ui.scrECATnet_tableDC,3,1, buffer ); 
-	snprintf ( buffer, sizeof(buffer), "0x%08x", (mstCnfg->systemTimeLen==4)?(EC_GET32(*mstCnfg->txSystemTime32bitPt)):
+	snprintf ( buffer, sizeof(buffer), "0x%08lx", (mstCnfg->systemTimeLen==4)?(EC_GET32(*mstCnfg->txSystemTime32bitPt)):
 										 (mstCnfg->systemTimeLen==8)?(long)(EC_GET64(*mstCnfg->txSystemTime64bitPt)):0);
     lv_table_set_cell_value ( guider_ui.scrECATnet_tableDC,4,1, buffer ); 
-	snprintf ( buffer, sizeof(buffer), "0x%08x", (mstCnfg->systemTimeLen==4)?(EC_GET32(*mstCnfg->rxSystemTime32bitPt)):
+	snprintf ( buffer, sizeof(buffer), "0x%08lx", (mstCnfg->systemTimeLen==4)?(EC_GET32(*mstCnfg->rxSystemTime32bitPt)):
 										 (mstCnfg->systemTimeLen==8)?(long)(EC_GET64(*mstCnfg->rxSystemTime64bitPt)):0);
     lv_table_set_cell_value ( guider_ui.scrECATnet_tableDC,5,1, buffer ); 
     #endif

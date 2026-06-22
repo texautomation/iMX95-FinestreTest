@@ -21,7 +21,6 @@
 /*********************
  *      DEFINES
  *********************/
-#define ESC_REG_300_COUNT           20
 #define N_COL_TABLE_SLAVE           23
 #define N_ROW_TABLE_ESC_DL          3
 #define N_ROW_TABLE_RX              9
@@ -112,7 +111,7 @@ void update_scrECATregs(void)
         lv_table_set_cell_value(guider_ui.scrECATregs_tableSlave,SlaveIndex+1,cnt++,buffer); 
         snprintf(buffer, sizeof(buffer), "%02x |", ESC_shm->sharedMemoryRegister_0x110_to_0x111[SlaveIndex][1]);
         lv_table_set_cell_value(guider_ui.scrECATregs_tableSlave,SlaveIndex+1,cnt++,buffer);
-        for ( iReg = 0; iReg < ESC_REG_300_COUNT; iReg++ )
+        for ( iReg = 0; iReg < ESC_REGISTERS_0x0300; iReg++ )
         {
             if ( iReg != 0x0E  && iReg != 0x0F )
             {
@@ -151,6 +150,7 @@ void update_scrECATregs(void)
 	lv_table_set_cell_value(guider_ui.scrECATregs_tablePU, 1, 1, buffer);
 	snprintf(buffer, sizeof(buffer), "0x%02x", ESC_shm->sharedMemoryRegister_0x300_to_0x313[rowSel-1][cnt++]);
 	lv_table_set_cell_value(guider_ui.scrECATregs_tablePDI, 1, 1, buffer);
+    //salto i registri 0x0E e 0x0F
     cnt += 2;
     for(r = 1; r < N_ROW_TABLE_LL; r++) 
     {
