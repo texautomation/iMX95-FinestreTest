@@ -53,8 +53,8 @@ typedef struct
 	lv_obj_t *scrSelect_label_5;
 	lv_obj_t *scrSelect_cont_4;
 	lv_obj_t *scrSelect_label_4;
-	lv_obj_t *scrSelect_cont_3;
-	lv_obj_t *scrSelect_label_3;
+	lv_obj_t *scrSelect_contCNC;
+	lv_obj_t *scrSelect_labelCNC;
 	lv_obj_t *scrSelect_contECATWin;
 	lv_obj_t *scrSelect_labelECATWin;
 	lv_obj_t *scrSelect_contMain;
@@ -374,6 +374,14 @@ typedef struct
 	lv_obj_t *scrECATband_labelTitle;
 	lv_obj_t *scrECATband_contAlarm;
 	lv_obj_t *scrECATband_taAlarm;
+	lv_obj_t *scrCNC;
+	bool scrCNC_del;
+	lv_obj_t *scrCNC_contAllarmi;
+	lv_obj_t *scrCNC_contStato;
+	lv_obj_t *scrCNC_contSpeed;
+	lv_obj_t *scrCNC_contMenu;
+	lv_obj_t *scrCNC_contAxes;
+	lv_obj_t *scrCNC_contHeader;
 }lv_ui;
 
 typedef void (*ui_setup_scr_t)(lv_ui * ui);
@@ -408,6 +416,7 @@ void setup_scr_scrECATmsgs(lv_ui *ui);
 void setup_scr_scrECATregs(lv_ui *ui);
 void setup_scr_scrECATlost(lv_ui *ui);
 void setup_scr_scrECATband(lv_ui *ui);
+void setup_scr_scrCNC(lv_ui *ui);
 LV_IMAGE_DECLARE(_Logo1_Nero_RGB565A8_330x110);
 
 LV_IMAGE_DECLARE(_Vuota_RGB565A8_160x160);

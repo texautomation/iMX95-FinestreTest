@@ -15,6 +15,7 @@
 #include "freemaster_client.h"
 #endif
 
+#include "screen_CNC.h"
 #include "custom.h"
 #include "screen_ECATNetwork.h"
 #include "screen_ECATBandwidth.h"
@@ -56,6 +57,25 @@ void events_init_scrMain (lv_ui *ui)
     lv_obj_add_event_cb(ui->scrMain_labelManual, scrMain_labelManual_event_handler, LV_EVENT_ALL, ui);
 }
 
+static void scrSelect_contCNC_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_RELEASED:
+    {
+        ui_load_scr_animation(&guider_ui, &guider_ui.scrCNC, guider_ui.scrCNC_del, &guider_ui.scrSelect_del, setup_scr_scrCNC, LV_SCR_LOAD_ANIM_NONE, 200, 200, true, false);
+        //lv_obj_t *scr = lv_screen_active();
+        /* Elimina tutti gli oggetti figli */
+        //lv_obj_clean(scr);
+        //cnc_dashboard_create();
+        screen_CNC_custom_init(&guider_ui);
+        break;
+    }
+    default:
+        break;
+    }
+}
+
 static void scrSelect_contECATWin_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
@@ -87,6 +107,7 @@ static void scrSelect_contMain_event_handler (lv_event_t *e)
 
 void events_init_scrSelect (lv_ui *ui)
 {
+    lv_obj_add_event_cb(ui->scrSelect_contCNC, scrSelect_contCNC_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->scrSelect_contECATWin, scrSelect_contECATWin_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->scrSelect_contMain, scrSelect_contMain_event_handler, LV_EVENT_ALL, ui);
 }

@@ -248,49 +248,49 @@ void setup_scr_scrSelect(lv_ui *ui)
     lv_obj_set_style_pad_left(ui->scrSelect_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->scrSelect_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-    //Write codes scrSelect_cont_3
-    ui->scrSelect_cont_3 = lv_obj_create(ui->scrSelect);
-    lv_obj_set_pos(ui->scrSelect_cont_3, 940, 170);
-    lv_obj_set_size(ui->scrSelect_cont_3, 160, 160);
-    lv_obj_set_scrollbar_mode(ui->scrSelect_cont_3, LV_SCROLLBAR_MODE_OFF);
+    //Write codes scrSelect_contCNC
+    ui->scrSelect_contCNC = lv_obj_create(ui->scrSelect);
+    lv_obj_set_pos(ui->scrSelect_contCNC, 940, 170);
+    lv_obj_set_size(ui->scrSelect_contCNC, 160, 160);
+    lv_obj_set_scrollbar_mode(ui->scrSelect_contCNC, LV_SCROLLBAR_MODE_OFF);
 
-    //Write style for scrSelect_cont_3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrSelect_cont_3, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_border_opa(ui->scrSelect_cont_3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_border_color(ui->scrSelect_cont_3, lv_color_hex(0x606060), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_border_side(ui->scrSelect_cont_3, LV_BORDER_SIDE_FULL, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrSelect_cont_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrSelect_cont_3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->scrSelect_cont_3, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->scrSelect_cont_3, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrSelect_cont_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrSelect_cont_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrSelect_cont_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrSelect_cont_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrSelect_cont_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    //Write style for scrSelect_contCNC, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_border_width(ui->scrSelect_contCNC, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_opa(ui->scrSelect_contCNC, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_color(ui->scrSelect_contCNC, lv_color_hex(0x606060), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_side(ui->scrSelect_contCNC, LV_BORDER_SIDE_FULL, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->scrSelect_contCNC, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->scrSelect_contCNC, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui->scrSelect_contCNC, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_grad_dir(ui->scrSelect_contCNC, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui->scrSelect_contCNC, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->scrSelect_contCNC, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->scrSelect_contCNC, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->scrSelect_contCNC, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->scrSelect_contCNC, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-    //Write codes scrSelect_label_3
-    ui->scrSelect_label_3 = lv_label_create(ui->scrSelect_cont_3);
-    lv_obj_set_pos(ui->scrSelect_label_3, 30, 130);
-    lv_obj_set_size(ui->scrSelect_label_3, 100, 30);
-    lv_label_set_text(ui->scrSelect_label_3, "");
-    lv_label_set_long_mode(ui->scrSelect_label_3, LV_LABEL_LONG_WRAP);
+    //Write codes scrSelect_labelCNC
+    ui->scrSelect_labelCNC = lv_label_create(ui->scrSelect_contCNC);
+    lv_obj_set_pos(ui->scrSelect_labelCNC, 30, 130);
+    lv_obj_set_size(ui->scrSelect_labelCNC, 100, 20);
+    lv_label_set_text(ui->scrSelect_labelCNC, "CNC");
+    lv_label_set_long_mode(ui->scrSelect_labelCNC, LV_LABEL_LONG_WRAP);
 
-    //Write style for scrSelect_label_3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->scrSelect_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->scrSelect_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->scrSelect_label_3, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->scrSelect_label_3, &lv_font_montserratMedium_18, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->scrSelect_label_3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->scrSelect_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->scrSelect_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->scrSelect_label_3, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->scrSelect_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->scrSelect_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->scrSelect_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->scrSelect_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->scrSelect_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->scrSelect_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    //Write style for scrSelect_labelCNC, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_border_width(ui->scrSelect_labelCNC, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->scrSelect_labelCNC, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui->scrSelect_labelCNC, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui->scrSelect_labelCNC, &lv_font_montserratMedium_18, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui->scrSelect_labelCNC, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_letter_space(ui->scrSelect_labelCNC, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_line_space(ui->scrSelect_labelCNC, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui->scrSelect_labelCNC, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->scrSelect_labelCNC, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui->scrSelect_labelCNC, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->scrSelect_labelCNC, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->scrSelect_labelCNC, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->scrSelect_labelCNC, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->scrSelect_labelCNC, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes scrSelect_contECATWin
     ui->scrSelect_contECATWin = lv_obj_create(ui->scrSelect);

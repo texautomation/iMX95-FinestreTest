@@ -79,6 +79,7 @@ void init_scr_del_flag(lv_ui *ui)
     ui->scrECATregs_del = true;
     ui->scrECATlost_del = true;
     ui->scrECATband_del = true;
+    ui->scrCNC_del = true;
 }
 
 void setup_bottom_layer(void)

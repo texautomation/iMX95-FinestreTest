@@ -212,6 +212,7 @@ void custom_init(lv_ui *ui)
     setup_scr_scrECATmsgs(ui);
     setup_scr_scrECATnet(ui);
     setup_scr_scrECATregs(ui);
+    setup_scr_scrCNC(ui);
 
     // stili 
     lv_style_init(&style_checked);
